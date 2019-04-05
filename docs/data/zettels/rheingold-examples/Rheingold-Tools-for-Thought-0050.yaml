@@ -1,0 +1,22 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0050
+note: |
+  In his brilliant solution to one of the key metamathematical problems posed by the formalists, Alan Turing described in precise mathematical terms how an automatic formal system with extremely simple rules of operation could have very powerful capabilities.
+  An automatic formal system is a physical device which automatically manipulates the tokens of a formal system according to the system's rules.
+  Turing's theoretical machine was both an example of his theory of computation and a proof that a certain kind of computing machine could, in fact, be constructed.
+  When he brought mathematics and logic together in the form of a machine, Turing made symbol-processing systems possible.
+  He proposed that the vast majority of intellectual problems could be converted to the form "find a number n such that .
+  Even more important than this provocative statement connecting the abstractions of intellect with the more concrete realm of numbers -- an implication that still inspires the efforts of artificial intelligence researchers -- was Turing's recognition that the numbers were more important as symbols in this case than as elements of mathematical calculations.
+  One of Turing's greatest insights was his understanding, from the very beginning, of something that the majority of the computer priesthood has yet to understand -- the fact that numbers are only one possible way of interpreting the internal states of an automatic formal system.
+  Babbage's "patterns of action" were now formalized with mathematical rigor.
+  Turing's "states" provided the crucial metaphor for bridging the power of human cognition and the capabilities of machines.
+  What, Turing asked, does a human symbol processor do when performing a calculation?
+tags:
+- Core Text
+- Computing History
+- Rheingold 0050
+- Turing
+- Artificial Intelligence
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

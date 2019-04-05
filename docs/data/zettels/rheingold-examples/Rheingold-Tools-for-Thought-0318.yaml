@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0318
+note: |
+  Kay felt that the threshold number of picture elements needed to most strongly attract and hold the attention of a large population of computer users, and give the users significant power to control the computer, would be around one million dots.
+  The Alto computer being constructed for PARC researchers -- which the Learning Research Group called "an interim Dynabook" -- would have around half a million dots.
+  The technique by which the Alto would achieve its high-resolution screen was called "bit-mapping," a term that meant that each picture element, each dot of light on the display screen, was connected to one bit of information in a specific place in the computer's memory, thus creating a kind of two-way informational map of the screen.
+  If, for example, a specific bit in the computer's "memory map" was turned off, there would not be a dot of light at the location on the screen.
+  Conversely, an "on" bit at a coordinate in the memory map would produce a dot of light at the designated screen location.
+  By turning on and off parts of the bit map through software commands, recognizable graphic images can be created (and changed) on the screen.
+  Bit-mapping was a major step toward creating a computer that an individual could use comfortably, whether the user is an expert programmer or a beginner.
+  The importance of a visual display that is connected directly to the computer's memory is related to the human talent for recognizing very subtle visual patterns in large fields of information -- undoubtedly a survival trait that evolved way back when our ancestors climbed trees and prowled savannas.
+  Human information processors have a very small short term memory, however, which means that all computers and no humans can extract the square roots of thousand-digit numbers in less than a second, no computers and all humans can recognize a familiar face in a crowd.
+  By connecting part of the computer's internal processes to a visible symbolic representation, bit-mapping puts the most sophisticated part of the human information processor in closer contact with the most sophisticated part of the mechanical information processor.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0318
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,25 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0108
+note: |
+  But this "Preliminary Discussion," unquestionably dominated by von Neumann, also went boldly beyond the EDVAC conception as it was stated in the "First Draft."
+  Although the latest proposal was aimed at the construction of a machine that would be more sophisticated than EDVAC, the authors went much farther than describing a particular machine.
+  They very strongly suggested that their specification should be of the general plan for the logical structure and fundamental method of operation for all future computers.
+  They were right: it took almost forty years, until the 1980s until anyone made a serious attempt to build "non-von Neumann machines."
+  The primary contributions of this document were related to the logical use of the memory mechanism and the overall plan of what has been come to be known as the "logical architecture."
+  One aspect of this architecture was the ingenious way data and instructions were made to be changeable during the course of a computation without requiring direct intervention by the human operator.
+  This changeability was accomplished by treating numerical data as "values" that could be assigned to specific locations in memory.
+  The basic memory component of an EDVAC-type computer used collections of memory elements known as "registers" to store numerical values in the form of a series of on/off impulses.
+  Each of these numbers was assigned an "address" in the memory, and any address could contain either data or an instruction.
+  In this way, specific data and instructions could be located when needed by the control unit.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0108
+- 1980s
+- 1980 decade
+- 1900 century
+- 1900s
+- 1900 century late
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

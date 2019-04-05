@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0400
+note: |
+  Scientific literature, the very basis of worldwide scientific scholarship, consists of published documents which refer to many previously published documents.
+  An experiment is usually performed to test a hypothesis that was based on previous experiments.
+  Performing a "search of the literature" is the first thing a scientist does when confronted with a new research problem.
+  The problem today is that scientific research is too successful.
+  As Vannevar Bush warned forty years ago, the rate and volume of scientific publication have overwhelmed the coping capacity of our print-era technology.
+  With a hypertext system, each scientific document could have links to its intellectual antecedents and to documents regarding related problems.
+  The entire body of relevant scientific literature could be collapsed into each individual document.
+  The links would function in the same way as footnotes, but with immediate access to the cited material, as if each footnote was like a window or door into the cited document.
+  A system with links, backtrack, and versioning needs only an economic structure to become a publishing system.
+  Nelson sees an anarchic but self-organizing system based on his conception of royalties and subroyalties.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0400
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

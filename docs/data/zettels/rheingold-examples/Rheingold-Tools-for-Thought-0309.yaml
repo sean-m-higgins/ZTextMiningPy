@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0309
+note: |
+  This is the key element that separated LOGO from the "computer assisted instruction" projects that had preceded it.
+  Instead of treating education as a task of transferring knowledge from the teacher to the student, the LOGO approach was to help students strengthen their ability to discover knowledge on their own.
+  One of the most important of these skills, for example, is the idea of "bugs" -- the word that programmers use to describe the small mistakes that inevitably crop up in computer programs, and which must be tracked down before the program will work.
+  Instead of launching students on an ego-bruising search for the "right" answer, the task of learning LOGO was meant to encourage children to solve problems by daring to try new procedures, then debugging the procedures until they work.
+  The first revolutionary learning instrument introduced in LOGO was the "turtle," a device that is part machine and part metaphor.
+  The original LOGO turtle was a small robot, controlled by the computer and programmed by the child, that could be instructed to move around, pulling a pen as it moved, drawing intriguing patterns on paper in the process.
+  Alan Kay was one of several software designers who realized that this process was more than just practice at drawing pictures, for the ability to manipulate symbols -- whether the symbols are turtle drawings, words, or mathematical equations -- is central to every medium used to augment human thinking.
+  The abstract turtle of today's more advanced display technology is a triangular graphic figure that leaves a video trail behind it on a display screen.
+  Whether it is made of metal and draws on paper, or made of electrons and draws on a video screen, the turtle is what educational psychologists call a transitional object -- and what Papert calls an "object-to-think-with."
+  Instead of "programming the computer" to draw a pattern, children are encouraged to "teach the turtle" how to draw it.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0309
+- Abstraction
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

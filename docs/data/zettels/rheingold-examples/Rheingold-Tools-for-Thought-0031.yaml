@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0031
+note: |
+  If your object is to weave a complex calculation out of subcalculations, some of which may be repeated many times, it is tedious to rewrite a sequence of a dozen or a hundred instructions over and over, Why not just store copies of often-used calculations, or subroutines, in a "library" of procedures for later use?
+  Then your program can "call" for the subroutine from the library automatically, when your calculation requires it.
+  Such libraries of subprocedures are now a part of virtually every high-level programming language.
+  Analytical Engines and digital computers are very good at doing things over and over many times, very quickly.
+  By inventing an instruction that backs up the card-reading device to a specified previous card, so that the sequence of instructions can be executed a number of times, Ada created the loop--perhaps the most fundamental procedure in every contemporary programming language.
+  It was the conditional jump that brought Ada's gifts as a logician into play.
+  She came up with yet another instruction for manipulating the card-reader, but instead of backing up and repeating a sequence of cards, this instruction enabled the card-reader to jump to another card in any part of the sequence, if a specific condition was satisfied.
+  The addition of that little "if" to the formerly purely arithmetic list of operations meant that the program could do more than calculate.
+  In a primitive but potentially meaningful way, the Engine could now make decisions.
+  She also noted that machines might someday be built with capabilities far beyond those possible with Victorian era technology, and speculated about the possibility of whether such machines could ever achieve intelligence.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0031
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

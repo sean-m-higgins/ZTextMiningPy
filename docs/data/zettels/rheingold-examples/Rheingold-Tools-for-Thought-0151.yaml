@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0151
+note: |
+  The game is a mundane version of "twenty questions."
+  In the case of the English alphabet, it turns out to be a game of "five questions."
+  Player number one thinks of a letter of the alphabet.
+  Player number two tries to guess the letter, using only questions like "is it earlier than L in the alphabetical sequence?"
+  It is a strictly yes-or-no game, in which only one of two possible answers applies at every move.
+  Shannon pointed out that it takes a maximum of five questions to locate any of the thirty symbols necessary for making English sentences.
+  If the sequence of yes or no decisions needed to specify the correct letter is converted into a sequence of zeroes and ones or a sequence of on and off impulses, or any other kind of binary symbol, you have a code for communicating the alphabet -- which is, in fact, the basis of the code used for transmitting teletypewriter messages.
+  This game can be visualized as a tree structure, where each letter is the only leaf on a branch that branches off a branch that eventually branches off a trunk.
+  Or it can be seen as a garden of forking paths, where each path is a sequence of one-way-or-the-other decisions, and the location of any endpoint can be coded by specifying the sequence of decisions along the path.
+  It is also a good way to locate an address in a computer's memory or to encode an instruction to be placed in that location.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0151
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0167
+note: |
+  He knew that data processing wasn't what he wanted.
+  If you were the Census Office, overflowing with information on a couple of hundred million people, and for some crazy reason you wanted to find out how many divorced people over sixty lived on farms in the sun belt, you could use a UNIVAC to perform the sorting and calculating needed to tell you what you wanted to know.
+  That was data processing.
+  If you had a payroll for 10,000 employees to calculate every other Friday and needed to transform time sheets into entries in a ledger and print up all the checks -- data processing power was just what you could buy from your local IBM representative.
+  Data processing involved certain constraints on what could be done with computers, and constraints on how one went about doing these things.. Payrolls, mathematical calculations, and census data were the proper kinds of tasks An arcane process known as "batch processing" was the proper way to do these things.
+  If you had a problem to solve, you had to encode your program and the data that the program was meant to operate upon, usually in one of the two major computer languages -- FORTRAN and COBOL.
+  The encoded program and data were converted into boxes full of what had become universally known as "IBM cards" -- the kind you weren't supposed to spindle, fold, or mutilate.
+  The cards were delivered to a systems administrator at the campus "computer center" or the corporate "data processing center."
+  This specialist was the only one allowed to submit the program to the machine, and the person from whom you would retrieve your printout hours or days later.
+  But if you wanted to plot ten thousand points on a line, or turn a list of numbers into a graphic model of airflow patterns over an airplane wing, you wouldn't want data processing or batch processing.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0167
+- IBM
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

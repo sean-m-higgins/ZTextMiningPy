@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0040
+note: |
+  They instruct us concerning the mode in which language and number serve as instrumental aids to the process of reasoning; they reveal to some degree the connexion between different powers of our common intellect; they set before us .
+  To unfold the secret laws and relations of those high faculties of thought by which all beyond the merely perceptive knowledge of the world and of ourselves is attained or matured, is an object which does not stand in need of commendation to a rational mind.
+  Although his discovery had profound consequences in both pure mathematics and electrical engineering, the most important elements of Boole's algebra of logic were simple in principle.
+  He used the algebra everybody learns in school as a starting point, made several small but significant exceptions to the standard rules of algebraic combination, and used his special version to precisely express the syllogisms of classical logic.
+  The concept Boole used to connect the two heretofore different thinking tools of logic and calculation was the idea of a mathematical system in which there were only two quantities, which he called "the Universe" and "Nothing" and denoted by the signs 1 and 0.
+  Although he didn't know it at the time, Boole had invented a two-state system for quantifying logic that also happened to be a perfect method for analyzing the logic of two-state physical devices like electrical relays or vacuum tubes.
+  By using the symbols and operations specified, logical propositions could be reduced to equations, and the syllogistic conclusions could be computed according to ordinary algebraic rules.
+  By applying purely mathematical operations, anyone who knew Boolean algebra could discover any conclusion that was logically contained in any set of specified premises.
+  Because syllogistic logic so closely resembles the thought processes of human reasoning, Boole was convinced that his algebra not only demonstrated a valid equivalence between mathematics and logic, but also represented a mathematical systemization of human thought.
+  Since Boole's time, science has learned that the human instrument of reason is far more complicated, ambiguous, unpredictable, and powerful that the tools of formal logic.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0040
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

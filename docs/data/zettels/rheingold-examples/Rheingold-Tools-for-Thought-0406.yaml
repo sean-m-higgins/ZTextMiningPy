@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0406
+note: |
+  There was, for example, a feature simply called "messages."
+  Anyone plugged into the system could leave a message for anyone else on a kind of computerized blackboard.
+  Like a blackboard, you could check your message later and see if anyone appended a note.
+  Notes proliferated so fast that people began to develop programs for sifting through them.
+  The fancy part of the software came in when you wanted to be able to review only the last five messages, or only those relating to a particular topic, or all the messages from a particular person, or on a given date.
+  Similar efforts to build electronic mail systems were also going on in conjunction with the ARPAnet.
+  One unique feature of both systems that emerged early was the capability of communicating with a specialized audience, even if you didn't know who was in that audience.
+  For example, if you indicate to the host computer that you want all future messages on the topic of AI research, folk dancing, and Spacewar to be routed to your electronic mailbox, then anyone with news about one of those topics can reach you without knowing who you are.
+  They were also discovering something that had been unknown in previous communication media -- the content of the message is capable of also being an address.
+  Far from being a tool of dehumanization, the computer conferencing system could boost everybody's ability to contact a community of common interest.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0406
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

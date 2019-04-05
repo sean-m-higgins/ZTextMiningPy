@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0029
+note: |
+  Ada translated the notes from French to English and composed an addendum which was more than twice as long as the text she had translated.
+  When Babbage read the material, he urged Ada to publish her notes in their entirety.
+  Lady Lovelace's published notes are still understandable today and are particularly meaningful to programmers, who can see how truly far ahead of their contemporaries were the Analytical Engineers.
+  Professor B. H. Newman in the Mathematical Gazette has written that her observations "show her to have fully understood the principles of a programmed computer a century before its time."
+  Ada was especially intrigued by the mathematical implications of the punched pasteboard cards that were to be used to feed data and equations to Babbage's devices.
+  Ada's Essay, entitled "Observations on Mr. Babbage's Analytical Engine," includes more than one prophetic passage, unheeded by most of her contemporaries, but which have grown in significance with the passage of a century: The distinctive characteristic of the Analytical Engine, and that which has rendered it possible to endow mechanism with such extensive faculties as bid fair to make this engine the extensive right hand of algebra, is the introduction into it of the principle which Jacquard devised for regulating, by means of punched cards, the most complicated patters in the fabrication of brocaded stuffs.
+  It is in this that the distinction between the two engines lies.
+  Nothing of the sort exists in the Difference Engine.
+  We may say most aptly that the Analytical Engine weaves algebraical patterns just as the Jacquard loom weaves flowers and leaves.
+  The bounds of arithmetic were, however, outstepped the moment the idea of applying cards had occurred; and the Analytical Engine does not occupy common ground with mere "calculating machines."
+tags:
+- Core Text
+- Computing History
+- Rheingold 0029
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0140
+note: |
+  In Boolean Algebra, one fundamental logical operation is not, an operation that reverses the input, so that the output of a "not" operation is the opposite of the input (remember that there are only two symbols or states).
+  Another fundamental operation is and, which dictates that the output is true (or "on" or "1") if and only if every one of the several inputs are also true ("on," "1").
+  For example, the listing in the table for "A is true and B is true" would be set for "1" when A is "1" and B is "1" and set for "0" in all other cases.
+  One could look up the answer in the truth table by finding the input row where both A and B are equal to 1: NOT AND Input Output Input A Input B Output 0 1 0 0 0 1 0 0 1 0 1 0 0 1 1 1The way that results are determined by matching the proper rows and columns in the truth tables, a purely automatic procedure, has a crucial resemblance to the "instruction tables" Turing proposed.
+  One of the important features of Boolean algebra is the way logical operations can be put together to form new ones, and collections of logical operations can be put together to perform arithmetic operations.
+  Logical syllogisms can be constructed in terms of operations on zeroes and ones, by arranging for the output of one truth table to feed input to another truth table.
+  For example, it turns out that by putting a not before every and input, and putting another not after its output, it is possible to build an "or" operation.
+  By stringing various sequences of only these two basic operations, "not" and "and," it is possible to build procedures for adding, subtracting, multiplying, and dividing.
+  Logic and arithmetic are thus intimately and simply related.
+  What nobody knew until Shannon told us was that the same algebra could describe the behavior of electrically switched circuits.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0140
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

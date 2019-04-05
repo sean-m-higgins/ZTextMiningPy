@@ -1,0 +1,30 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0097
+note: |
+  Mauchly tried making a few electronic circuits for himself, and he began to see a way that they could be used for computation.
+  Mauchly took note of one circuit in particular that was developed by the cosmic-ray researchers -- the coincidence circuit, in which a switch would be closed only when several signals arrived at exactly the same time, thus, in effect, rendering a decision.
+  Would a machine capable of making electronic logical operations be possible via some variation of this circuit?
+  Experimenting with his own vacuum-tube circuits, Mauchly speculated that there might also exist circuits used in other kinds of instruments that would enable him to build a machine to add, subtract, multiply, and divide.
+  At this point his speculations were more grandiose than his hand-wired prototypes, but the clues he had obtained from the cosmic-ray researchers were enough to put Mauchly's weather-predicting machines on a collision course with a certain device the U.S. Army had in mind, one that had nothing to do with sunspots or the weather.
+  Mauchly brought a small analog device to the AAAS meeting where he met Atanasoff, and in June, 1941, he hitched a ride to visit Atanasoff in Ames, Iowa.
+  Atanasoff demonstrated the ABC, Mauchly stayed for five days, and thirty-two years later a court decided that Mauchly's later invention of the ENIAC relied upon key ideas of Atanasoff's that were transferred from mind to mind those five days in June.
+  The 1973 legal decision (Honeywell versus Sperry Rand, U.S. District Court, District of Minnesota, Fourth Division) did not state that Mauchly stole anything, but did restore partial credit for the invention of the electronic computer to a man whose name had been nearly forgotten in all the publicity and honors heaped upon Mauchly and Eckert.
+  After the ruling, Mauchly said: "I feel I got nothing out of that visit to Atanasoff except the royal shaft later."
+  On Mauchly's behalf, it must be noted that nobody has disputed the fact that the sheer scale and engineering audacity of ENIAC was far beyond the ABC, and that Mauchly was indeed on the right track at least as early as Atanasoff.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0097
+- 1941 year
+- 1940s
+- 1940 decade
+- 1900 century
+- 1900s
+- 1973 year
+- 1970s
+- 1970 decade
+- 1900 century mid
+- 1900 century late
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0024
+note: |
+  Up to one thousand different 50-digit numbers could be stored for later reference in the memory unit Babbage called the "store."
+  To display the result, Babbage designed the first automated typesetter.
+  Numbers could be put into the store from the mill or from the punched-card input system Babbage adapted from French weaving machines.
+  In addition, cards could be used to enter numbers into the mill and specify the calculations to be performed on the numbers as well.
+  By using the cards properly, the mill could be instructed to temporarily place the results in the store, then return the stored numbers to the mill for later procedures.
+  The final component of the Analytical Engine was a card-reading device that was, in effect, a control and decision-making unit.
+  A working model was eventually built by Babbage's son.
+  Babbage himself never lived to see the Analytical Engine.
+  Toward the end of his life, a visitor found that Babbage had filled nearly all the rooms of his large house with abandoned models of his engine.
+  As soon as it looked as if one means of constructing his device might actually work--Babbage thought of a new and better way of doing it.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0024
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,27 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0089
+note: |
+  The calculating power needed in the quest for thermonuclear weaponry ended up being one of the highest-priority uses for ENIAC -- top-secret calculations for Los Alamos were the subject of the first official programs run on the device when it became operational -- although the reason the electronic calculator had been commissioned in the first place was to generate the mathematical tables needed for properly aiming conventional artillery.
+  The ENIAC project was started under the auspices of the Army Ballistic Research Laboratory.
+  Herman Goldstine, a historian of computation as well as one of the key participants, took the trouble to point out that the word ballistics is derived from the Latin ballista, the name of a large device for hurling missiles.
+  Ballistics in the modern sense is the mathematical science of predicting the path of a projectile between the time it is launched and the moment it hits the target.
+  Complex equations concerning moving bodies are complicated further by the adjustments necessary for winds of different velocities and for the variations in air resistance encountered by projectiles fired from very large guns as they travel through the atmosphere.
+  The results of all possible distance, altitude, and weather calculations for guns of each specific size and muzzle velocity are given in "firing tables" which artillerymen consult as they set up a shot.
+  The application of mass-production techniques to weapons meant that new types of guns and shells were coming along at an unprecedented pace, making the ongoing production of firing tables no easy task.
+  During World War I, such calculations were done by humans who were called "computers."
+  But even then it was clear that new methods of organizing these large-scale calculations, and new kinds of mechanical calculators to help the work of human computers, would be an increasingly important part of modern warfare.
+  In 1918 the Ballistics Branch of the Chief of Ordnance set up a special mathematical section at the Aberdeen Proving Ground in Maryland.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0089
+- 1918 year
+- 1910s
+- 1910 decade
+- 1900 century
+- 1900s
+- First World War
+- 1900 century early
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

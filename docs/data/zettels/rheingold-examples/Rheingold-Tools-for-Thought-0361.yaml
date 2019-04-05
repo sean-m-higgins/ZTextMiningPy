@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0361
+note: |
+  One important difference between an expert system and other kinds of computer programs is that the program does not simply provide answers to questions, the way a calculator provides the solutions to equations.
+  Expert systems do, of course, suggest answers, and eventually they will venture answers accompanied by a numerical statement of "confidence" in the answer.
+  But they do more than that.
+  The most important part of an expert system is in the interaction between the program and the person who uses it.
+  The human who is faced with a specialized problem can consult the specialized program, which is able to ask the human questions of its own regarding the particulars of the problem.
+  The consultation is a dialogue that is tailored to the specific case at hand.
+  The program simulates the decision process of human experts, and feeds back the results of that process to the human who consults it, thus serving as a reference and guide for the person who uses it.
+  Expert systems as they exist today are made of three parts -- a base of task-specific knowledge, a set of rules for making decisions about that knowledge, and a means of answering people's questions about the reasons for the program's recommendations.
+  The "expert" program does not know what it knows through he raw volume of facts in the computer's memory, but by virtue of a reasoning-like process of applying the rule system to the knowledge base; it chooses among alternatives, not through brute-force calculation, but by using some of the same rules of thumb that human experts use.
+  Statistics about how often experts turn out to be right are the ultimate criteria for evaluating expertise -- whether the expert is a person who has studied for years, or a computer program that was literally born yesterday.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0361
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

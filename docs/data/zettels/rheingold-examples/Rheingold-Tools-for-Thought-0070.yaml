@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0070
+note: |
+  Turing not only anticipated the fact that software engineering would end up more difficult and time-consuming than hardware engineering, but anticipated the importance of what came to be known as "debugging": Instruction tables will have to be made up by mathematicians with computing experience and perhaps a certain puzzle-solving ability.
+  There will probably be a good deal of work of this kind to be done, for every known process has got to be translated into instruction table form at some stage.
+  This work will go on whilst the machine is being built, in order to avoid some delay between the delivery of the machine and the production of the results.
+  Delay there must be, due to the virtually invisible snags, for up to a point it is better to let the snags be there than to spend such time in design that there are none (how many decades would this course take?).
+  This process of constructing instruction tables should be very fascinating.
+  There is no real danger of it ever becoming a drudge, for any processes that are quite mechanical may be turned over to the machine itself.
+  Except for the almost equally advanced ideas of a German inventor by the name of Konrad Zuse, which were long unknown to British and American scientists, Turing's postwar writings about the logical complexities and mathematical challenges inherent in the construction of instruction tables were the first significant steps in the art and science of computer programming.
+  Turing was fascinated with the intricacies of creating coded instruction tables, but he was also interested in what might be done with a truly sophisticated programming language.
+  His original metamathetical formalism had stemmed from his attempt to connect the process of human thought to the structure of formal systems, and Turing was still intrigued by the possibility that automatic formal systems -- computers -- might one day emulate aspects of human reasoning.
+  The most profound questions Turing raised concerning the capabilities of universal machines were centered around this hypothesized future ability of computing engines to simulate human thought.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0070
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

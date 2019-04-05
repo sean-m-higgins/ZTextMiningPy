@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0372
+note: |
+  The Stanford job called for a resident software handyman in a laboratory that was exploring the technology of instruction.
+  He took it.
+  He had become a significant contributor to the research team, as well as the hired computer jockey, when he joined a small research group at Stanford Institute of Mathematical and Social Sciences.
+  Over the next several years, he helped design a program that taught beginners how to program in the language BASIC.
+  Programming is debugging.
+  So being wrong is not so much something to be avoided at all costs, but should be seen as a clue to the right way of doing it.
+  That's why it was actually an environment rather than just an instructional program.
+  We tried to build a curriculum for teaching BASIC, along with the handholding help people seemed to need in learning software, right into the BASIC language interpreter."
+  An interpreter, it must be remembered, is not a person who specializes in deciphering computer jargon, but a kind of computer program that can convert programming commands written in the kind of high-level language that people find easier to write into a machine-language form that the computer can read.
+  The very primitive communications between programmer and interpreter created much of what beginners have always found frustrating about learning old-style programming.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0372
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

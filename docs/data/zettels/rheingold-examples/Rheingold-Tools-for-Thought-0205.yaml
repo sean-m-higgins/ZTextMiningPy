@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0205
+note: |
+  For my first experiment, I gave ELIZA a script designed to permit it to play (I really should say parody) the role of a Rogerian psychotherapist engaged in an initial interview with a patient.
+  The Rogerian psychotherapist is relatively easy to imitate because much of his technique consists of drawing his patient out by reflecting the statements back to him.
+  The following conversation betwen a young lady and ELIZA playing doctor illustrates both the Rogerian technique of encouraging a patient to keep talking and the operation of the computer program ELIZA.
+  The first to "speak" is the young lady.
+  The computer's responses are printed entirely in capitals.en are all alike.
+  M IN WHAT WAY bugging us about something or other.
+  CAN YOU THINK They're always OF A SPECIFIC EXAMPLE Well, my boyfriend made me come here.
+  I'M SORRY TO HEAR YOU YOUR BOYFRIEND MADE YOU COME HERE He says I'm depressed much o f ARE DEPRESSEDThe first thing that alarmed Weizenbaum was the way people who knew enough about computers to know better began to get drawn into serious conversations with it about their lives!
+  Even his own secretary had fallen into the habit of conversing with it!
+  People were asking to be left alone with the machine to spill out their most intimate thoughts!
+tags:
+- Core Text
+- Computing History
+- Rheingold 0205
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

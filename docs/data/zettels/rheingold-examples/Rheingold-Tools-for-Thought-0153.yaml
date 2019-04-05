@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0153
+note: |
+  When you are making predictions about such large populations, averages based on the overall behavior of the population have to replace precise case-by-case calculations based on the behavior of individual members of the population.
+  One of the properties of a statistical average is that it is quite possible for a population to be characterized by an average value that is not held by any particular element of the population.
+  If you have a population consisting of three people, and you know that one is three feet tall, one five feet tall, and one is six feet tall, you have quite precise information about that population, which would enable you to pick out individuals by height.
+  But if all you know is that the average height of the population is four feet, eight inches, you wouldn't know anything useful about any one of the three particular individuals.
+  Whenever a system is represented by an average, some information is necessarily lost, just as two energy states lose a little energy when they are brought into equilibrium.
+  Whenever you move from an average measure to a precise measure, you have reduced uncertainty about that population.
+  And that reduction in uncertainty is where the statistical properties that govern the motions of populations of molecules are connected to the statistical properties of a binary code, where entropy meets information.
+  To see how uncertainty can relate to a binary code, think about a game of twenty questions.
+  If the object of the game is to guess a number between one and one hundred, and player one asks if the number is larger than fifty, an answer from player two (no matter if it is yes or no) reduces player one's uncertainty by one half.
+  Before asking the question, player one had one hundred possible choices.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0153
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

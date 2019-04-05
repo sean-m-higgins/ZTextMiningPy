@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0060
+note: |
+  The distinction between a universal Turing machine and the many different Turing machines it is able to imitate is a direct analogy to digital computers.
+  Like universal Turing machines, all digital computers are functionally identical.
+  At the most basic level, every digital computer operates in the way our doubling machine did with the squares and Os and Xs.
+  Instead of building a different physical machine to solve different problems, it is more practical to describe to an instruction-following machine different virtual machines (programs) that use this one-square-at-a-time mechanical instruction-following process to solve complicated problems through a pattern of simple operations.
+  Following instructions is the nature of digital computers.
+  The difference between a computer calculator and a computer typewriter, for example, lies in the instructions it follows -- the coded description it is given of the virtual machine it is meant to imitate in order to perform a task.
+  Since computers understand "bits" that can correspond to O and X, or 0 and 1, or "on" and "off," you can use these symbols to write descriptions that turn the general machine into the specific machine you want.
+  That's what programmers do.
+  They think of machines people might want to use, and figure out ways to describe those machines to general machines -- computers, that is.
+  It would be too time-consuming to achieve anything significant in programming if programmers had to spend all their time thinking of ways to describe machines in strings of Os and Xs.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0060
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

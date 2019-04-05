@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0125
+note: |
+  The use of statistics and probability theory was one clue.
+  A method for predicting the end of a message based on information about the beginning was another clue.
+  The device in Parkinson's dream was another clue.
+  Then it occurred to Wiener and Bigelow that the human organism had already solved the problem they were facing.
+  How is any human being, or a chimpanzee for that matter, able to reach out a hand and pick up a pencil?
+  How are people able to put one foot in front of the other, fall face-forward for a short distance, and end up taking a step?
+  Both processes involve continuous, precise readjustments of muscles (the servomechanisms that move the gun), guided by continuous visual information (radar), controlled by a continuous process of predicting trajectories.
+  The prediction and control take place in the nervous system (the control circuits of the animating automata).
+  Wiener and Bigelow looked more closely at other servomechanisms, including self-steering mechanisms as simple as thermostats, and concluded that feedback is the concept that connects the way brains, automatic artillery, steam engines, autopilots, and thermostats perform their functions.
+  In each of those systems, some small part of the past output is fed back to the central processor as present input, in order to steer future output.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0125
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

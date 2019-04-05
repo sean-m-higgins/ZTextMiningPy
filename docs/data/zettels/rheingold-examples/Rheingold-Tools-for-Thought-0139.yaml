@@ -1,0 +1,32 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0139
+note: |
+  In 1953, at about the same time von Neumann and Turing were both thinking about the mathematical possibilities of self-reproducing machinery, Shannon published another major work on the subject of these special automata.
+  In 1956, at the age of forty, Shannon was one of the organizers of the conference at Dartmouth that gave birth to the field of artificial intelligence.
+  From the pre-war discoveries that scooped Wiener and von Neumann, to the explorations in the 1950s that led to both AI and multi-access computer systems, his life and ideas formed the single most important bridge between the wartime origins of cybernetics and digital computers and the present age of artificial intelligence and personal computing.
+  What Shannon did in 1937 was to provide a way to design machines based on the logical algebra described a century before by George Boole.
+  Boole, in The Laws of Thought, stated that he had succeeded in connecting the process of human reason to the precise symbolic power of mathematics.
+  There were only two values in the logical calculation system that Boole proposed: 1 and 0.
+  If a value is true, it can be designated by the symbol 1; and if it is false, the symbol 0 can be used.
+  In this system, a truth table describes the various possible logical states of a system.
+  Given an input state, a truth table for a specific operation determines the appropriate output state for whenever that operation is applied to that input.
+  Another way of saying that would be that given a starting tape, the truth table determines what the ending tape will be.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0139
+- 1937 year
+- 1930 decade
+- 1900 century
+- 1930s
+- 1900s
+- 1953 year
+- 1950s
+- 1950 decade
+- 1956 year
+- Turing
+- Artificial Intelligence
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0164
+note: |
+  Licklider thought he might be onto a good idea with an intricate neural model of pitch perception, but quickly learned, to his dismay, that his mathematical model had grown too complex to work out by hand in a reasonable length of time, even using the analog computers that were then available.
+  And until the mathematical model could be worked out, there was no hope of building a mechanical model of pitch perception.
+  The idea of building a mathematical or electronic model was meant to simplify the task of understanding the complexities of the brain, like plotting a graph to see the key relationships in a collection of data.
+  But the models themselves now began to grow unmanageably complex.
+  Like Mauchly with his meteorological data, twenty years before, Licklider found he was spending more and more of his time dealing with the calculations he needed to do to create his models, which left less time for what he considered to be his primary occupation -- thinking about what all that information meant.
+  Beneath those numbers and graphs was his real objective -- the theoretical underpinnings of human communication.
+  Although he was primarily interested in how the brain processes auditory information, he felt that he was spending most of his time putting things into files or taking them out, as well as managing the increasing amounts of numerical data he needed to construct the models he had in mind.
+  Out of curiosity, he wondered if any of his colleagues had looked into the way scientific researchers spent their time.
+  When he couldn't find any time-and-motion studies of information-shuffling researchers like himself, Licklider decided to keep track of his own activities as he went through his normal working day.
+  It didn't take long to discover that his main occupation, even when he wasn't keeping records of his behavior, was centered on keeping records of everything else.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0164
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

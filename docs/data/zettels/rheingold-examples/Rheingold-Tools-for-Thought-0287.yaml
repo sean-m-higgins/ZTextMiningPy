@@ -1,0 +1,26 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0287
+note: |
+  With the advent of network technology, the hardware became less important and the software became more important, because such a network consists of a relatively simple hardware level, where a small box plugs the individual computer into the network, and a series of more sophisticated software levels known as protocols that enable the different devices to interoperate via a communication channel.
+  With common-carrier networks -- the kind where teenage hackers use their telephones to gain access to Defense Department computers -- the small box is known as a modem and works by translating computer bits into a pattern of tones that the public telephone system uses to communicate information.
+  A local area network uses a different kind of small box that converts computer data into electrical impulses that travel from computer to computer via a short cable, rather than the audio tones that are sent over common-carrier communication lines.
+  Local area networks are meant for environments like PARC -- any campus or laboratory or group of offices where many machines are distributed over a small geographical area.
+  Several local networks can also be linked over long distances via "message processors" known as gateways to the common-carrier-linked internetwork.
+  This scheme embeds local networks in more global supernetworks.
+  Today's network technologies use the packet-switching techniques originally developed during the creation of the ARPAnet -- exactly the kind of coding of information that Shannon predicted in 1948.
+  Information is transported and processed in packets of information -- bursts of coded on-off pulses -- that carry, in addition to the core data of the message, information on how the message is to be transmitted and received.
+  If your computer uses the right kind of hardware and software translators, your data will find its own way through the network according to the control and routing information embedded in the packets.
+  The technical details of packet switching won't matter to the vast majority of the people who will end up using network systems in the future, but the notion of "distributed computing" signals an important change to a new phase in the evolution of computation.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0287
+- 1948 year
+- 1940s
+- 1940 decade
+- 1900 century
+- 1900s
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

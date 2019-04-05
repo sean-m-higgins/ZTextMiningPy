@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0268
+note: |
+  Among the capabilities that came with the increasingly sophisticated electronic hardware and software were powers to model, represent, and search through large collections of information.
+  With sufficient speed and memory capacity, computers were gaining the power to assist the creative aspects of communication.
+  But serious obstacles had to be overcome to bring that power out where people could use it.
+  It is hardly possible to interact dynamically with your program when you have to dump boxes of punchcards into readers, then decipher boxes of printout.
+  Since a large part of the process of building a program is a matter of tracking down subtle errors in complex lists of instructions, the batch processing ritual put an effective limit on how much programmers could do, how fast they could do it, and the quality of the programs they could produce.
+  Batch processing created two problems: The computers could handle only one program (and one programmer) at a time, and programmers weren't able to interact directly with the computer while their programs were running.
+  Time-sharing was made possible because of the enormous gap between the speed of computer operations and the rate of information transfer needed to communicate with a human.
+  Even the fastest typist, for example, can enter only a single keystroke in the length of time it would take the computer to perform millions of operations.
+  Time-sharing gives each of the 20, 50, or 100 or more people who are using the computer the illusion that he or she has the computer's exclusive "attention" at all times, when in reality the computer is switching from one user's task to another's every few millionths of a second.
+  When the first programmers gained interactive access to the computer, they also gained a new freedom to create ever more powerful programs and see the results more quickly than ever before.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0268
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

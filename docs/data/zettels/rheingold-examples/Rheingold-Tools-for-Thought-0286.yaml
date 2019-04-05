@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0286
+note: |
+  When time-sharing first got going, and hackers began to proliferate late at night in the corners of university computer departments, the subcult of computerists found that while they could all communicate with the central computer at the same time, they couldn't all necessarily communicate with each other, or share each other's programs or files.
+  It took some effort, but the time-sharing systems programmers eventually solved the problem.
+  The solution to the difficult problem of sharing resources among different users of a multiaccess computer became no less difficult when it had to be translated to the problem of sharing resources between many equally powerful, geographically separated, often incompatible computers (as with ARPAnet).
+  The carefully designed connectivity of time-sharing could not be patched onto the new system.
+  The PARC network had to be built from the ground up, along with the personal workstations and shared servers for filing, printing, and mail.
+  The server notion meant that certain otherwise stock-model Altos would be programmed for the tasks of controlling these network services, instead of building separate devices to perform these tasks.
+  The concept of the resulting Ethernet, as it was called, stemmed from the determination to make the network itself a tool at the command of the individual user.
+  The PARC folks were hungry for personal computing power, but they didn't want to give up that hard-won and effort-amplifying community they were just beginning to know on the ARPAnet.
+  Dan Swinehart, an SRI alumnus who joined PARC early in the game, remembers that "From the day the Alto was proposed, Butler Lampson and Bob Metcalfe pointed out that if we were going to give everybody at PARC a self-contained computer instead of hooking them all into a central time-sharing system, we'd need a connecting network with enough communicating and resource-sharing capability that the people at the personal work stations wouldn't be isolated from each other."
+  Thus, the companion to the ALTO was the Ethernet, the first of the "local area networks."
+tags:
+- Core Text
+- Computing History
+- Rheingold 0286
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

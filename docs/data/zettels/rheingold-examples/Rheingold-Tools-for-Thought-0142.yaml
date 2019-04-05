@@ -1,0 +1,25 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0142
+note: |
+  The circuit of one relay can also control the electromagnet of the next relay, and so on, until you have a complete circuit that is made of nothing but switches, all controlling one another, depending on how they are set at the beginning and how they are altered by new input.
+  Each relay and circuit controlled by that relay can be in only one of two states, on or off.
+  This two-state characteristic of switched circuits is what links electricity to logic, for each relay-controlled circuit can be seen as a truth table, where current flows from the output only when specified input conditions are satisfied, and logical operations can be seen as physical devices that emit an output pulse if and only if all of their input switches are on, or off, or some specified combination, In the 1930s, telephone systems were using ever larger and more complicated mazes of circuits controlled by these relays.
+  Instead of requiring a human operator to plug the proper jack into the right part of a switchboard, relays could close the circuit when the specified input conditions were reached.
+  Using relays, all kinds of useful things could be done in the way of automatic dialing and routing.
+  But the growing complexity of the circuitry was getting to be a problem.
+  It was becoming harder and harder to figure out what these big collections of switches were doing.
+  Shannon was looking for a mathematical procedure that was best suited for describing the behavior of relay circuits.
+  His thesis showed how George Boole's algebra could be used to describe the operations of these complex circuits.
+  And he was not unaware of the implications if the fact that these circuits could now be designed to represent the operations of logic and arithmetic.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0142
+- 1930s
+- 1930 decade
+- 1900 century
+- 1900s
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

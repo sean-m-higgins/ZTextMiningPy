@@ -1,0 +1,26 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0086
+note: |
+  The first of these questions asked whether or not mathematics was complete.
+  Completeness, in the technical sense used by mathematicians, means that every true mathematical statement can be proven (i.e., is the last line of a valid proof).
+  The second question, the one that most concerned von Neumann, asked whether mathematics (or any other formal system) was consistent.
+  Consistency in the technical sense means that there is no valid sequence of allowable steps (or "moves" or "states") that could prove an untrue statement to be true.
+  If arithmetic was a consistent system, there would never be a way to prove that 1 + 1 = 3.
+  The third question, the one that opened the side door to computation, asked whether or not mathematics was decidable.
+  Decidability means that there is some definite method that is guaranteed to correctly determine whether an assertion is provable.
+  It didn't take long for a shocking answer to emerge in response to the first Hilbert-von Neumann question.
+  In 1930, yet another young mathematician, Kurt Gdel, showed that arithmetic cannot be complete, because there will always be at least one true assertion that cannot be proved.
+  In the course of demonstrating this, Gdel crossed a crucial threshold between logic and mathematics when he showed that any formal system that is as rich as the number system (i.e., contains the mathematical operators + and =) can be expressed in terms of arithmetic.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0086
+- 1930 year
+- 1930 decade
+- 1900 century
+- 1930s
+- 1900s
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

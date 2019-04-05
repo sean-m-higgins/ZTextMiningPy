@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0056
+note: |
+  Turing then proved that for any formal system, there exists a Turing machine that can be programmed to imitate it.
+  This kind of general formal system with the ability to imitate any other formal system was what Turing was getting at.
+  These systems are now known as "universal Turing machines."
+  The theory was first stated in a paper with the forbidding title "On Computable Numbers, with an application to the Entscheidungsproblem."
+  The Turing Machine was a hypothetical device Turing invented on the way to settling a critical question about the foundations of mathematics as a formalized means of thinking.
+  He showed that his device could solve infinitely many problems, but that there are some problems that cannot be solved because there is no way of predicting in advance whether or when the machine is going to stop.
+  Here is where the parting of the ways between metamathematics and computation occurred.
+  Our simple example of a doubling program took only twenty-six steps.
+  But there is no way of knowing whether or not other programs (which can be direct translations of theorems in number theory) will ever stop.
+  By proving this, Turing made an equivalent point about all mechanical systems (i.e., systems in which the procedures are definite enough to be carried out by a machine).
+tags:
+- Core Text
+- Computing History
+- Rheingold 0056
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

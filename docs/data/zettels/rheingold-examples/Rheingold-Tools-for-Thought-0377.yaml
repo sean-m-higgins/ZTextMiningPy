@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0377
+note: |
+  If you increase the number of cases to be decided between from two to three, it gets even more snarled: After two moves on a triple-branching tree, there are nine branches (instead of four); after three moves there are twenty-seven (instead of eight), etc., ad infinitum.
+  So you have to build a system to weed out the legal but absurd moves, as well as a strategy to evaluate two or three moves in advance.
+  What a machine needs to know, practically before it can get started, is that the mysterious something that human chessmasters know that enables them to rule out all but a few possibilities when they look at a chessboard (or hear a chess situation described to them verbally).
+  When a human contemplates a chess position, that person's brain accomplishes an information processing task of cosmic complexity.
+  The human brain has obviously found a way to bypass the rules of exhaustive search -- a way to beat the numbers involved in searching problem space.
+  This is the vitally important trick that seems to have eluded artificial intelligence program designers from the beginning.
+  What does the human chessmaster do to prune the tree created by brute-force programs, and how can computers help other humans perform similar tasks?
+  The point of expert-system building is not to outdo the brain but to help human reasoning by creating an intelligent buffer between brain processes and the complexities of the world -- especially information-related complexities.
+  A problem-pruning tool could be an important component of such an informational intermediary.
+  Human brains seem to accomplish tasks in ways that would require absurd amounts of computer power if they were to be duplicated by machines.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0377
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

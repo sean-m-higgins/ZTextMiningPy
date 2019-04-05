@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0058
+note: |
+  This code can be interpreted by a machine, a machine that automatically manipulates the tokens, given a list of instructions and a starting configuration.
+  When the machine stops, you read the tape and you get the output of the program.
+  In this case, you put the number you want to double in the starting configuration, and then let the machine metaphorically clank away one square at a time, erasing and writing Os or Xs.
+  When the machine stops, you count the Xs in the final tape configuration.
+  The list of instructions is what turns the universal Turing machine into the doubling machine.
+  Mechanically, there is no difference between the two machines.
+  The particular instructions described by the code are what the universal Turing machine operates upon.
+  If you can describe, in similarly codable instructions, a machine for tripling, or extracting square roots, or performing differential equations, then your basic, dumb old universal Turing machine can imitate your tripling machine or square root machine.
+  That ability to imitate other machines is what led to computers.
+  The numbers (or Xs and Os) on the tape aren't that important.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0058
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

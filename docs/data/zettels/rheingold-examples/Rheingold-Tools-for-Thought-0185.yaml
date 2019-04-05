@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0185
+note: |
+  The presentation group veterans, expanded by the addition of experts in the infant technology of transistor-based computer design, began to work intensively on the problem of display devices.
+  Licklider remembers the first official meeting on interactive graphics, where the first wave of preliminary research was presented and discussed in order to plan the assault on the main problem of getting information from the innards of the new computers to the surface of various kinds of display screens.
+  It was at this meeting, Licklider recalls, that Ivan Sutherland first took the stage in a spectacular way.
+  But because of the graphics program he was creating for his Ph.D. thesis, because he was a protg of Claude Shannon, and because of the rumors that he was just the kind of prodigy ARPA was seeking, he was invited to the meeting.
+  It was the kind of question that indicated that this unknown young fellow might have something interesting to say to this high-powered assemblage.
+  So Licklider arranged for him to speak to the group the next day: "Of course, he brought some slides, and when we saw them everyone in the room recognized his work to be quite a lot better than what had been described in the formal session."
+  Sutherland's thesis, a program developed on the TX-2 at Lincoln, demonstrated an innovative way to handle computer graphics -- and a new way of commanding the operations of computers.
+  He called it Sketchpad, and it was clearly evident to the assembled experts that he had leaped over their years of research to create something that even the most ambitious of them had not yet dared.
+  Sketchpad allowed a computer operator to use the computer to create, very rapidly, sophisticated visual models on a display screen that resembled a television set.
+  The visual patterns could be stored in the computer's memory like any other data, and could be manipulated by the computer's processor.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0185
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

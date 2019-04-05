@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0379
+note: |
+  First, the human has to learn how to communicate with the computer; then he or she needs to know how the system arrived at its conclusion, in terms that he or she can understand.
+  And in order to tell the human about the steps of its reasoning process, such systems must have a means for knowing what they know.
+  By this point, the exercise has become more than a mechanical search through long lists of possibilities.
+  Problem-solving is only part of the function of a system that must convince a human that a solution it has found is indeed the correct one.
+  The internal and external communication aspects of this transfer process, Barr suspects, offer clues to some of the most significant problems in artificial intelligence as well as intellectual augmentation research: We are building systems that take part in the human activity of transfer of expertise among experts, practitioners, and students in different kinds of domains.
+  Our problems remain the same as they were before: We must find good ways to represent knowledge and metaknowledge, to carry on a dialogue, and to solve problems in the domain.
+  But the guiding principles of our approach and the underlying constraints on our solutions have been subtly shifted: Our systems are no longer being designed solely to be expert problem solvers, using vast amounts of encoded knowledge.
+  These are aspects of "knowing" that have so far remained unexplored in AI research: By participation in human transfer of expertise, these systems will involve more of the fabric of behavior that is the reason we ascribe knowledge and intelligence to people.
+  Like Doug Engelbart and Alan Kay, Barr feels that future generations will be less inhibited than present-day computer builders and users when it comes to stretching our ideas of what machines and humans can do.
+  This adjustment of human attitudes and computer capabilities is a present-day pragmatic concern of knowledge engineers, and a long-term prerequisite for the kind of human-machine symbiosis predicted by Licklider.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0379
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

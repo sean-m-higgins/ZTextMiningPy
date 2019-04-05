@@ -1,0 +1,32 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0063
+note: |
+  The emergence of the digital computer, based on the principles of Turing's machine, was stimulated by World War II, which was still four years in the future.
+  In 1936, Claude Shannon had yet to discover that the algebra invented by George Boole to formalize logical operations was identical with the mathematics used to describe switching circuits.
+  John von Neumann and his colleagues had yet to devise the concept of stored programming.
+  Norbert Wiener hadn't formalized the description of feedback circuits in control systems.
+  Several crucial electronic developments were yet to come.
+  Although only a half-dozen metamathematicians thought about such things during the 1930s, the notion of machines whose functions depend on the descriptions of how they operate happened to have one real-world application that suddenly became very important toward the end of the decade.
+  In 1940, the British government developed an intense interest in Turing's theories.
+  WWII A top-secret project code-named "Ultra," under the direction of an intelligence officer code-named "Intrepid," had captured and brought to London the secret German cipher machine known as "Enigma."
+  The machine enabled the Nazi high command to send orders to field commanders in the form of an uncrackable code.
+  Even though they had the machine in their hands British intelligence was still baffled by the encoding mechanism.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0063
+- 1936 year
+- 1930 decade
+- 1900 century
+- 1930s
+- 1900s
+- 1940 year
+- 1940s
+- 1940 decade
+- Second World War
+- Nazism
+- Turing
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

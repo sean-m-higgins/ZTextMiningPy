@@ -1,0 +1,31 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0362
+note: |
+  The methodology for conducting such an evaluation was suggested in the 1950s, by Alan Turing.
+  The "Turing test" bypasses abstract arguments about artificial intelligence by asking people to determine whether or not the system they are communicating with via teletype is a machine or a person.
+  If most people can't distinguish a computer from another human, strictly by the way the other party responds to questions, then the other party is deemed to be intelligent.
+  A similar strategy has been employed to judge the efficacy of expert systems.
+  Why not just ask some human experts to distinguish human from machine diagnoses?
+  One experiment conducted by the Stanford Medical School began by submitting to MYCIN case histories of ten patients with different types of infectious meningitis.
+  At the same time, eight human physicians, including five faculty specialists in infectious diseases, a research fellow, and a resident, were given the same information that had been fed to MYCIN.
+  MYCIN's recommendations were sent, along with the human physicians' recommendations, also unidentified as such, and a record of the therapy the patients actually received, to eight non-Stanford specialists.
+  The outside specialists gave the highest rating to MYCIN.
+  In the 1980s, there is little question that expert systems can be highly effective, if not superior to human expertise, in certain highly specialized fields.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0362
+- 1950s
+- 1950 decade
+- 1900 century
+- 1900s
+- 1980s
+- 1980 decade
+- Turing
+- Artificial Intelligence
+- Abstraction
+- 1900 century mid
+- 1900 century late
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

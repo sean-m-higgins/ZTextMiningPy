@@ -1,0 +1,29 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0267
+note: |
+  Many of the time-sharing veterans who started out as undergraduate hackers at project MAC or as ARPA-funded engineers in Berkeley and Santa Monica were to meet later, in the research sanctums of Bell, SRI, Rand, and (mostly) at PARC.
+  Time sharing was an early and effective application of the philosophy that the existing means of using computers should be tailored to the way people function, rather than forcing people who want to use them to conform to mechanical constraints.
+  Without the development of multiaccess computing in the early sixties, the idea of personal computing would never have been more than a dream.
+  In the early 1960s, data processing was what one was expected to do with a computer, and one hardly ever did it directly.
+  First, a program and its raw data had to be converted to a shoebox full of punched cards.
+  The cards were delivered to a data processing center, where a system administrator decided how and when they were to be fed into the main computer.
+  You came back an hour or a day or a week later and retrieved a thick printout and a hefty bill.
+  The keypunch-submit-wait-retrieve ritual was called "batch processing."
+  By 1966, groups in California and Massachusetts were well on the way toward raising the art of computer programming to a high enough level to do some truly interesting things with computers.
+  Licklider and a few others suspected that if they could make the power of computers more directly accessible to people writing and running programs, programmers might be able to construct new and better kinds of software at far greater speed than heretofore possible.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0267
+- 1966 year
+- 1960s
+- 1960 decade
+- 1900 century
+- 1900s
+
+- 1960 decade early
+- 1960s early
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

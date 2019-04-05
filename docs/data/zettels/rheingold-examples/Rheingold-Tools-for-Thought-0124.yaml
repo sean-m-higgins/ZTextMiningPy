@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0124
+note: |
+  That is when Bush turned to Weaver and Wiener.
+  During this wartime mathematical work related to radar-directed antiaircraft fire, Wiener recognized the fundamental relationship between two basic problems -- communication and control.
+  The communication problem in the earliest days of radar was that the radar apparatus was like a badly tuned radio receiver.
+  The true signal of attacking planes was often drowned out by false signals -- noise -- from other sources.
+  Wiener recognized that this too was a kind of cryptography problem, if the location of the enemy aircraft is seen as a message that must somehow be decoded from the surrounding noise.
+  The noisy radar was more than an ordinary "interesting problem," because once you understand messages and noise in terms of order and information measured against disorder and uncertainty, and apply statistics to predict future messages, it becomes clear (to a mathematician of Wiener's stature) that the issue is related to the basic processes of order and disorder in the universe.
+  Once it is seen in statistical and mathematical terms, the communication problem leads to the heart of something more important, called information theory.
+  But that branch of the story belongs to Claude Shannon as much as, or more than, it does to Wiener.
+  The control problem was where Wiener, and his very young and appropriately brilliant assistant, an engineer by the name of Julian Bigelow, happened upon the general importance of feedback loops.
+  Assuming that it is possible to feed information about a plane's path into the aiming apparatus of a gun, how can that information be used to predict the probable location of the plane?
+tags:
+- Core Text
+- Computing History
+- Rheingold 0124
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,35 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0044
+note: |
+  Like Jacquard's and Babbage's cards, and the "player pianos" then in vogue, the holes in Hollerith's cards were meant to allow the passage of mechanical components.
+  Hollerith used an electromechanical counter in which copper brushes closed certain electrical circuits if a hole was encountered, and did not close a circuit if a hole was not present.
+  An electrically activated mechanism increased the running count in each category by one unit every time the circuit for that category was closed.
+  By adding sorting devices that distributed cards into various bins, according to the patterns of holes and the kind of tabulation desired, Hollerith not only created the ability to keep up with large amounts of data, but created the ability to ask new and more complicated questions about the data.
+  The new system was in place in time for the 1890 census.
+  Hollerith obtained a patent on the system that he had invented just in time to save the nation from drowning in its own statistics.
+  In 1882-83, he was an instructor in mechanical engineering at the Massachusetts Institute of Technology, establishing the earliest link between that institution and the development of computer science and technology.
+  In 1896, Hollerith set up the "Tabulating Machine Company" to manufacture both the cards and the card-reading machines.
+  In 1900, Hollerith rented his equipment to the Census Bureau for the Twelfth Census.
+  Some years later, Hollerith's Tabulating Machine had become an institution known as "International Business Machines," run by a fellow named Thomas Watson, Senior.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0044
+- 1882 year
+- 1880s
+- 1880 decade
+- 1800 century
+- 1800s
+- 1890 year
+- 1890s
+- 1890 decade
+- 1896 year
+- 1900 year
+- 1900 decade
+- 1900 century
+- 1900s
+- 1800 century late
+- 1900 century early
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

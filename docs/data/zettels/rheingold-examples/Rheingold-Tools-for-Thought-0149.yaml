@@ -1,0 +1,30 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0149
+note: |
+  Now what if the imp decides to let only the occasional slow-moving, colder molecule pass from the hot to the cold side when it randomly approaches the gate?
+  Taken far enough, this policy could mean that the hot side would get hotter and the cold side would get colder, and entropy would decrease instead of increase without any energy being added to the system!
+  In 1922, a Hungarian student of physics by the name of Leo Szilard (later to be von Neumann's colleague in the Manhattan project), then in Berlin, finally solved the paradox of Maxwell's demon by demonstrating that the demon does indeed need to contribute energy to the system, but like a good magician the demon does not expend that energy in its most visible activity -- moving the gate -- but in what it knows about the system.
+  The demon is a part of the system, and it has to do some work in order to differentiate the hot and cold molecules at the proper time to open the gate.
+  Simply by obtaining the information about molecules that it needs to know to operate the gate, the demon adds more entropy to the system than it subtracts.
+  Although Szilard showed implicitly that information and entropy were intimately connected, the explicit details of the relationship between these two qualities, expressed in the form of equations, and the generalization of that relationship to such diverse phenomena as electrical circuits and genetic codes, were not yet known.
+  It was Claude Shannon who made information into a technical term, and that technical term has since changed the popular meaning of the word.
+  Another puzzle related to entropy, and the cryptic partial solution to it proposed in 1945 by another physicist, was a second clue linking it to information.
+  Quite simply: If the universe tends toward entropy, how does life, a highly ordered, energy-consuming, antientropic phenomenon, continue to exist?
+  In a universe flowing toward disorder, how on earth did one-celled creatures complicate themselves enough to build a human nervous system?
+tags:
+- Core Text
+- Computing History
+- Rheingold 0149
+- 1922 year
+- 1920s
+- 1920 decade
+- 1900 century
+- 1900s
+- 1945 year
+- 1940s
+- 1940 decade
+- 1900 century early
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

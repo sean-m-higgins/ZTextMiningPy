@@ -1,0 +1,28 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0114
+note: |
+  The way the task was accomplished by living organisms of the type found on earth was only one way it could be done.
+  In principle, the task could be done by a machine that could follow a plan, because the plan, and not the mechanism that carried it out, was a part of the system with the special, heretofore mysterious property that distinguished life from nonliving matter.
+  Von Neumann approached "cellular automata" on an abstract level, just as Turing did with his first machines.
+  As early as 1948, he showed that any self-replicating system must have raw materials, a program that provides instructions, an automaton that follows the instructions and arranges the symbols in the cells of a Turing-type machine, a system for duplicating instructions, and a supervisory unit -- which turned out to be an excellent description of the DNA direction of protein synthesis in living cells.
+  Another thing that interested Johnny was the gamelike aspect of the world.
+  Accordingly, he thought about the way his self-reproducing automaton was like a game: Making use of the work done by his colleague Stanislav Ulam, von Neumann was able to refine his calculations and make them more generally applicable.
+  Von Neumann's mental experiment, which we can easily present in the form of a game, makes use of a homogeneous space subdivided by cells.
+  We can think of these cells as squares on a playing board.
+  A finite number of states -- e.g., empty, occupied, or occupied by a specific color -- is assigned to a square.
+  At the same time, a neighborhood is defined for each cell.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0114
+- 1948 year
+- 1940s
+- 1940 decade
+- 1900 century
+- 1900s
+- Abstraction
+- Turing
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

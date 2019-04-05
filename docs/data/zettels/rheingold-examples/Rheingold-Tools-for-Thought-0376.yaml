@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0376
+note: |
+  Even with only 64 squares and a limited number of allowable moves, the number of possible moves in chess multiplies so quickly that it would take uncountable years to evaluate all legal possibilities.
+  In chess and many other formal systems, the correct answer is a member of a very large number of possible alternatives.
+  The problem posed by an opponent's move is best answered by a move that will lead to capturing an opponent's king.
+  Hidden among the huge number of possible countermoves for each one of the opponent's move is one answer or a small group of answers that would have the best chance of achieving the final goal or some intermediate goal.
+  The abstract domain in which the solution is hidden is known as a "problem space."
+  The brute-force method of finding the right chess move by generating and checking each and every possibility that could exist according to the rules is known as an "exhaustive search of the problem space."
+  Problem space is where the combinational explosion lurks, waiting to be triggered by any branching more than a few levels deep.
+  The problem of the combinational explosion can be easily visualized as a tree structure.
+  If the decisions needed to choose between different options are seen as the branches of a tree, then a simple two-decision example would yield two branches on the first move, four on the next, eight on the one after that.
+  By the time you get to sixty-four moves, each with twice as many branches as the previous move, you won't be able to see the forest for the branches.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0376
+- Abstraction
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

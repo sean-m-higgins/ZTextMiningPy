@@ -1,0 +1,30 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0062
+note: |
+  Then you have to specify where to store the answer, and issue step-by-step instructions on how to send the answer to your printer or monitor.
+  Obviously, it is easier to do the whole thing in a procedure like the one in BASIC: You simply type something on the keyboard, like "PRINT 2 + 3," and some part of the software takes care of accumulators and memory addresses.
+  Your printer prints out "5," or it is displayed on your monitor, and the computer doesn't bother you with details about its internal operations.
+  At the core of every computer language is something very much like the doubling machine.
+  Since it is possible to describe machines that describe machines, under the rules of the universal Turing machine game, it is possible to write a machine language program that describes a machine that can translate assembly language into machine language.
+  Having done that, this new tool can be used to create yet another level of communication that is even more manageable than assembly language, by making a code-language that is still closer to English.
+  That last virtual machine -- the English-like one -- is called a high-level programming language.
+  High-level doesn't mean that a language is intellectually lofty, only that it us a virtual machine interpreted by a lower-level machine, which in turn may be interpreted by an even lower level machine, until you get to the lowest level of on and off impulses that translate the Os and Xs into electronically readable form.
+  BASIC and FORTRAN and other languages that programmers work with are actually virtual machines that are described to the computer by other virtual machines equivalent to the assemblers mentioned above, known as interpreters and compilers.
+  The first compiler, however, was not to be written until 1953, seventeen years after Turing's theoretical paper was published in 1936.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0062
+- 1936 year
+- 1930 decade
+- 1900 century
+- 1930s
+- 1900s
+- 1953 year
+- 1950s
+- 1950 decade
+- Turing
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

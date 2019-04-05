@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0072
+note: |
+  In order to disguise the appearance, voice, and other sensory clues from the players, the interrogation takes place over a teletype.
+  Turing then asks us to substitute a machine for one of the unknown players and make a new object for the game: This time, the interrogator is to guess, on the basis of the teletyped conversation, which inhabitant of the other room is a human being and which one is a machine.
+  In describing how such a conversation might go, Turing quoted a brief "specimen" of such a dialog: Q: Please write me a sonnet on the subject of the Forth Bridge.
+  A: Count me out on this one.
+  I could never write poetry.
+  Q: Add 44957 to 70764.
+  A: (pause about 30 seconds and then give as answer) 105621.
+  Q: Do you play chess?
+  A: Yes.
+  Q: I have K at my K1, and no other pieces.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0072
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

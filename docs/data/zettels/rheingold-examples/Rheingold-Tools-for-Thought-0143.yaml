@@ -1,0 +1,22 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0143
+note: |
+  If logic was the formal system that most closely matched the operations of human reason, and if Boole's truth tables could embody such a formal system of simulated reasoning, then the use of truth tables as the "instruction tables" Turing discussed, and with switching devices like relays to represent the "states" of the machines (or the cells of the tape), it would be possible to build electrical circuits that could simulate some of the logical operations of human thought.
+  When the digital computer builders got together to plan the future development of the technology, Shannon was in the thick of it -- and he didn't hesitate to remind his colleagues that what they were building was the first step toward artificial intelligence.
+  But during the ten years immediately following his first breakthrough, Shannon turned to a different aspect of this new field.
+  His new employer was Bell Laboratories, and the electrical or electronic communication of messages was his specialty.
+  AT&T, the foremost communication company in the world, was the owner of Bell Laboratories, so naturally the laboratory was interested in supporting Shannon's probes into the fundamental nature of communication.
+  Shannon was encouraged to pursue his interesting questions such as: When something is communicated, what is delivered from one party to another?
+  When a communication is obscured by noise or encryption, what fails to get across?
+  This was the communication part of the communication and control problem pointed out by Wiener.
+  During the war, working at top-secret defense projects for Bell Laboratories, Shannon was involved in cryptological work that brought him into contact with Turing.
+  After the war, Shannon concentrated on describing the nature of the entity they were communicating and manipulating with all these logical and mathematical circuits.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0143
+- Turing
+- Artificial Intelligence
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0324
+note: |
+  Smalltalk was not just a language, and the Alto system was not just a one-person computer.
+  Together, the hardware, the software, and the tools for the users to learn the software, constituted an environment -- a small symbolic spaceship that the first-time user learned to control and steer through a personal universe.
+  The ability of the users to personalize their representation and use of information became clear as the children from Jordan Middle School experimented with changing typefonts for displaying letterforms, and with changing the bit-maps of the computer to create and animate cartoon images in mosaics, lines, and halftones.
+  The users not only had the capability to create and edit in a new way, but once they learned how to use the medium they gained the ability to make their own choices about how to view the universe of information at their fingertips.
+  The editing capabilities of the Dynabook made it possible to display and change every object in the Smalltalk microworld.
+  Text and graphics could be manipulated by pointing at icons and lists of choices -- "menus" in software jargon -- and multiple "windows" on the display screen made it possible to view a document or group of documents in several different ways at the same time.
+  The filing capabilities made it possible to store and retrieve dynamic documents that could consist of any collection of objects that could be displayed and have something to do with each other.
+  Drawing tools and painting programs made it possible to input information freehand as well as through the keyboard.
+  The structure of the Smalltalk language, the tools used by the first-time user to learn how to get around in the Dynabook, and the visual or auditory displays were deliberately designed to be mutable and movable in the same way: "Animation, music, and programming," wrote Kay and Goldberg, "can be thought of as different sensory views of dynamic processes.
+  The structural similarities among them are apparent in Smalltalk, which provides a common framework for expressing those ideas."
+tags:
+- Core Text
+- Computing History
+- Rheingold 0324
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

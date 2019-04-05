@@ -1,0 +1,27 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0112
+note: |
+  The control unit specified by the "Preliminary Report" -- the component that supervises the execution of instructions -- was the materialization of the formal logic device created by Emil L. Post and Turing, who had proved that it was possible to devise codes in terms of numbers that could cause a machine to solve any problem that was clearly statable.
+  This is where the symbol meets the signal, where sequences of on and off impulses in the circuits, the Xs and Os on the cells of the endless tape, the strings of numbers in the programmer's code, marry the human-created computation to the machine that computes.
+  The input-output devices were the parts of the system that were to advance the most slowly while the switch-based memory, arithmetic, and control components ascended through orders of magnitude.
+  For over a decade after ENIAC, punched cards were the main input devices, and for over two decades, teletype machines were the most common output devices.
+  The possibility of future breakthroughs in this area and their implications were not overlooked.
+  In a memorandum written in November, 1945, concerning one of the early proposals for the IAS machine, von Neumann anticipated the possibility of creating a more visually oriented output device: In many cases the output really desired is not digital (presumably printed) but pictorial (graphed).
+  In such situations the machine should graph it directly, especially because graphing can be done electronically and hence more quickly than printing.
+  The natural output in such a case is an oscilloscope, i.e., a picture on its fluorescent screen.
+  In some cases these pictures are wanted for permanent storage .
+  Both alternatives should be provided for.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0112
+- 1945 year
+- 1940s
+- 1940 decade
+- 1900 century
+- 1900s
+- Turing
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

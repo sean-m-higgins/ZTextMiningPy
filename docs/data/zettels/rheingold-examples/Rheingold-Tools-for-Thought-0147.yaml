@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0147
+note: |
+  If there were no container, the highly energetic molecules and the less energetic molecules would mix, and there would be no sharp differentiation between the hot parts and the cold parts of the system.
+  A system with high entropy has a low degree of order.
+  A system with low entropy has a higher degree of order.
+  In a steam engine, you have the heat in one place (the boiler) and it is dissipated into the cold part (the condenser).
+  This is a very orderly (low entropy) system in the sense that anyone can reliably predict in which part of the engine the hot molecules are likely to be found.
+  But when all the parts of a steam engine are the same temperature, and the hot and cold molecules are equally likely to be found in the boiler and the condenser (and hence the entropy is high), the engine can't do any work.
+  Another physicist, Boltzmann, showed that entropy is a function of the way the parts of the system are arranged, compared with the number of ways the system can be arranged.
+  For the moment, let's forget about molecules and think about decks of cards.
+  There is a large number of ways that fifty-two cards can be arranged.
+  When they come from the factory, every deck of cards is arranged in a definite order, by suit and by value.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0147
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

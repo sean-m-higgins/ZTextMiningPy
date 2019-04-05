@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0385
+note: |
+  Which means that no matter how well an expert system agrees with one particular human expert, that does not guarantee that another expert won't catch the software making a wrong decision.
+  The key to taking advantage of these natural disagreements between experts, Barr realized, was to build in a mechanism for "remembering experiences," for keeping around old decisions, even if they were wrong, and creating new rules from the outcome of disagreements.
+  Taken far enough, this aspect of the system leads directly to one of the hottest issues in AI research -- the question of whether programs can learn from experience.
+  Barr was only interested in one specific aspect of this issue -- the possibility of creating a means of tracking decisions and keeping track of instances where human experts disagree with each other.
+  The first steps of establishing consensus, then, involve figuring out where you do agree.
+  Then you can get on to the second step -- trying to find exactly where in your individual knowledge systems the disagreement lies.
+  They can agree that one of them was wrong, they both can remain convinced that they are right, they can decide that they are both wrong or both right.
+  They can look for an investigation or experiment that could decide the issue.
+  Or they can decide that they both have to wait for new knowledge."
+  Barr believes consensus assistance is only a start on "the ultimate kind of thing we can do with intelligent assistants.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0385
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

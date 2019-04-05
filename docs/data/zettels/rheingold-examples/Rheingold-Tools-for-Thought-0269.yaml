@@ -1,0 +1,27 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0269
+note: |
+  Programmers of the first multiaccess computers of the sixties were able to submit programs a piece at a time and receive responses a piece at a time, instead of trying to make the whole programming job work, for better or worse, in a single batch.
+  By eliminating the "wait and see" aspect of batch-processing, time-sharing made it possible for programmers to treat their craft as a performing art.
+  It was clear, though, that this was an important breakthrough in information processing technology, so I became involved in the technology transfer between the different experimental systems, and eventually to military and civilian computer applications.
+  IBM ignored the ARPA stuff at first.
+  They simply didn't take it seriously.
+  Then GE agreed to cooperate with MIT and Bell Laboratories to develop and market a large time-sharing system.
+  IBM said, 'Whoops, something's happening here,' and they went off with a crash project to retrofit one of their 360 systems to time-sharing.
+  They took orders for a few and the system bombed.
+  They couldn't make the software work because hadn't been down the same roads that the ARPA funded groups had been down years before."
+  Time-sharing research caused a kind of schism in the corporate research field.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0269
+
+- 1960s
+- 1960 decade
+- 1900 century
+- 1900s
+- IBM
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

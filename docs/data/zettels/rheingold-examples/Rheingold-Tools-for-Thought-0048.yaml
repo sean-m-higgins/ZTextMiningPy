@@ -1,0 +1,26 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0048
+note: |
+  The reason we know such algorithms work is because they are based on the formal system known as arithmetic, which we know to be true.
+  What Turing's paper did, and what made digital computers possible, resulted in the millennia-long effort to reduce the various formal systems to one basic system that underlies them all.
+  Science--our civilization's preeminent system for gathering and validating knowledge--was built on mathematics, which was in turn a logical formalization of the primitive number theories of the Babylonians and the Greeks.
+  Computation was the unexpected result of the attempt to prove that the mathematical truths could be reduced to logical truths.
+  At the same time that our civilization's methods for predicting and understanding the universe grew powerful as the result of these intellectual systems (i.e., science, mathematics, and logic), a few people continued to ask whether these same systems could be reduced to their basic components.
+  If all sciences, when they become advanced enough, can be reduced to mathematical equations, is it possible to reduce mathematics to the most fundamental level of logic?
+  Since our certainty in the completeness and consistency of our knowledge system could depend on whether such a reduction was possible, it was very disconcerting to Western thinkers when evidence began to appear that there were exceptions, anomalies, paradoxes--holes in the structure of mathematics that might prevent any such grand reduction of formal systems.
+  Those two intellectual quests--the effort to reduce mathematics to a fundamental, formal symbol system, and the attempt to patch up the paradoxes that cropped up during the pursuit of that grand reduction--led directly but unexpectedly to computation.
+  In the first decades of the twentieth century, mathematicians and logicians were trying to formalize mathematics.
+  David Hilbert and John von Neumann set down the rules of formalism in the 1920s (as we shall see in the next chapter).
+tags:
+- Core Text
+- Computing History
+- Rheingold 0048
+- 1920s
+- 1920 decade
+- 1900 century
+- 1900s
+- Turing
+- 1900 century early
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

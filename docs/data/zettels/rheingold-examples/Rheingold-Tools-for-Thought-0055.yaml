@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0055
+note: |
+  The fact that it is mechanical was one of the points Turing was trying to make.
+  If you look at the starting position, note that there are two adjacent Xs.
+  Then look at the final position and note that there are four Xs.
+  If you were to use the same instructions, but start with a tape that had five Xs, you would wind up with ten Xs.
+  This list of instructions in the specification for a calculating procedure that will double the input and display the output.
+  It can, in fact, be done by a machine.
+  In essence, every Turing machine moves marks from one position on a tape to another position on a tape, in the way the procedure outlined above moved Xs and Os from square to square.
+  These days, the marks can be electronic impulses in microcircuits, and the tape can be an array of memory locations in a memory chip, but the essential idea is the same.
+  Turing proved that his hypothetical machine is an automated version of a formal system specified by the starting position (the pattern of Os and Xs on the tape at the beginning of the computation) and the rules (the instructions given by the instruction tables).
+  The moves of the game are the changing states of the machine that correspond to the specified steps of the computation.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0055
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

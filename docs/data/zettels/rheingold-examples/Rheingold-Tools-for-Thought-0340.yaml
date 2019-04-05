@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0340
+note: |
+  Nobody wore a plastic penholder.
+  As it was explained to me by Brenda and by Eric, whose project it was, a media room is an information terminal that a person can walk around inside -- a place where you can communicate directly with the machine without explicit input devices like keyboards.
+  The room itself is set up to monitor human communication output.
+  This presumes that all the hardware and software that are now in experimental or developmental stages will be working together to do what a good media room does -- without bothering the person who uses it with details of its operations.
+  Eric came to Atari from MIT's Architecture Machine Group, an innovative group led by Alan Kay's old friend and Atari consultant Nick Negroponte.
+  The idea of "spatial data management" that came from the MIT group was a response to the problem of finding a way to navigate the huge new informational realms opened by computers, by adopting the metaphor of information space that the user can more or less "fly" through.
+  The dominant metaphor in software design viewed large collections of information through the well-known "file-cabinet" metaphor, in which each piece of information is regarded as part of a "file folder" that the user locates through traditional filing methods.
+  But what if the collection of information could be displayed visually and arranged spatially, so the user could have the illusion of "navigating" through it?
+  Perhaps the most well-known demonstration of this metaphor was the "Aspen Map" created by Negroponte's group.
+  To use this map, you sit in front of a video screen and touch the screen to steer your way down a photographic representation of the streets and houses of Aspen, Colorado.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0340
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

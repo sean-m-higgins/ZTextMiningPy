@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0315
+note: |
+  In Smalltalk, every object was meant to be a microworld.
+  Computer scientists talk about computational metaphors in computer languages -- alternative frameworks for thinking about what programming really does.
+  The most widespread and oldest metaphor is that of a recipe, the kind of recipe you create for a very stupid but obedient servant -- a list of definite, step-by-step instructions that could provide a desired result when carried out by a mindless instruction-following mechanism.
+  The sequence of instructions is an accurate but limiting metaphor for how a computer operates.
+  It is a reflection of the fact that early computers were built to do just one thing at a time, but to do it very fast and get on to the next instruction.
+  This model, however, is not well suited to computers of the future, which will perform many processes at the same time (in the kind of computation that is called parallel processing).
+  Languages based on the dominant metaphors of numerical, serial procedures are much better suited for linear processes like arithmetic and less well suited for exactly those tasks that computers need to perform if they are to serve as representational media.
+  Parallel processing is also a better model of the way human brains handle information.
+  Starting from concepts set forth in LOGO and in Simula, Kay began to devise a new metaphor in which the string of one-at-a-time instructions is replaced by a multidimensional environment occupied by objects that communicate by sending one another messages.
+  In effect, he started out to build a computer language that would enable the programmer to look at the host computer not as a serial instruction follower, but as thousands of independent computers, each one able to command the power of the whole machine.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0315
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

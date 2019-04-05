@@ -1,0 +1,26 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0155
+note: |
+  It has to be said, by the way, that Shannon was reluctant to use the word "entropy" to represent this measure implied by his equations, but von Neumann told him to go ahead and use it anyway, because "since nobody knows what entropy is, in a debate you will be sure to have an advantage."
+  Remember that entropy is where Shannon ended up, not where he started.
+  Hot molecules and DNA were far from his original intention.
+  He got to the guessing game and the notion of bits and the relationship between uncertainty and entropy because he looked closely at what a message really is.
+  How does a signal that conveys information differ from everything else that happens?
+  How much energy must be put into broadcasting a voice over the radio to be sure that it will be understood despite atmospheric interference or static from other sources?
+  These were the questions that Shannon set out to answer.
+  Shannon's 1948 publication ("A Mathematical Theory of Information") presented a set of theorems that were directly related to the economical and efficient transmission of messages on noisy media, and indirectly but still fundamentally related to the connection between energy and information.
+  Shannon's work was a direct answer to an engineering problem that had not decreased in importance since the war: how can messages be coded so that they will be reliably transmitted and received over a medium where a certain amount of noise is going to garble reception?
+  Shannon showed that any message can be transmitted with as high a reliability as one wishes, by devising the right code.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0155
+- 1948 year
+- 1940s
+- 1940 decade
+- 1900 century
+- 1900s
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

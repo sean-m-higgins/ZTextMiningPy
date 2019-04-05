@@ -1,0 +1,27 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0115
+note: |
+  This neighborhood can consist of either the four orthogonally bordering cells or the eight orthogonally and diagonally bordering cells.
+  In the space divided up this way, transition rules are applied simultaneously to each cell.
+  The transition any particular cell undergoes will depend on its state and on the states of its neighbors.
+  Von Neumann was able to prove that a configuration of about 200,000 cells, each with 29 different possible states and each placed in a neighborhood of 4 orthogonally adjacent squares, could meet all the requirements of a self-reproducing automaton.
+  The large number of elements was necessary because von Neumann's model was also designed to simulate a Turing machine.
+  Von Neumann's machine can, theoretically, perform any mathematical operation.
+  In 1950, when it was evident to all that the engineering phase of computer technology was accomplishing impressive tasks, von Neumann postulated one such system in terms of a factory that contains within it the machinery and the detailed blueprints for making identical factories (and identical blueprints) from raw materials provided to it.
+  Take that a step up in complexity, and the details can include a specification for subsystems that find raw materials for the factory from the environment, with no human intervention.
+  If one fantasizes one step farther on the complexity spectrum, the instructions and capabilities could specify factories capable of building spaceships to send more spaceships to other planets, where the raw materials found would be shaped into more factory-spaceship-launchpad systems, and if you could build factories that could build two or more such complexes, you could have a counterforce to the generally disorderly trend of the cosmos, in the form of a (mindless?)
+  While it definitely sounds like a science-fiction story, and many would add that it could be interpreted to be an idea of such inhuman coldness as to be termed "fiendish" such scenarios are legitimate topics in the field of automata, and are still known as "von Neumann machines" (as distinguished from "the von Neumann machine," the logical architecture he created for digital computers).
+tags:
+- Core Text
+- Computing History
+- Rheingold 0115
+- 1950 year
+- 1950s
+- 1950 decade
+- 1900 century
+- 1900s
+- Turing
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

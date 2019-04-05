@@ -1,0 +1,26 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0107
+note: |
+  The split turned out to be a lifelong feud.
+  Goldstine, writing in 1972 from his admittedly partial perspective, was unequivocal in pointing out von Neumann's contributions: First, his entire summary as a unit constitutes a major contribution and had a profound impact not only on the EDVAC but also served as a model for virtually all future studies of logical design.
+  Second, in that report he introduced a logical notion adapted from one of McCulloch and Pitts, who used it in a study of the nervous system.
+  This notation became widely used, and is still, in modified form, an important and indeed essential way for describing pictorially how computer circuits behave from a logical point of view.
+  Third, in the famous report he proposed a repertoire of instructions for the EDVAC, and in a subsequent letter he worked out a detailed programming for a sort and merge routine.
+  This represents a milestone, since it is the first elucidation of the now famous stored program concept together with a completely worked-out illustration.
+  Fourth, he set forth clearly the serial mode of operation of the modern computer, i.e., one instruction at a time is inspected and then executed.
+  This is in sharp distinction to the parallel operation of the ENIAC in which many things are simultaneously performed.
+  While Mauchly and Eckert set forth to establish the commercial applications of computer technology, Goldstine, von Neumann, and another mathematician by the name of Arthur Burks put together a proposal and presented it to the Institute for Advanced Study at Princeton, the Radio Corporation of America, and the Army Ordnance Department, requesting one million dollars to build an advanced electronic digital computer.
+  Once again, some of the thinking in this project was an extension of the group creations of the ENIAC project.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0107
+- 1972 year
+- 1970s
+- 1970 decade
+- 1900 century
+- 1900s
+- 1900 century late
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

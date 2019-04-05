@@ -1,0 +1,26 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0154
+note: |
+  After asking that single yes or no question, player one either knows that the number is greater than fifty or that it is less than fifty.
+  One of the things Shannon demonstrated in 1948 was that the entropy of a system is represented by the logarithm of possible combinations of states in that system -- which is the same as the number of yes-or-no questions that have to be asked to locate one individual case.
+  Entropy, as it was redefined by Shannon, is the same as the number of binary decisions necessary to identify a specific sequence of symbols.
+  Taken together, those binary decisions, like the answers in the game, constitute a definite amount of information about the system.
+  When it comes to arranging molecules, living organisms seem to have a great deal of information about how to take elementary substances and turn them into complex compounds.
+  Somehow, living cells manage to take the hodgepodge of molecules found in their environment and arrange them into the substances necessary for sustaining life of the organism.
+  From a disorderly environment, living creatures somehow create their own internal order.
+  This remarkable property now sounds suspiciously like Maxwell's demon.
+  The answer, as we now know, is to be found in the way the DNA molecule arranges its elements -- doing so in such a way that the processes necessary for metabolism and reproduction are encoded.
+  The "negative entropy" that Schrodinger says is the nourishment of all life is information, and Shannon showed exactly how such coding can be done -- in molecules, messages, or switching networks.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0154
+- 1948 year
+- 1940s
+- 1940 decade
+- 1900 century
+- 1900s
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

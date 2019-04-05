@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0052
+note: |
+  Suppose the symbols are "X" and "O".
+  Suppose that the device can erase either symbol when it reads it in the active square and replace it with the other symbol (i.e., erase an X and replace it with an O, and vice versa).
+  The device also has the ability to move left or right, one square at a time, according to instructions interpreted by the control unit.
+  The instructions cause a symbol to be erased, written, or left the same, depending on which symbol is read.
+  Any number of games can be constructed using these rules, but they would not all necessarily be meaningful.
+  One of the first things Turing demonstrated was that some of the games constructed under these rules can be very sophisticated, considering how crude and automaton-like the primitive operations seem to be.
+  The following example illustrates how this game can be used to perform a simple calculation.
+  The rules of the game to be played by this Turing machine are simple: Given a starting position in the form of a section of tape with some Xs and Os on it, and a starting square indicated, the device is to perform the actions dictated by a list of instructions and follows the succeeding instructions one at a time until it reaches an instruction that forces it to stop.
+  Each instruction specifies a particular action to be performed if there is a certain symbol on the active square at the time it is read.
+  There are four different actions; they are the only legal moves of this game.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0052
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

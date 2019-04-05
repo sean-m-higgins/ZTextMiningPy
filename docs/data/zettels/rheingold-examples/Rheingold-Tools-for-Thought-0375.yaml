@@ -1,0 +1,27 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0375
+note: |
+  Knowledge is more than a collection of facts, frozen into some rationally coded order.
+  How do our minds do all the things they do when we're thinking, without consciously thinking about how to do it?
+  How do you know which details in a sea of information are worth your attention?
+  The difference between a novice and an expert, for example, is not simply a quantitative question of more stored facts about the area of expertise; the difference hinges, instead, on the ability to make judgments about novel problems in the field.
+  Chess has been the classic example of the difficulties of emulating expertise with computer programs.
+  It is a finite game, with a limited number of clearly allowable moves, each of which have perfectly specified outcomes.
+  Chess qualifies as a formal system in the Turing machine sense, and hence can be imitated by a computer.
+  Give the computer the rules, the starting position, and the opponent's first move, and the computer is capable in principle, of calculating all the possible responses to that move and formulating a response based on that calculation.
+  Yet, after a quarter of a century of effort, nobody has come up with an unbeatable chess playing program.
+  The reason that brute-force calculation hasn't defeated a human grandmaster is not rooted so much in technology as in mathematics: the combinational explosion is the term for the brute-force barrier noted by Shannon back in 1950.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0375
+- 1950 year
+- 1950s
+- 1950 decade
+- 1900 century
+- 1900s
+- Turing
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0061
+note: |
+  The O and X code is similar to what is now called machine language, and a relatively small number of programmers are actually able to write programs in it.
+  But what if you could build a virtual machine on top of a virtual machine?
+  What if there were a coded program written in terms of Os and Xs, much like the system we described for the doubling machine, except that this new system's task is to translate symbols that humans find easier to use and understand -- instructions like "go left" or even "double this number" -- into machine language?
+  Assembly language, a close relative of machine language except that is uses recognizable words instead of strings of Xs and Os, is a lot more manageable than machine language, so that's what most programmers use when they write video games or word processors.
+  Assembly language makes it easier to manipulate the information in the "squares" -- the memory cells of the computer -- by using words instead of numbers.
+  You use the translation program described above, called an assembler, to translate assembly language into machine language.
+  Every different microprocessor (the actual silicon chip hardware at the core of every modern computer) has a list of around a hundred primitive machine language operations -- known as "firmware" -- wired into it.
+  When the assembler follows the instructions in the assembly language programs, using machine language to talk to the microprocessor, the virtual machine meets the actual machine, and the computer is able to accomplish the specified task for the human who started the whole process.
+  Since you have to accomplish tasks in assembly language by telling the computer very specifically where to find the information you want, when to move it into an "active square" called an accumulator, and where to store it when it is processed, writing anything complicated in assembly language can be a chore -- like writing a book with semaphore flags, or measuring a city with a yardstick.
+  For example, to add two numbers in assembly language you have to specify what the first number is and assign it to the accumulator, then you have to specify the second number and instruct the machine to add it to the number already in the accumulator.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0061
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

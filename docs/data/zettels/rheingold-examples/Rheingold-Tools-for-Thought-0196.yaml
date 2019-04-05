@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0196
+note: |
+  Actually, there were two MIT time-sharing projects.
+  The more staid project was CTSS -- Compatible Time-Sharing System, so named because it was designed to be compatible with other systems that were being constructed elsewhere.
+  The MAC hackers were designing an operating system they called ITS -- the Incompatible Time-sharing System.
+  They couldn't care less about making it easy for outsiders to use.
+  They were having too much fun to share it with the kind of straight-arrow programmers who could stand to eat or sleep before finishing a good hack.
+  There were hackers and there were metahackers.
+  Richard Greenblatt, because of what his program did to Dreyfus, and because of his ability to improvise great code without fully understanding how he did it, was at the top of the hacking order.
+  He was a dropout and looked the part of the "Pepsi-guzzling, nonsleeping, single-minded programming addict who ate only food that came from a vending machine and whose skin had not absorbed anything but fluorescent light in three years," as Rodman fondly remembered him, three decades later.
+  But Greenblatt's peers knew him as a Nijinsky, a Frank Lloyd Wright, a Johann Sebastian Bach of LISP programming.
+  The matter of pranks, of what the hackers called "wheel wars" -- mucking up each others files, trying to thwart each other or "crash" the operating system -- was part of the working environment.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0196
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

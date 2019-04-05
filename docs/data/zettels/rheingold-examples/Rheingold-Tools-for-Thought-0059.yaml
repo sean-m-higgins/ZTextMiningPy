@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0059
+note: |
+  They are only symbols for states of a process -- markers in a "doubling game."
+  The list of instructions (the program) is what enables the machine to double the input number.
+  The instructions, not the symbols that keep track of the way they are carried out -- the rules, not the markers -- are what make the Turing machine work.
+  Universal Turing machines are primarily symbol manipulators.
+  And digital computers are universal Turing machines.
+  It isn't easy to think of the rules of a game as a kind of machine.
+  The task is somewhat easier if you think about "mechanical processes" that are so clearly and specifically defined that a machine can perform them by referring to an instruction table.
+  All universal Turing machines are functionally identical devices for following the program specified by an instruction table.
+  The instruction tables can differ, and they can turn the universal Turing machine into many different kinds of machine.
+  For this reason, the programs are sometimes called "virtual machines."
+tags:
+- Core Text
+- Computing History
+- Rheingold 0059
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

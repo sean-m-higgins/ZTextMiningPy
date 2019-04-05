@@ -1,0 +1,27 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0049
+note: |
+  Before Hilbert and von Neumann, Alfred North Whitehead and Bertrand Russell demonstrated in their Principia Mathematica that some aspects of human reasoning could be formally described, thus linking this awakened interest in mathematical logic to the ideas of the long-forgotten originator of the field, George Boole.
+  The idea of formal systems was of particular interest, because it appeared to bridge the abstractions of mathematics and the mysteries of human thought.
+  A formal system is a rigidly defined kind of game that specifies rules for manipulating tokens.
+  The qualifications for making a formal system are very much like the rules for any other game.
+  To tell someone how to play a game, and for the set of rules to qualify as a formal system, the same three aspects of the game must be communicated -- the nature of the tokens, a description of the starting position (or the starting layout of the "board"), and a listing of what moves are allowed in any given position.
+  Chess checkers, mathematics, and logic are examples of formal systems that satisfy these criteria.
+  By the 1930s, the effort to reduce mathematics to logically secure foundations brought about several attempts to treat arithmetic -- the branch of mathematics concerned with operations on numbers -- as a formal system.
+  In 1936, at the age of twenty-four, Alan M. Turing established himself as one of the greatest mathematical prodigies of all time when he pointed out to his colleagues that it was possible to perform computations in number theory by means of a machine -- a machine that embodied the rules of a formal system.
+  Although the machine itself didn't exist as a working model, Turing emphasized from the beginning that such machines could actually be built.
+  His finding was a milestone in the effort to formalize mathematics and, at the same time, a watershed in the history of computation.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0049
+- 1936 year
+- 1930 decade
+- 1900 century
+- 1930s
+- 1900s
+- Turing
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0104
+note: |
+  Once the code for the instructions needed to carry out the calculation had been drawn up, all that had to be done to perform the computation on any set of input data was to properly configure the machine to perform the instructions.
+  The calculation, which formerly took up the most time, had become trivial, but a new bottleneck was created with the resetting of switches, a process that took an unreasonable amount of time compared with the length of time it would take to run the calculation.
+  Resetting the switches was the most worrisome bottleneck, but not the only one.
+  The amount of time it took for the instructions to make use of the data, although greatly reduced from the era of manual calculation, was also significant -- in ballistics, the ultimate goal of automating calculation was to be able to predict the path of a missile before it landed, not days or hours or even just minutes later.
+  If only there was a more direct way for the different sets of instructions -- the inflexible, slow-to-change component of the computing system -- to interact with the data stored in the electronic memory, the more quickly accessible component of computation.
+  The solution, as von Neumann and colleagues formulated it, was an innovation based upon a logical breakthrough.
+  The now-famous "First Draft" described the logical properties of a true general-purpose electronic digital computer.
+  In one key passage, the EDVAC draft pointed out something that Babbage, if not Turing, had overlooked: "The device requires a considerable memory.
+  While it appears that various parts of this memory have to perform functions which differ somewhat in their nature and considerably in their purpose, it is nevertheless tempting to treat the entire memory as one organ."
+  In other words, a general-purpose computer should be able to store instructions in its internal memory, along with data.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0104
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

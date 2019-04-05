@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0365
+note: |
+  The resulting program became a milestone in the evolution of software, and the first of a series of software tools for chemists, biologists, and other researchers.
+  The process of constructing DENDRAL had another useful, unexpected side effect: The task of extracting judgment-related knowledge from human experts led to a new subfield known as "knowledge engineering."
+  One of the first spinoffs from MYCIN was EMYCIN -- an expert system for those people whose expertise is in building expert systems.
+  By separating the inference engine from the body of factual knowledge, it became possible to produce expert tools for expert-systems builders, thus bootstrapping the state of the art.
+  While these exotic programs might seem to be distant from the mainstream of research into interactive computer systems, expert-systems research sprouted in the same laboratories that created time-sharing, chess playing programs, Spacewar, and the hacker ethic.
+  DENDRAL had grown out of earlier work at MIT (MAC, actually) on programs for performing higher level mathematical functions like proving theorems.
+  It became clear, with the success of DENDRAL and MYCIN, that these programs could be useful to people outside the realm of computer science.
+  It also became clear that the kind of nontechnical questions that Weizenbaum and others had raised in regard to AI were going to be raised when this new subfield became more widely known.
+  As the first frighteningly practical applications to the field of medicine proved when they were created, the field of artificial expertise involves important ethical as well as philosophical, psychological, and engineering considerations.
+  The clearest area of potential danger in applying knowledge engineering to human medicine is the possibility of misuse through misunderstanding.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0365
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

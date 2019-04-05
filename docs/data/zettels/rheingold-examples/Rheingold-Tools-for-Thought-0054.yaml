@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0054
+note: |
+  In order to play the game (run the program) specified by the list of instructions, one more thing must be provided: a starting tape configuration.
+  For our example, let us consider a tape with two Xs on it, bounded on both sides by an infinite string of Os.
+  The changing states of a single tape are depicted here as a series of tape segments, one above the other.
+  The active square for each denoted by a capital X or O.
+  When the machine is started it will try to execute the first available instruction, instruction #1.
+  The following series of actions will then occur: Instruction Tape What the Machine Does #1 ...ooXxooooooo... One (of two) Xs is erased.
+  Tape is scanned to the #3 ...oooxOoooooo... right.
+  This X is erased.#3 ...ooooOxxoooo... Scanner moves to the right #4 ...oooooXxoooo... of the two Xs that were #4 ...oooooxXoooo... written earlier.
+  The machine stops because there is no instruction for #7 if O is being scanned.
+  This game may seem rather mechanical.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0054
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

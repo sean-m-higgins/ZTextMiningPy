@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0141
+note: |
+  Equally important was the way these combinations of logical and arithmetic operations could be used to build a "memory" operation.
+  Boolean algebra makes it possible to devise a procedure, or build a device, the "state" of which can store specific information -- either data or operations.
+  If electrical circuitry can perform logical and mathematical operations, and can also store the result of those operations, then electronic digital computers can be designed.
+  Until Shannon, Boolean algebra had been a curious and almost totally forgotten eddy in the mainstream of mathematical thought for almost a century, and was certainly unknown to the more practical-minded world of physics and electrical engineering.
+  And that is where the genius of Shannon's rediscovery lies, for he was writing a thesis in electrical engineering, not mathematical logic, and the objects of his concern were not the processes of thought but the behavior of large circuits of electrical switches connected together into the kinds of circuits one finds in a telephone system.
+  Shannon was interested in the properties of complicated electrical circuits that were built from very simple devices known as relays.
+  A relay is a switch -- a device that opens or closes a circuit, permitting or blocking the flow of electricity -- not unlike an ordinary light switch, except a relay is not switched on or off by a human hand, but by the passage of an electrical current.
+  A relay contains an electromagnet.
+  When a small current flows into the relay, the electromagnet is activated, closing the circuit controlled by the relay until the input current is turned off.
+  In other words, the electromagnet is a small electrical circuit that opens and closes another electrical circuit.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0141
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

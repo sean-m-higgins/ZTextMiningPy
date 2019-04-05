@@ -1,0 +1,30 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0096
+note: |
+  In 1936, Mauchly arranged to have many parts of the government's voluminous meteorological records shipped back to his office at Ursinus.
+  He intended to apply modern statistical analysis to the weather data in an attempt to correlate them with records of sunspot activity, hoping that this probe would reveal the previously undetected pattern.
+  As other mathematical meteorologists like von Neumann were also quickly discovering, Mauchly found that any calculations involving data based on weather quickly grew so complicated that it would take a lifetime to calculate all the equations generated from even the shortest periods of observation.
+  So he found himself doing the same thing that the ballistics experts did -- hiring a lot of people with adding machines.
+  A Depression-era agency, the National Youth Administration, helped Mauchly pay students fifty cents an hour to tabulate his weather data with hand calculators.
+  Mauchly planned to obtain punched-card machines, once he got his crew to tackle the first part of the data.
+  But when he watched a demonstration of the world's most advanced punched-card tabulator at the 1939 World's Fair, he realized that even scores of such machines in the hands of trained operators might take another decade to go through the weather data.
+  In 1939 and 1940, Mauchly read in scientific journals about a new measuring and counting system developed to assist cosmic-ray research.
+  The part of the system that caught his eye was the fact that this new device, using electronic circuits, could count cosmic rays far faster than a dozen of the fasted punched-card tabulators.
+  Cosmic rays can be detected at the rate of thousands per second, but all previous recorders failed to keep pace beyond 500 times a second.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0096
+- 1936 year
+- 1930 decade
+- 1900 century
+- 1930s
+- 1900s
+- 1939 year
+- 1940 year
+- 1940s
+- 1940 decade
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

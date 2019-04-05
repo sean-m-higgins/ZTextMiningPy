@@ -1,0 +1,28 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0157
+note: |
+  The error-correcting codes guaranteed by Shannon's "noisy channel" theorem are just as useful for genetic control of protein synthesis as for protocols in a computer network.
+  Shannon's MIT colleague, Noam Chomsky, has used a similar tool in his exploration of the "deep structure" of language.
+  With all these higher-level abstractions, Shannon did not abandon all thought of the potential of digital computers.
+  Where Wiener saw the computer as a self controlling mechanism and von Neumann saw a device with logical as well as mathematical properties, Shannon tended to think of ENIAC and UNIVAC as information processing machines.
+  Like Turing and other mathematicians since then, Shannon was fascinated with the idea that something as sophisticated and essentially human as chess playing could, in theory, be emulated by some future version of these devices.
+  In February, 1950, Shannon published "A Chess Playing Machine" in The Scientific American.
+  Half a decade before anyone dared to name the endeavor "artificial intelligence research," Shannon pointed out what a very few people then recognized -- that electronic digital computers could "be adapted to work symbolically with elements representing words, propositions or other conceptual entities."
+  A chess game is a Turing machine.
+  And a universal Turing machine, given the properly coded rules, ought to be able to play chess.
+  Shannon pointed out that the way most people would design a machine to play chess -- to mechanically examine each alternative move and evaluate it, the so-called brute-force method -- would be virtually impossible, even on the fastest imaginable computer.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0157
+- 1950 year
+- 1950s
+- 1950 decade
+- 1900 century
+- 1900s
+- Turing
+- Artificial Intelligence
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

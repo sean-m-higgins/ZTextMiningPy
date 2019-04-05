@@ -1,0 +1,28 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0363
+note: |
+  Twenty years ago, few people, even inside the artificial intelligence community, were confident that it could be done at all.
+  The normally "pure" research field of artificial intelligence strayed into this potentially controversial area of applied AI, as it was bound to, because the questions surrounding expertise are at the core of the effort to simulate human intelligence.
+  Edward A. Feigenbaum was one of the people from artificial intelligence research who decided, in the mid-1960s, that it is important to know how much a computer program can know, and that the best way to learn something about the question would be to try to construct an artificial expert.
+  Joshua Lederberg, the Nobel laureate geneticist, suggested the task of determining the molecular structure of compounds, based on data from mass spectrography and guided by the rules that are known to govern molecular bonds, was an appropriately difficult and potentially useful problem for artificial intelligence techniques.
+  Together with software expert Bruce Buchanan and Nobel laureate biochemist Carl Djerassi, Lederberg and Feigenbaum started to design DENDRAL, the first expert system, in 1965, at Stanford University.
+  Human chemists know that the possible spatial arrangement of the molecules that make up any chemical compound depends on a number of basic rules about how different atoms can bond to one another.
+  They also know a lot of facts about different atoms in known compounds.
+  When they make or discover a previously unknown compound, they can gather evidence about the compound by analyzing the substance with a mass spectrograph.
+  The mass spectrograph provides a lot of data, but no clues to what it all means.
+  Conventional computer-based systems had failed to provide a tool for discovering molecular structures, based on spectrographic data.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0363
+- 1965 year
+- 1960s
+- 1960 decade
+- 1900 century
+- 1900s
+- 1960 decade mid
+- 1960s mid
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

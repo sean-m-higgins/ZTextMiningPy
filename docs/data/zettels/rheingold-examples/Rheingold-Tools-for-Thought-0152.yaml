@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0152
+note: |
+  This basic element in this game-tree-code, the binary decision, was the basis for Shannon's basic measure of information -- the bit.
+  Whenever computer enthusiasts speak of a "bit," they are referring to one of those decisions in the garden of forking paths.
+  Note that each decision, each bit, reduces the uncertainty of the situation, whether you are designating turns in a pathway or numbers in a guessing game or the energy state of molecules in a container.
+  But what if you were to use a different strategy to guess the right answer?
+  What if you just named each of the possible letters, one at a time, in a sequence or randomly?
+  This relates to probability theory, the mathematical principles governing the random selection of small samples from large populations.
+  The relative probability of an event occurring, whether it is the probability of a molecule being hot or the probability of a symbol being a specific letter of the alphabet, depends upon the total number of cases in the population and the frequency of the specified event.
+  If there are only two cases in the population, a single yes or no decision reduces the uncertainty to zero.
+  In a group of four, it takes two decisions to be sure.
+  In a group of trillions, you have to guess a little.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0152
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0378
+note: |
+  The first expert-systems experiments were not focused exclusively on machine capabilities nor on human capabilities, but on the border between the two types of symbol processors.
+  How could a machine be used to transfer expertise from one human to another?
+  The emerging differences between machine capabilities and human cognitive talents were brought into sharper focus when it was demonstrated by systems like MYCIN that this kind of software was capable of measurably augmenting the power of human judgment.
+  Doctors who used MYCIN to aid their diagnostic decision-making ended up making accurate diagnoses more often than they did before they used the program to assist them.
+  The "reasoning" capabilities of the first expert systems were actually quite primitive, but the way these systems worked as "consultation tools" made it clear that there was great potential power in designing software systems that could interact with people in ways that simulated and augmented human knowing.
+  The present link between the technology of augmenting human intellect, the business of building expert systems, and the science of artificial intelligence, Avron Barr and his colleagues, is the role of transfer of expertise both as a practical, valuable tool and as a probe for understanding the nature of understanding: A key point in our current approach to building expert systems is that these key programs should not only be able to apply the corpus of expert knowledge to specific problems, but that they should also be able to interact with the users just as humans do when they learn, explain, and teach what they know.
+  These transfer of expertise (TOE) capabilities were originally necessitated by "human engineering" considerations -- the people who build and use our systems needed a variety of "assistance" and "explanation" facilities.
+  However, there is more to the idea of TOE than the implementation of needed user features: These social interactions -- learning from experts, explaining one's reasoning, and teaching what one knows -- are essential dimensions of human knowledge.
+  These are as fundamental to the nature of intelligence as expert-level problem-solving, and they have changed our ideas about representation and about knowledge.
+  In order to make a decision with the help of an expert system, a human user must know more than just the facts of the system's recommendation.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0378
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,22 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0073
+note: |
+  You only have K at K6 and R at R1.
+  It is your move.
+  What do you play?
+  A: (After a pause of 15 seconds) R-R8 mate.
+  Note that if this dialog is with a machine, it is able to do faulty arithmetic (39457 + 7064 does not equal 105621) and play decent chess at the same time.
+  Having established his imitation game as the criterion for determining whether or not a machine is intelligent, and before proceeding to consider various objections to the idea of artificial intelligence, Turing explained his own beliefs in the matter: .
+  I believe that in about fifty years' time it will be possible to program computers, ... to make them play the imitation game so well that an average interrogator will not have more than 70 percent chance of making the right identification after five minutes of questioning.
+  The original question, "Can machines think?"
+  I believe to be too meaningless to deserve discussion.
+  Nevertheless I believe that at the end of the century the use of words and educated opinion will have altered so much that one will be able to speak of machines thinking without expecting it to be contradicted.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0073
+- Turing
+- Artificial Intelligence
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

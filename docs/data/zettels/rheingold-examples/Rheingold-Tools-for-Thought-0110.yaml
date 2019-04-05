@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0110
+note: |
+  The "Preliminary Report" expanded the means of distinguishing instructions from data by stating that computers would keep these two categories of information separate by operating during two different time cycles, as well.
+  All the instructions are executed according to a timing scheme based on the ticking of a built-in clock.
+  The "instruction" cycles and "execution" cycles alternate: On "tick," the machine's control unit interprets numbers brought to it as instructions, and prepares to execute the operations specified by the instructions on "tock," when the "execution" cycle begins and the control unit interprets input as data to operate upon.
+  The plan for this new category of general-purpose computer not only specified a timing scheme but set down what has become known as the "architecture" of the computer -- the division of logical functions among physical components.
+  The scheme had similarities to both Babbage's and Turing's models.
+  All such machines, the authors of the "Preliminary Report" declared, must have a unit where arithmetic and logical operations can be performed (the processing unit where actual calculation takes place, equivalent to Babbage's "mill"), a unit where instructions and data for the current problem can be stored (like Babbage's "store," a kind of temporary memory device), a unit that executes the instructions according to the specified sequential order (like the "read/write head" of Turing's theoretical machine), and a unit where the human operator can enter raw information or see the computed output (what we now call "input-output devices").
+  Any machine that adheres to these principles -- no matter what physical technology is used to implement these logical functions -- is an example of what has become known as "the von Neumann architecture."
+  It doesn't matter whether you build such a machine out of gears and springs, vacuum tubes, or transistors, as long as its operations follow this logical sequence.
+  This theoretical template was first implemented in the Unites States at the Institute for Advanced Study.
+  Modified copies of the IAS machine were made for the Rand Corporation, an Air Force spinoff "think tank" that was responsible for keeping track of targets for the nation's new but fast-growing nuclear armory, and for the Los Alamos Laboratory.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0110
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

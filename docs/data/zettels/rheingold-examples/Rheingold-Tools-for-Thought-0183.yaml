@@ -1,0 +1,32 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0183
+note: |
+  Time-sharing was to be the first, most important step in the transition from batch processing to the threshold of personal computing (i.e., one person to one machine).
+  The idea was to create computer systems capable of interacting with many programmers at the same time, instead of forcing them to wait in line with their cards or tapes.
+  Exploratory probes of the technologies that could make time-sharing possible had been funded by the Office of Naval Research and Air Force Office of Scientific Research before ARPA stepped in.
+  Licklider beefed up the support to the MIT Cambridge laboratory where AI researchers were working on their own approach to "multi-access computing."
+  Project MAC, as this branch became known, was the single node in the research network where AI and computer systems design were, for a few more years, cooperative rather than divergent.
+  MAC generated legends of its own, from the pioneering AI research of McCarthy, Minsky, Papert, Fredkin, and Weizenbaum, to the weird new breed of programmers who called themselves "hackers," who held late night sessions of "Spacewar" with a PDP-1 they had rigged to fly simulated rockets around an ocilloscope screen and shoot dots of light at one another.
+  MAC was one of the most important meeting grounds of both the AI prodigies of the 1970s and the software designers of the 1980s.
+  By the end of the ARPA-supported heyday, however, the AI people and the computer systems people were no longer on the same track.
+  One of Licklider's first moves in 1962-1963 was to set up an MIT and Bolt, Beranek and Newman group in Massachusetts to help Systems Development Corporation in Santa Monica in producing a transistorized version of the SAGE-based time-sharing prototypes, which were based on the old vacuum tube technology.
+  The first step was to get a machine to all the researchers that was itself interactive enough that it could be used to design more interactive versions -- the "bootstrapping" process that became the deliberate policy of Licklider and his successors.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0183
+- 1962 year
+- 1960s
+- 1960 decade
+- 1900 century
+- 1900s
+- 1963 year
+- 1970s
+- 1970 decade
+- 1980s
+- 1980 decade
+- 1900 century mid
+- 1900 century late
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

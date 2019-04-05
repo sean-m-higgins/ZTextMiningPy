@@ -1,0 +1,24 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0323
+note: |
+  Nearly a decade before keyboards and display screens became familiar appliances, these children were introduced to a device no child and only a few computer scientists had seen before -- an Alto computer set up to run Smalltalk.
+  By using the mouse and the graphics capabilities provided by the hardware and software, these students were able use Smalltalk to command the computer in much the same way that Papert's students in Cambridge, years before, had learned to program in LOGO by "teaching the turtle new words."
+  The screen was either a "very crisp high-resolution black-and-white CRT or a lower resolution high quality color display."
+  High-fidelity speakers and sound synthesizers, five-key keyboards like Engelbart's, and piano-like keyboards were also available.
+  The system could store the equivalent of 1500 pages of text and graphics, and the processor was capable of creating, editing, storing, and retrieving documents that consisted of words, graphic images, sounds, numbers, or combinations of all four symbol forms.
+  The mouse could be used to draw as well as to point, and an "iconic editor" (another Smalltalk innovation) used symbols that children who were too young to read could use to edit graphics; e.g., instead of typing in a command to invoke a graphics cursor, a child could point to a paintbrush icon.
+  The interim Dynabook could be used to read or write an old-fashioned book, complete with illustrations, but it could also do much more: "It need not be treated as a simulated paper book since this is a new medium with new properties.
+  A dynamic search may be made for a particular context.
+  The non-sequential nature of the file medium and the use of dynamic manipulation allows a story to have many accessible points of view; Durrell's Alexandria Quartet, for instance, could be one book in which the reader may pursue many paths through the narrative," wrote Kay and Goldberg.
+  The dynamic nature of the medium was made clear to the users as they became acquainted with the toolkit for drawing, editing, viewing, and communicating.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0323
+- 1500 year
+- 1500 century
+- 1500s
+- 1500 century early
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0053
+note: |
+  They are: Replace O with X.
+  Replace X with O.
+  Go one square to the right.
+  Go one square to the left.An example of an instruction is: "If there is an X on the active square replace it with O."
+  This instruction causes the machine to perform the second action listed above.
+  In order to create a "game," we need to make a list that specifies the number of the instruction that is being followed at every step as well as the number of the instruction that is to be followed next.
+  That is like saying "The machine is now following (for example) instruction seven, and the instruction to be followed next is (for example) instruction eight."
+  Here is a series of instructions, given in coded form and the more English-like translation.
+  Taken together, these instructions constitute an "instruction table" or a "program" that tells a Turing machine how to play a certain kind off game: 1X02 (Instruction #1: if an X is on the active square, replace it with O, then execute instruction #2.)
+  Note that if there is an O on the active square in instruction #1 or #7, or if there is an X on the active square in instruction #2, the machine will stop.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0053
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

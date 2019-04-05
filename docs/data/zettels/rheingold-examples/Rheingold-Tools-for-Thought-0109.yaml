@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0109
+note: |
+  One result of this was that a particular piece of data could be a variable -- like the x in algebra -- that could be changed independently by having the results of an operation stored at the appropriate address, or by telling the computer to perform an operation on whatever was found at that location.
+  One of the characteristics of any series of computation instructions is a reference to data: when the instructions tell the machine how to perform a calculation, they have to specify what data to plug into the calculation.
+  By making the reference to data a reference to the contents of a specific memory location, instead of a reference to a specific number, it became possible for the data to change during the course of a computation, according to the results of earlier steps.
+  It is in this way that the numbers stored in the memory can become symbolic of quantities other than just numerical value, in the same way that algebra enables one to manipulate symbols like x and y without specifying the values.
+  It is easier to visualize the logic of this schema if you think of the memory addresses as something akin to numbered cubbyholes or post-office boxes -- each address is nothing but a place to find a message.
+  The addresses serve as easily located containers for the (changeable) values (the "messages") to be found inside them.
+  Box #1, for example, might contain a number; box #2 might contain another number; box #3 might contain instructions for an arithmetic operation to be performed on the numbers found in boxes #1 and #2; box #4 might contain the operation specified in box #3.
+  The numbers in the first two boxes might be fixed numbers, or they might be variables, the values of which might depend on the result of other operations.
+  By putting both the instructions and the raw data inside the same memory, it became possible to perform computations much faster than with ENIAC, but it also became necessary to devise a way to clearly indicate to the machine that some specific addresses contain instructions and other addresses contain numbers for those instructions to operate on.
+  In the "First Draft," von Neumann specified that each instruction should be designated in the coding of a program by a number that begins with the digit 1, and each of the numbers (data) should begin with the digit 0.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0109
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

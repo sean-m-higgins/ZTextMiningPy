@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0364
+note: |
+  The problem is that the rules allow a very large number of "near misses" -- possible structures that almost, but not quite, fit all the data.
+  There appears to be a "complexity gap" when it comes to the task of sifting through all the near misses.
+  The far simpler computing processes that were used to discover simple structures are just not adequate for more complex structures.
+  DENDRAL was designed to find that one "structure in a haystack" that perfectly fit the spectrographic data and the rules of chemical bonds.
+  It turns out that you can't just feed all the known facts into a computer and expect to get a coherent answer.
+  That isn't the way human experts make decisions, and apparently that isn't the way you coax a computer into making a decision.
+  What you need is an "inference engine" to fit together the rules of the game, the body of previously known facts, the mass of new data, then venture a guess about what it all means.
+  Building the right kind of "if-then" program, one with enough flexibility to use the kind of rules of thumb that human experts employ, was only the first major problem to be solved.
+  Once you've created the program structure capable of manipulating expert knowledge, you still have to get some knowledge into the system.
+  After feeding the computer program lots of data about molecules, and rules about how they can be combined in molecular structures, the creators of DENDRAL interviewed expert chemists, trying to specify how the experts made their decisions about which combinations and structures are likely to be useful.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0364
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

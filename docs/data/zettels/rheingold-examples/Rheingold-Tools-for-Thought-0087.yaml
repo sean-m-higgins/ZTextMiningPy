@@ -1,0 +1,35 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0087
+note: |
+  This means that no matter how complicated mathematics (or any other equally powerful formal system) becomes, it can always be expressed in terms of operations to be performed on numbers, and the parts of the system (whether or not they are inherently numerical) can be manipulated by rules of counting and comparing.
+  Von Neumann's and Hilbert's third question about the decidability of mathematics led Turing to his 1936 breakthrough.
+  The "definite method" (of determining whether a mathematical assertion is provable) that was demanded by the decidability question was formulated by Alan Turing as a machine that could operate in definite steps on statements encoded as symbols on tape.
+  Gdel had shown how numbers could represent the operations of formal system, and Turing showed how the formal system could be described numerically to a machine equipped to decode such a description (e.g., translate the system's rules into the form "find a number n, such that .
+  All of these questions were terribly important at the time they were formulated -- to the few dozen people around the world who were equipped to understand their significance.
+  But in 1930, the rest of the population had more important things to worry about that the hypothetical machines of the metamathematicians.
+  Even those who understood that universal machines could in fact be built were in no position to begin such a task.
+  Making a digital computer was an engineering project that would require the kind of support that only a national government could afford.
+  John von Neumann was at the Institute for Advanced Study at Princeton by the time young Gdel and Turing came along.
+  Although he was keenly aware of the latest developments in the "foundation crisis of mathematics" he had helped initiate in the late 1920s, von Neumann's restless intellect was attacking half a dozen new problems by the early 1930s.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0087
+- 1920s
+- 1920 decade
+- 1900 century
+- 1900s
+- 1930 year
+- 1930 decade
+- 1930s
+- 1936 year
+- 1920 decade late
+- 1920s late
+- 1930 decade early
+- 1930s early
+- Turing
+- 1900 century early
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

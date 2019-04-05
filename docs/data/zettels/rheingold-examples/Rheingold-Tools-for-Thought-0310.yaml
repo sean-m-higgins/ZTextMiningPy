@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0310
+note: |
+  They start by "pretending to be the turtle" and trying to guess what the turtle would do in order to trace a square, a triangle, a circle, or a spiral.
+  Then they give the turtle a series of English-like commands, typed in through a keyboard, to "teach the turtle a new word."
+  If the procedure followed by the turtle in response to the typed commands doesn't achieve the desired graphic effect, the next step is to systematically track down the "bug" that is preventing success.
+  The fear of being wrong is replaced in this process by the immediate feedback of discovering powerful ideas on one's own.
+  After decades of research, Papert summarized the results of his LOGO work for a general audience in Mindstorms: Children, computers, and powerful ideas.
+  In this manifesto of what has grown into an international movement in both the educational and computing communities, Papert reiterated something important that is easy to lose in the complexities of the underlying technology -- that the purpose of any tool ought to be to help human beings become more human: In my vision the computer acts as a transitional object to mediate relationships that are ultimately between person and person.
+  I am talking about a revolution in ideas that is no more reducible to technologies than physics and molecular biology are reducible to the technological tools used in laboratories or poetry to the printing press.
+  In my vision, technology has two roles.
+  One is heuristic: The computer presence has catalyzed the emergence of ideas.
+  The other is instrumental: The computer will carry ideas into a world larger than the research centers where they have incubated up to now.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0310
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

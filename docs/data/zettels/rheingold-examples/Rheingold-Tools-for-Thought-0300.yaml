@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0300
+note: |
+  Part of the genius of Licklider and Bob Sproull was the way this moving around contributed to the growth of a community."
+  One of the people Evans managed to recruit for the Utah department who had an impact, not only on Alan Kay but on the entire course of personal computing was Ivan Sutherland, the graduate student and protg of Claude Shannon and J. C. R. Licklider who single-handedly created the field of computer graphics as a part of his MIT Ph.D. thesis -- the now legendary program known as "Sketchpad."
+  People like Alan Kay still get excited when they talk about Sketchpad: "Sketchpad had wonderful aspects, besides the fact that it was the first real computer graphics program.
+  It was not just a tool to draw things.
+  It was a program that obeyed laws that you wanted to be held true.
+  So to draw a square in Sketchpad, you drew a line with a lightpen and said: 'Copy-copy-copy, attach-attach-attach.
+  That angle is 90 degrees, and these four things are to be equal.'
+  Sketchpad would go zap!
+  Another computer prophet who saw the implications of Sketchpad and other heretofore esoteric wonders of personal computing was an irreverent, unorthodox, counterculture fellow by the name of Ted Nelson, who has long been in the habit of self-publishing quirky, cranky, amazingly accurate commentaries on the future of computing.
+  In The Home Computer Revolution Nelson had this to say about Sutherland's pioneering program, in a chapter entitled "The most important computer Program Ever Written": You could draw a picture on the screen with the lightpen -- and then file the picture away in the computer's memory.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0300
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

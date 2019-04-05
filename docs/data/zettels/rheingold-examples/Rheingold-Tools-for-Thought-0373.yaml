@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0373
+note: |
+  Interpreters cannot create programs that will run successfully on computers unless the programs are written perfectly, without a single minor error.
+  If a parenthesis is out of place, the interpreter simply stops operation and puts some spine-chilling message on the screen -- the infamous "Fatal Error" or the enigmatic "Syntax Error."
+  The communication between first-time BASIC programmers and the BASIC interpreter necessary to run their programs was the part of the system Avron Barr and his colleagues were trying to make easier and less frustrating to the human user: "Usually, interpreters return cryptic 'error messages' when they are fed a program with a bug in it," Barr explains.
+  In order to build an interpreter that not only is able to identify errors, but also can give beginning users hints about how to go about solving the problem, Avron had to go beyond the normal tricks of the programming trade and learn about some of the exotic new notions that were beginning to emerge from AI research.
+  This wasn't standard operating procedure for the vast majority of programmers: To most computer programmers, even scientific programmers, AI was esoteric hocus-pocus that a clique of obsessed academics did with a lot of money from the Defense Department.
+  When the intelligent interpreter project was finished, Barr entered the computer science department as a graduate student at Stanford, where he encountered Ed Fiegenbaum.
+  Although he had been working as a professional programmer, and he was surrounded by artificial intelligence types, and had even picked up a few tricks from AI hackers, this was Barr's first formal exposure to the field.
+  Feigenbaum had an idea about writing and editing a book.
+  Avron took on the task.
+  They thought they could produce a general handbook on AI by the end of the summer.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0373
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

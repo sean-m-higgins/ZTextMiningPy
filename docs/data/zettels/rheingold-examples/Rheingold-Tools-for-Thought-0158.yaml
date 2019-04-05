@@ -1,0 +1,27 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0158
+note: |
+  He estimated that a typical chess game has about 10^120 possible moves, so "A machine calculating one variation each millionth of a second would require over 10^95 years to decide on its first move!"
+  This "combinatorial explosion" -- the rapid and overwhelming buildup of alternatives in any system in which each level leads to two or more deeper levels -- was another one of those secrets of nature that Claude Shannon was in the habit of turning up.
+  The explosive expansion of the number of alternative decisions is a barrier that confronts any attempt to exhaustively examine a branching structure, and continues to confront programmers who seek to emulate cognitive functions by performing searches through problem spaces.
+  Turing and Shannon were altogether serious in their interest in chess, because of the complexity of the game in relation to the simplicity of its rules, and because they suspected that the shortcut needed to perform this kind of time-consuming search-procedure would also be a clue to the way brains solved all sorts of problems.
+  A chess playing program was also interesting because it was a relative of the kind of informational entities known as automata that von Neumann and Turing had been toying with.
+  Once again, like Turing's universal machines, these automata were theoretical devices that did not exist at that time, but were possible to build, in principle.
+  For years, Shannon experimented with almost absurdly simple homemade versions -- mechanical mice that were able to navigate simple mazes.
+  In 1953, Shannon wrote a paper, "Computers and Automata," in which he posed questions that continue to be of acute interest to psychologists as well as computerists.
+  Can a chess playing computer learn form its mistakes?
+  Is it possible to build a machine that can diagnose itself and repair its own malfunctions?
+tags:
+- Core Text
+- Computing History
+- Rheingold 0158
+- 1953 year
+- 1950s
+- 1950 decade
+- 1900 century
+- 1900s
+- Turing
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

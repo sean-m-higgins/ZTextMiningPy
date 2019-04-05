@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0051
+note: |
+  He decided that mental calculations consist of operations for transforming the input numbers into a series of intermediate states which progress from one to the next according to a fixed set of rules, until an answer is found.
+  Sometimes, people use pencil and paper to keep track of the states of their calculations.
+  The rules of mathematics require more rigid definitions than those provided by the fussily described human states of mind discussed by metaphysicians, so Turing concentrated on defining these states in a way that was so clear and unambiguous that the description could be used to command the operations of a machine.
+  Turing started with a precise description of a formal system, in the form of "instruction tables" describing which moves to make for every possible configuration of states in the system.
+  He then proved that the description of these instructions, the steps of formal axiomatic system like logic, and the machine states that make up the "moves" in an automatic formal system are all equivalent to one another.
+  Such matters as formal systems and Turing machines sound very far away from what computers actually do, but in fact they underlie the entire technology of digital computers -- which wasn't to come into existence until over a decade after Alan Turing published his epochal paper.
+  The process of computation was graphically depicted in Turing's paper when he asked the reader to consider a device that can read and write simple symbols on a paper tape that is divided into squares.
+  The "reading/writing head" can move in either direction along the tape, one square at a time, and a control unit that directs the actions of the head can interpret simple instructions about reading and writing symbols in squares.
+  The single square that is "scanned" or "read" at each stage is known as the active square.
+  Imagine that new sections can be added at either end of the existing tape, so it is potentially infinite.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0051
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

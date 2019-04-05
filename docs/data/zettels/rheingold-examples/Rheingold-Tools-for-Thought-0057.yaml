@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0057
+note: |
+  Turing and his colleagues ended the long search for a logically certain basis underlying formal systems by making the shocking discovery that there are a number of important features about formal systems about which we can never be certain.
+  Formal systems, by their very nature, have certain inherent limitations.
+  At this point, the theory of computation became something more than an important branch of metamathematics, as the properties of formal systems faded into the background and the properties of machines emerged in a wholly unexpected and dramatic manner -- because at the same time that Turing put a limit on the capabilities of formal systems, he showed that there is indeed such a thing as a universal formal system.
+  And that is what a computer is, in the most basic sense.
+  The way the universal Turing machine imitates other Turing machines is as automatic as the way our doubling machine multiplies the input by two.
+  Assuming that the control unit of the device is capable of interpreting simple instructions -- something that had been a matter for toolmakers, not mathematicians since Babbage's time -- it is possible to encode a more complex list of instructions describing various Turing machines and put them onto the input tape, along with the starting position.
+  Just as the instructions followed by the machine can be stated in English (or German or French, etc.
+  A code can be devised, using the same Xs and Os, that can uniquely represent every instruction and instruction table (program).
+  Both the instructions and the data can be put onto the same tape.
+  A universal Turing machine can then scan that coded tape and perform the function specified in the code (doubling the number on the data portion of the tape, in our example).
+tags:
+- Core Text
+- Computing History
+- Rheingold 0057
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,6 +1,5 @@
 import numpy as np
 import re
-from nltk.corpus import stopwords
 
 
 class ZettelPreProcessor:
@@ -12,39 +11,49 @@ class ZettelPreProcessor:
 	def tokenizer(self):
 		tokens = []
 		for zettel in ZettelPreProcessor.zettels:
-			list = re.split("\W+", zettel.lower())
-			for token in list:
+			new_list = re.split('\W+', str(zettel).lower())
+			for token in new_list:
 				tokens.append(token)
+		tokens = list(filter(None, tokens))
 		return tokens
 
 	def create_unique_corpus(self, tokens):
-		return np.unique(tokens)
+		unique = []
+		for word in tokens:
+			if word not in unique:
+				unique.append(word)
+		unique = list(filter(None, unique))
+		unique.sort()
+		return unique
 
 	def create_unique_tag_corpus(self, tokens):
 		unique_tag_corpus = []
 		lock = 0
 		for word in tokens:
-			if word == "tags":
+			if word == "ntags": #TODO
 				lock = 1
 				continue
-			if word == "cite":
+			if word == "ncite": #TODO
 				lock = 0
 			while lock == 1:
-				unique_tag_corpus.append(word)
+				if word not in unique_tag_corpus:
+					unique_tag_corpus.append(word)
 				break
-		return np.unique(unique_tag_corpus)
+		unique_tag_corpus = list(filter(None, unique_tag_corpus))
+		unique_tag_corpus.sort()
+		return unique_tag_corpus
 
 	def create_count_matrix(self, unique_corpus):
 		count_matrix = []
 		for zettel in ZettelPreProcessor.zettels:
-			count = ZettelPreProcessor.get_word_count(ZettelPreProcessor, zettel, unique_corpus)
+			count = ZettelPreProcessor.get_word_count(self, zettel, unique_corpus)
 			count_matrix.append(count)
 		return count_matrix
 
 	def get_word_count(self, zettel, unique_corpus):
 		new_unique_corpus = unique_corpus
-		count = np.zeros(new_unique_corpus.size)
-		split_zettel = re.split("\W+", zettel.lower())
+		count = np.zeros(len(new_unique_corpus))
+		split_zettel = re.split("\W+", str(zettel).lower())
 		for word in split_zettel:
 			new_iter = iter(unique_corpus)
 			i = 0
@@ -52,7 +61,7 @@ class ZettelPreProcessor:
 				if word == new_word:
 					count[i] = 1
 				i += 1
-		return count
+		return count.tolist()
 
 	def create_boolean_tag_matrix(self, unique_tags):
 		unique_tag_count_matrix = ZettelPreProcessor.create_count_matrix(self, unique_tags)
@@ -73,12 +82,23 @@ class ZettelPreProcessor:
 			n_gram.append(tokens[i:i+n])
 		return n_gram
 
+	def get_stop_words(self):
+		stopwords = "/Users/SeanHiggins/ZTextMiningPy/docs/data/processedData/stopWords/sparkStopWords.txt"
+		file = open(stopwords, "r")
+		contents = file.read()
+		return contents
+
 	def remove_stop_words(self, tokens):
 		filtered_words = []
+		stopwords = ZettelPreProcessor.get_stop_words(self)
 		for word in tokens:
-			if word in set(stopwords.words("english")):
+			if word in stopwords:
 				continue
 			else:
 				filtered_words.append(word)
 		filter(None, filtered_words)
 		return filtered_words
+
+	# TODO def stemmer:
+
+	# TODO def lematizer:

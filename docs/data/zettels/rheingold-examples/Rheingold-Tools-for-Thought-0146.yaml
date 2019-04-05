@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0146
+note: |
+  If this linkage of such disparate ideas as "heat," "average motion," and "order of a system" sounds confusing, you have a good idea of how nineteenth-century physicists felt.
+  For a long time, they thought that heat was some kind of invisible fluid that was transferred from one object to another.
+  When it was discovered that heat is way of characterizing a substance in which the molecules were, on the average, moving around faster than the molecules in a "cold" substance, a new way of looking at systems consisting of large numbers of parts (molecules, in this case) came into being.
+  And this new way of looking at the way the parts of systems are arranged led, eventually, to the entropy-information connection.
+  Because "average motion" of molecules is a statistical measure, saying something about the amount of heat in a system says something about they way the parts of that system are arranged.
+  Think about a container of gas.
+  The system in this case includes everything inside the container and everything outside the container.
+  The gas is considered to be hot if the average energy of the molecules inside the container is higher than the average energy of the molecules outside the container.
+  Some of the molecules inside the container might, in fact, be less energetic (cooler) than some of the molecules outside the container -- but on the average, the population of molecules inside are more energetic than the population of the molecules outside.
+  There is a certain order to this arrangement -- energetic molecules are more likely to be found inside the container, less energetic molecules are more likely to be found outside.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0146
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0045
+note: |
+  But there were two World Wars ahead, and several more thinkers--the most extraordinary of them all--still to come before a manufacturer of tabulating machines and punch cards would have anything to do with true computers.
+  The modern-day concerns of this company--selling machines to keep track of the information that goes along with doing business--would have to wait for some deadly serious business to be transacted.
+  The War Department, not the Census Office or a business machine company, was the mother of the digital computer, and the midwives were many--from Alan Turing's British team who needed a special kind of computing device to crack the German code, to John von Neumann's mathematicians at Los Alamos who were faced with the almost insurmountable calculations involved in making the atomic bomb, to Norbert Weiner's researchers who were inventing better and faster ways to aim antiaircraft fire, to the project of the Army Ballistic Research Laboratory that produced the Electronic Numerical Integrator and Calculator (ENIAC).
+  It would be foolish to speculate about what computers might become in the near future without realizing where they originated in the recent past.
+  The historical record is clear and indisputable on this point: ballistics begat cybernetics.
+  ENIAC, the first electronic digital computer, was originally built in order to calculate ballistic firing tables.
+  When ENIAC's inventors later designed the first miniature computer, it was the BINAC, a device small enough to fit in the nose cone of an ICBM and smart enough to navigate by the position of the stars.
+  Although the first electronic digital computer was constructed in order to produce more accurate weapons, the technology would not have been possible without at least one important theoretical breakthrough that had nothing to do with ballistics or bombs.
+  The theoretical origins of computation are to be found, not in the search for more efficient weaponry, but in the quest for more powerful and elegant symbol systems.
+  The first modern computer was not a machine.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0045
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

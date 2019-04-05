@@ -1,0 +1,22 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0076
+note: |
+  The computer age might have been delayed for decades longer if World War II had not provided top-notch engineering teams, virtually unlimited funds, and the will to apply scientific findings to real-world problems at the exact point in the history of mathematics when the theory of computation made computers possible.
+  While the idea undoubtedly would have resonated in later minds, the development of the computer was an inevitable engineering step once Turing explained computation.
+  When an equally, perhaps even more gifted thinker happened upon the same ideas Turing had been pursuing, it was no accident of history that Turing's theoretical insights were converted to workable machinery.
+  A theory of computation is one very important step -- but you simply cannot perform very sophisticated computations in a decently short interval if you are restricted to a box that chugs along a tape, erasing Os and writing Xs.
+  The next step in both software and hardware history was precipitated by the thinking of another unique, probably indispensable figure in the history of programming -- John von Neumann.
+  Turing had worked with von Neumann before the war, at Princeton's Institute for Advanced Study.
+  Von Neumann wanted the young genius to stay on with him, as his protg and assistant, but Turing returned to Cambridge.
+  Von Neumann's profound understanding of the implications of Turing's work later became a significant factor in the convergence of different lines of research that led to the invention of the first digital computers.
+  It isn't often that the human race produces a polymath like von Neumann, then sets him to work in the middle of the biggest crisis in human history.
+  Von Neumann was far more than an embellisher of Turing's ideas -- he built the bridge between the abstractions of mathematicians and the practical concerns of the people who were trying to create the first generation of electronic computers.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0076
+- Second World War
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

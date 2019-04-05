@@ -1,0 +1,33 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0204
+note: |
+  His creation of a program that gave the illusion of a wise, all-knowing, computerized psychiatrist -- and his shock at seeing how willingly even his computer-sophisticated colleagues were taken in by the illusion -- triggered Weizenbaum's dissension.
+  Weizenbaum started out at MIT with what he thought would be an abstract interest in programs that used simple programming tricks to answer questions posed in English.
+  He put together a working version that the hackers had fun with, and which seemed to be a step, albeit a very primitive first step, toward a genuine language-understanding program.
+  The hackers enjoyed the pretense that they were "conversing" with a computer, even though they knew that the program was parsing very simple sentences with no real underlying understanding of their meaning.
+  While he was working on a more elaborate question-answering program, with greater sentence-parsing capabilities than his first version, Weizenbaum met a psychiatrist from Stanford named Kenneth Colby, who was interested in using computers to model mental states and mental disorders in order to find clues to more effective forms of psychotherapy.
+  Colby helped Weizenbaum create a special-case version of ELIZA, known as DOCTOR.
+  In the introduction of his 1976 book, Weizenbaum described how this most successful and disturbing version of ELIZA came into being, and conveyed a little of the flavor of the "ELIZA effect": The work was done in the period 1964-1966, and it was reported in the computer-science literature in January 1966 and August 1967.
+  To summarize it briefly, I composed a computer program with which one could "converse" in English.
+  The human conversationalist partner would type his portion of the conversation on a typewriter connected to a computer, and the computer, under control of my program, would analyze the message that had been transmitted to it, compose a response to it in English, and cause the response to be typed on the computer's typewriter.
+  I chose the name ELIZA for the language analysis program because, like the Eliza of Pygmalion fame, it could be taught to "speak" increasingly well.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0204
+- 1964 year
+- 1960s
+- 1960 decade
+- 1900 century
+- 1900s
+- 1966 year
+- 1967 year
+- 1976 year
+- 1970s
+- 1970 decade
+- Abstraction
+- 1900 century mid
+- 1900 century late
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

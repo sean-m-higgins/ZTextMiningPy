@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0069
+note: |
+  His public talks and private conversations indicated a strong belief that the cost of electronic technology would drop while its power as a medium for computation would increase in the coming decades.
+  He also believed that the capabilities of these devices would quickly extend beyond their original purposes.
+  Programs for doubling numbers or extracting square roots or breaking codes are handy tools, but Turing was aware that calculation was only one of the kinds of formal systems that could be imitated by a computational device.
+  In particular, he saw how the simple "instruction tables" of his theoretical machines could become elements of a powerful grammar that the machines could use to modify their own operations.
+  One innovation of Turing's stemmed from the fact that computers based on Boolean logic operate only on input that is in the form of binary numbers (i.e., numbers expressed in powers of two, using only two symbols), while humans are used to writing numbers in the decimal system (in which numbers are expressed in powers of ten, using ten symbols.
+  Turing was involved in the writing of instruction tables that automatically converted human-written decimals to machine-readable binary digits.
+  If basic operations like addition, multiplication, and decimal-to-binary conversion could be fed to the machine in terms of instruction tables, Turing saw that it would be possible to build up heirarchies of such tables.
+  The programmer would no longer have to worry about writing each and every operational instruction, step by repetitive step, and would thus be freed to write programs for more complex operations.
+  Turing wrote a proposal shortly after the end of the war in which he discussed both the hardware and "coding" principles of his long-hypothetical machines.
+  He foresaw that the creation of these instruction tables would become particularly critical parts of the entire process, for he recognized that the ultimate capabilities of computers would not always be strictly limited by engineering considerations, but by considerations of what was not yet known as "software."
+tags:
+- Core Text
+- Computing History
+- Rheingold 0069
+- Turing
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

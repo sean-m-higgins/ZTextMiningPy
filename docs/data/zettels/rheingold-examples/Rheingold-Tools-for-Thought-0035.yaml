@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0035
+note: |
+  Although he had only recently begun to study mathematics, the teenage George Boole suddenly saw a way to capture some of the power of human reason in the form of an algebra.
+  And Boole's equations actually worked when they were applied to logical problems.
+  But there was a problem, and it wasn't in Boole's concept.
+  The problem, at the time, was that nobody cared.
+  Partly because he was from the wrong social class, and partly because most mathematicians of his time knew very little about logic, Boole's eventual articulation of this insight didn't cause much commotion when he published it.
+  His revelation was largely ignored for generations after his death.
+  When the different parts of computer technology converged unexpectedly a hundred years later, electrical engineers needed mathematical tools to make sense of the complicated machinery they were inventing.
+  The networks of switches they created were electrical circuits whose behavior could be described and predicted by precise equations.
+  Because patterns of electrical pulses were now used to enclose logical operations like "and," "or," and the all important "if," as well as the calculator's usual fare of "plus," "minus," "multiply," and "divide," there arose a need for equations to describe the logical properties of computer circuits.
+  Ideally, the same set of mathematical tools would work for both electrical and logical operations.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0035
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

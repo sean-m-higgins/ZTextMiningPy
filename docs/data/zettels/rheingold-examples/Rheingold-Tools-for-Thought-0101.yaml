@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0101
+note: |
+  This electronic routing was the materialization of the machine's instructions for transforming the input data into the solution.
+  Many different kinds of equations could be solved, and the performance of a calculation could be altered by the outcome of subproblems, but ENIAC was nowhere near as flexible as Babbage's Analytical Engine, which could be reprogrammed to solve a different set of equations, not by altering the machine itself, but by altering the sequence of input cards.
+  What Mauchly and Eckert gained in calculating power and speed, they paid for in overall flexibility.
+  The gargantuan electronic machine had to be set up for solving each separate problem by changing the configuration of a huge telephone-like switchboard, a procedure that could take days.
+  The origins of the device as a ballistics project were partially responsible for this inflexibility.
+  It was not the intention of the Moore School engineers to build a universal machine.
+  Their contract quite clearly specified that they create an altogether new kind of trajectory calculator.
+  Especially after von Neumann joined the team, they realized that what they were constructing would not only become the ultimate mathematical calculator, but the first, necessarily imperfect prototype of a whole new category of machine.
+  Before ENIAC was completed, its designers were already planning a successor.
+  Von Neumann, especially, began to realize that what they were talking about was a general-purpose machine, one that was by its nature particularly well suited to function as an extension of the human mind.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0101
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

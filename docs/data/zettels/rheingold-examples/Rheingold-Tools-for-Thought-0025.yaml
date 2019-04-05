@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0025
+note: |
+  The four subassemblies of the Analytical Engine functioned very much like analogous units in modern computing machinery.
+  The mill was the analog of the central processing unit of a digital computer and the store was the memory device.
+  Twentieth-century programmers would recognize the printer as a standard output device.
+  It was the input device and the control unit, however, that made it possible to move beyond calculation toward true computation.
+  The input portion of the Analytical Engine was an important milestone in the history of programming.
+  Babbage borrowed the idea of punched-card programming from the French inventor Jacquard, who had triggered a revolution on the textile industry by inventing a mechanical method of weaving patterns in cloth.
+  The weaving machines used arrays of metal rods to automatically pull threads into position.
+  To create patterns, Jacquard's device interposed a stiff card, with holes punched in it, between the rods and the threads.
+  The card was designed to block some of the rods from reaching the thread on each pass; the holes in the card allowed only certain rods to carry threads into the loom.
+  Each time the shuttle was thrown, a new card would appear in the path of the rods.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0025
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

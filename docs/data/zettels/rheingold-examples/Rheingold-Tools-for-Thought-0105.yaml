@@ -1,0 +1,32 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0105
+note: |
+  What used to be a complex configuration of switchboard settings could be symbolized by the programmer in the form of a number and read by the computer as the location of an instruction stored in memory, an instruction that would automatically be applied to specified data that was also stored in memory.
+  This meant that the program could call up other programs, and even modify other programs, without intervention by the human operator.
+  Suddenly, with this simple change, true information processing became possible.
+  This is the kernel of the concept of stored programming, and although the ENIAC team was officially the first to describe an electronic computing device in such terms, it should be noted that the abstract version of exactly the same idea was proposed in Alan Turing's 1936 paper in the form of the single tape of the universal Turing machine.
+  And at the same time the Pennsylvania group was putting together the EDVAC report, Turing was thinking again about the concept of stored programs: So the spring of 1945 saw the ENIAC team on one hand, and Alan Turing on the other, arrive naturally at the idea of constructing a universal machine with a single "tape."
+  But when Alan Turing spoke of "building a brain," he was working and thinking alone in his spare time, pottering around in a British back garden shed with a few pieces of equipment grudgingly conceded by the secret service.
+  He was not being asked to provide the solution to numerical problems such as those von Neumann was engaged upon; he had been thinking for himself.
+  He had simply put together things that no one had put together before: his one tape universal Turing machine, the knowledge that large scale pulse technology could work, and the experience of turning cryptanalytic thought into "definite methods" and "mechanical processes."
+  Since 1939 he had been concerned with little but symbols, states, and instruction tables -- and with the problem of embodying these as effectively as possible in concrete forms.
+  With the EDVAC design, ballistics calculators took the first step toward general-purpose computers, and it became clear to a few people that such devices would surely evolve into something far more powerful.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0105
+- 1936 year
+- 1930 decade
+- 1900 century
+- 1930s
+- 1900s
+- 1939 year
+- 1945 year
+- 1940s
+- 1940 decade
+- Abstraction
+- Turing
+- 1900 century mid
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,21 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0367
+note: |
+  MYCIN's inference engine (the part of the program that makes decisions by applying general rules to scientific specific data), known as E-MYCIN, was used by researchers at Stanford and Pacific Medical Center to produce PUFF, an expert system that assists in diagnosing certain lung disorders.
+  An even newer system, CADUCEUS (formerly known as INTERNIST), uses AI techniques to simulate the diagnostic skills of a specific human physician -- Dr. Jack Meyers of the School of Medicine at the University of Pittsburgh.
+  Meyers and his partner, Harry Pople, Jr., a Carnagie-Mellon-trained AI expert, have been storing parts of Meyers' problem-solving style and his knowledge about the entire range of medicine, along with an impressive body of information from the medical literature.
+  CADUCEUS is not yet complete, but it can already perform creditably when it is submitted difficult cases from the medical journals.
+  People told Katherine Fishman, the author of The Computer Establishment, that their object is to provide "something the physician would use instead of going to the library or consulting a specialist.
+  There aren't that many experts available, even at major centers."
+  Among the sponsoring agencies who have shown interest in CADUCEUS are NASA, which has an obvious need for such a medical helper in manned space missions, and The Navy, which could use something similar for nuclear submarines.
+  Special gear for astronauts and nuclear submariners might sound remote from most people's daily lives, but in recent history, the transistor radio, handheld calculators, and many other examples of new technologies have traveled from the exotic confines of NASA to the breast pockets of teenagers around the world in less than ten years.
+  Like the creators of previous technological advances, knowledge engineers first had to prove that expert systems could be built at all and that they were useful.
+  That took about ten years.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0367
+- NASA
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

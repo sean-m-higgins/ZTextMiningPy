@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0148
+note: |
+  With a little bit of thought, anybody can predict which card is the fifth from the top of the deck.
+  The predictability and orderliness disappears when the deck is shuffled.
+  An unshuffled deck of cards has a lower degree of entropy because energy went into arranging it in an unlikely manner.
+  Less energy is then required to put the deck into a more probable, less orderly, less predictable, more highly entropic state: According to the second law of thermodynamics, all decks of cards in the universe will eventually be shuffled, just as all molecules will have an equal amount of energy.
+  James Clerk Maxwell, yet another nineteenth-century scientist, proposed a paradox concerning this elusive quality called entropy, which seems to relate such intuitively dissimilar measures as energy, information, order, and predictability.
+  The paradox became infamous among physicists under the name "Maxwell's demon."
+  Consider a container split by a barrier with an opening small enough to pass only one molecule at a time from one side to another.
+  On one side is a volume of hot gas, in which the average energy of the molecules is higher than the average energy of the molecules in the cold side of the container.
+  According to the second law, the hotter, more active molecules should eventually migrate to the other side of the container, losing energy in collisions with slower moving molecules, until both sides reach the same temperature.
+  What would happen, Maxwell asked, if you could place a tiny imp at the molecular gate, a demon who didn't contribute energy to the system, but who could open and close the gate between the two sides of the container?
+tags:
+- Core Text
+- Computing History
+- Rheingold 0148
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0111
+note: |
+  Against von Neumann's mild objections, the Rand machine was dubbed JOHNNIAC.
+  The Los Alamos machine assigned to nuclear weapons-related calculations was given the strangely uneuphemistic name of MANIAC.
+  British computer builders, who had been pursuing parallel research and who were aware of Von Neumann's ideas, beat the Americans when it came to constructing a machine based on the logical principles enunciated by von Neumann.
+  The first machine that was binary, serial, and used stored-program memory was EDSAC -- the Electronic Delay Storage Automatic Calculator, built at the University Mathematical Laboratory, University of Cambridge, England.)
+  In a von Neumann machine, the arithmetic and logic unit is where the basic operations of the system are wired in.
+  All the other instructions are constructed out of these fundamentals.
+  It is possible, in principle, to build a device of this type with very few, extremely simple, built-in operations.
+  Addition, for example, could be performed over and over again whenever a multiplication operation is requested by a program.
+  In fact, the only two operations that are absolutely necessary are "not" and "and."
+  The problem with using a few very simple hardwired operations and proportionally complex software structures built from them is that it slows down the operation of the computer: Because instructions are executed one at a time ("serially") as the internal clock ticks, the number of basic instructions in a program dictates how long it takes a computer to run that program.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0111
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0277
+note: |
+  Through long distance common-carrier communications, these "interface message processors" (known eventually as "imps") and their local multiaccess computer communities could be integrated into a kind of supercommunity.
+  The imps would take care of all the behind-the-scenes traffic controlling and error-checking functions needed to ensure accurate transmission of data -- a significant task in itself -- so the individual users wouldn't have to worry about whether the files they want to read or the programs they need to use are a thousand miles away or down the hall.
+  The resulting communication system became part of a new kind of computing system that was not confined to any single computer.
+  Teams of ARPA-supported scientists found that they could invoke the use of a program residing in a computer located in Berkeley, California, feed the program with data stored in Los Angeles, then display the result in Cambridge, Massachusetts.
+  The network was suddenly more important than the individual computers, as the computers became "nodes" in a geographically distributed supercomputer.
+  It began to be possible to think of a computer network that was not centrally controlled from any one place, in which the traffic control and data communication and behind-the-scenes number crunching required were invested in the software instead of the hardware.
+  Instead of a huge host computer in the center of it all that received a stream of information from one computer, translated the stream into a form that could be decoded by another computer, and relayed the translated information to the receiving computer, the smaller imps at each node would accept and pass along information packets that had been translated into a common format by the imp connected to the originating computer.
+  The controlling agent in a "packet switched" network like the ARPAnet was not connected to a central computer somewhere, nor even the "message processors" that mediated between the computers, but the packets of information, the messages themselves.
+  Like the addresses on letters, the code by which information was packaged for transmission put into each packet all the information necessary for getting the message from origin to destination, and for translating between different kinds of computers and computer languages.
+  While the networking technology was evolving rapidly the number of computer terminals proliferated and the accepted way of using computers was beginning to change.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0277
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+

@@ -1,0 +1,20 @@
+title: 01.01.09-Rheingold-Tools-for-Thought-0384
+note: |
+  Thus, technological inventions change as they are applied to people's needs, and the activities that people undertake change with the availability of new technologies.
+  And as people in industry try to push the new technology toward some profitable niche, they will also explore the nature of the underlying phenomena.
+  Of course, it is not just the scientists and engineers who developed the new technology who are involved in this exploration: Half the job involves finding out what the new capabilities can do for people.
+  In order to build an expert system, a knowledge engineer needs to encode the rules a human expert uses to make decisions about problems in a specific field, then connect those decision rules with a large collection of facts about that field.
+  The human expert is asked to test the software model.
+  If the human expert disagrees with the system's suggested solution to a problem, then the human asks the system to reconstruct the chain of rules and facts that led to its decision.
+  By pinpointing the places where the program went wrong, the human expert and the knowledge engineer turn their rough mock-up into a working expert system by a process of progressive debugging.
+  Eventually, they end up with a program that will agree with the human expert a very high proportion of the time.
+  Consensus comes in when you ask a second expert to evaluate the system.
+  In real life, human experts disagree with one another, even at the highest levels of expertise.
+tags:
+- Core Text
+- Computing History
+- Rheingold 0384
+cite:
+  bibkey: Rheingold_ToolsThoughtHistory_2000
+  page: PDF eBook
+
