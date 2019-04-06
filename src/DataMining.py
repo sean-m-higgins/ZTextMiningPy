@@ -48,7 +48,10 @@ class DataMining:
     minkowsky = distance.calculate_distances(count_matrix, 2)
     cosine = distance.calculate_distances(count_matrix, 3)
     jaccard = distance.calculate_distances(count_matrix, 4)
-    tf_idf = distance.calculate_distances(count_matrix, 5)
+    tf_idf = distance.tf_idf(zettels, tokens, count_dictionary, doc_count_dictionary) #TODO
+
+    for row in tf_idf:
+        print(row)
 
     euclidean_distance_matrix = distance.create_distance_matrix(euclidean)
     manhattan_distance_matrix = distance.create_distance_matrix(manhattan)
@@ -56,6 +59,10 @@ class DataMining:
     cosine_distance_matrix = distance.create_distance_matrix(cosine)
     jaccard_distance_matrix = distance.create_distance_matrix(jaccard)
     tf_idf_distance_matrix = distance.create_distance_matrix(tf_idf)
+
+    for row in tf_idf_distance_matrix:
+        print("\n")
+        print(row)
 
     cluster = Cluster.Cluster()
 

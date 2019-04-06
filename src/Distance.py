@@ -22,7 +22,6 @@ class Distance:
             2: Distance.minkowsky_distance(self, rows[0], rows[1], 3),
             3: Distance.cosine_distance(self, rows[0], rows[1]),
             4: Distance.jaccard_similarity(self, rows[0], rows[1]),
-            5: Distance.tf_idf(self, rows[0], rows[1]),
         }
         return switch.get(n)
 
