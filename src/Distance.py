@@ -22,6 +22,7 @@ class Distance:
             2: Distance.minkowsky_distance(self, rows[0], rows[1], 3),
             3: Distance.cosine_distance(self, rows[0], rows[1]),
             4: Distance.jaccard_similarity(self, rows[0], rows[1]),
+            5: Distance.tf_idf(self, rows[0], rows[1]),
         }
         return switch.get(n)
 
@@ -66,6 +67,20 @@ class Distance:
         union = (len(row_one) + len(row_two)) - intersection
         return intersection/float(union)
 
-    #TODO TF-IDF
-
+    def tf_idf(self, zettels, tokens, count_dict, doc_count_dict):
+        """ tf_idf = tf * idf """
+        tf_idf = []
+        total_words = len(tokens)
+        total_docs = len(zettels)
+        for zettel in zettels:
+            new_tf_idf = []
+            for word in tokens:
+                # tf = (count of given word) / (total number of words)
+                tf = count_dict[word] / total_words
+                # idf = (total number of documents / (number of documents containing word)
+                idf = total_docs / doc_count_dict[word]
+                tf_idf_value = tf * idf
+                new_tf_idf.append(tf_idf_value)
+            tf_idf.append(new_tf_idf)
+        return tf_idf
 

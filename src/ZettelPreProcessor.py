@@ -1,5 +1,9 @@
 import numpy as np
 import re
+import nltk
+from nltk.stem.porter import PorterStemmer
+from nltk.stem.lancaster import LancasterStemmer
+from nltk.stem import SnowballStemmer, WordNetLemmatizer
 
 
 class ZettelPreProcessor:
@@ -30,10 +34,10 @@ class ZettelPreProcessor:
 		unique_tag_corpus = []
 		lock = 0
 		for word in tokens:
-			if word == "ntags": #TODO
+			if word == "tags":
 				lock = 1
 				continue
-			if word == "ncite": #TODO
+			if word == "cite":
 				lock = 0
 			while lock == 1:
 				if word not in unique_tag_corpus:
@@ -59,7 +63,7 @@ class ZettelPreProcessor:
 			i = 0
 			for new_word in new_iter:
 				if word == new_word:
-					count[i] = 1
+					count[i] = count[i] + 1
 				i += 1
 		return count.tolist()
 
@@ -99,6 +103,66 @@ class ZettelPreProcessor:
 		filter(None, filtered_words)
 		return filtered_words
 
-	# TODO def stemmer:
+	def stemmer(self, tokens, stemmer_type):
+		switch = {
+			'porter': PorterStemmer(),
+			'lancaster': LancasterStemmer(),
+			'snowball': SnowballStemmer('english'),
+		}
+		stemmer = switch.get(stemmer_type)
+		new_tokens = []
+		for word in tokens:
+			new_tokens.append(stemmer.stem(word))
+		return new_tokens
 
-	# TODO def lematizer:
+	def pos_tagger(self, tokens):
+		tags = nltk.pos_tag(tokens)
+		new_tags = []
+		for pair in tags:
+			if pair[1].startswith('J'):
+				new_tags.append([pair[0], 'a'])
+			elif pair[1].startswith('V'):
+				new_tags.append([pair[0], 'v'])
+			elif pair[1].startswith('N'):
+				new_tags.append([pair[0], 'n'])
+			elif pair[1].startswith('R'):
+				new_tags.append([pair[0], 'r'])
+		return new_tags
+
+	def lematizer(self, tokens_pos):
+		new_tokens = []
+		lemmatizer = WordNetLemmatizer()
+		for word in tokens_pos:
+			new_tokens.append(lemmatizer.lemmatize(word[0], word[1]))
+		return new_tokens
+
+	def create_count_dictionary(self, tokens):
+		word_dict = {}
+		for word in tokens:
+			if word in word_dict:
+				word_dict[word] += 1
+			else:
+				word_dict[word] = 1
+		return word_dict
+
+	def create_doc_count_dictionary(self, tokens):
+		doc_count_dict = {}
+		for zettel in ZettelPreProcessor.zettels:
+			cur_zettel = re.split('\W+', str(zettel).lower())
+			z_dict = {key: 1 for key in cur_zettel}
+			word_dict = {}
+			for word in tokens:
+				#if word was already found in current zettel... break
+				if word in word_dict:
+					continue
+				# if word is in current zettel...
+				if word in z_dict:
+					if word in doc_count_dict:
+						doc_count_dict[word] += 1
+						word_dict[word] = 1
+					else:
+						doc_count_dict[word] = 1
+						word_dict[word] = 1
+		return doc_count_dict
+
+
