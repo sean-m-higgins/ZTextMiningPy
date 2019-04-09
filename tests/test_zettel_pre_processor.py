@@ -22,8 +22,10 @@ class Test(unittest.TestCase):
     pos_tokens = process.pos_tagger(tokens)
     lemmatized = process.lematizer(pos_tokens)
     stemmed = process.stemmer(tokens, 'lancaster')
+
+    lemmatized_tokens = process.process_zettels()
     count_dict = process.create_count_dictionary(tokens)
-    doc_count_dict = process.create_doc_count_dictionary(tokens)
+    doc_count_dict = process.create_doc_count_dictionary(lemmatized_tokens)
 
     def test_tokenizer(self):
         expected = ['this',	'is', 'a', 'test', 'sentence', 'for', 'data', 'mining', 'zettels', 'zettels', 'zettels',

@@ -65,7 +65,7 @@ class DataMining:
 
     # customer_data = pd.read_csv('D:\Datasets\customer_data.csv')
     # data = customer_data.iloc[:, 3:5].values
-    matrix = np.array(euclidean_distance_matrix)
+    matrix = np.array(jaccard_distance_matrix)
     hierarchical_cluser = cluster.hclust(matrix)
 
 
@@ -94,5 +94,5 @@ class DataMining:
 #20 visual graphs
 #21 TODO Tag/Autotag
 #22 word,count dictionary
-
+#TODO Tests
 #

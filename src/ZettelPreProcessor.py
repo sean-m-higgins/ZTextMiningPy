@@ -156,7 +156,8 @@ class ZettelPreProcessor:
 
 	def create_doc_count_dictionary(self, tokens):
 		doc_count_dict = {}
-		for zettel in ZettelPreProcessor.zettels:
+		zettels = ZettelPreProcessor.zettels
+		for zettel in zettels:
 			ZettelPreProcessor.init_zettels(self, zettel)
 			cur_zettel = ZettelPreProcessor.process_zettels(self)
 			z_dict = {key: 1 for key in cur_zettel}

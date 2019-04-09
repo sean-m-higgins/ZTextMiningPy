@@ -75,7 +75,7 @@ class Distance:
         doc_count_dict = process.create_doc_count_dictionary(tokens)
         total_docs = len(zettels)
         tf_idf = []
-        for zettel in zettels:  #TODO how to deal with zettels of different lengths?
+        for zettel in zettels:  # TODO how to deal with zettels of different lengths?
             new_tf_idf = []
             process.init_zettels(zettel)
             tokens = process.process_zettels()

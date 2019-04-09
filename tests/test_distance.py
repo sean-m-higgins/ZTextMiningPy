@@ -54,7 +54,7 @@ class Test(unittest.TestCase):
                     0.10344827586206896, 0.10344827586206896, 0.10344827586206896, 0.10344827586206896,
                     0.10344827586206896, 0.10344827586206896, 0.10344827586206896, 0.10344827586206896,
                     0.10344827586206896]
-        distance = self.distance.tf_idf(self.document, self.tokens, self.count_dict, self.doc_count_dict)
+        distance = self.distance.tf_idf(self.document)
         self.assertEqual(distance, expected)
 
     def test_distance_matrix(self):
