@@ -1,3 +1,4 @@
+from src import ZettelPreProcessor
 from math import *
 
 
@@ -66,17 +67,24 @@ class Distance:
         union = (len(row_one) + len(row_two)) - intersection
         return intersection/float(union)
 
-    def tf_idf(self, zettels, tokens, count_dict, doc_count_dict):
+    def tf_idf(self, zettels):
         """ tf_idf = tf * idf """
-        tf_idf = []
-        total_words = len(tokens)
+        process = ZettelPreProcessor.ZettelPreProcessor()
+        process.init_zettels(zettels)
+        tokens = process.process_zettels()
+        doc_count_dict = process.create_doc_count_dictionary(tokens)
         total_docs = len(zettels)
-        for zettel in zettels:
+        tf_idf = []
+        for zettel in zettels:  #TODO how to deal with zettels of different lengths?
             new_tf_idf = []
+            process.init_zettels(zettel)
+            tokens = process.process_zettels()
+            count_dict = process.create_count_dictionary(tokens)
+            total_words = len(tokens)
             for word in tokens:
-                # tf = (count of given word) / (total number of words)
+                # tf = (count of given word for a given zettel) / (total number of words for given zettel)
                 tf = count_dict[word] / total_words
-                # idf = (total number of documents / (number of documents containing word)
+                # idf = (total number of documents) / (number of documents containing word)
                 idf = total_docs / doc_count_dict[word]
                 tf_idf_value = tf * idf
                 new_tf_idf.append(tf_idf_value)

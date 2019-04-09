@@ -12,6 +12,15 @@ class ZettelPreProcessor:
 	def init_zettels(self, zet):
 		ZettelPreProcessor.zettels = zet
 
+	def process_zettels(self):
+		tokens = ZettelPreProcessor.tokenizer(self)
+		filtered_words = ZettelPreProcessor.remove_stop_words(self, tokens)
+		# stemmer types: 'porter', 'lancaster', 'snowball'
+		stemmed_tokens = ZettelPreProcessor.stemmer(self, filtered_words, 'lancaster')
+		pos_tagged_tokens = ZettelPreProcessor.pos_tagger(self, stemmed_tokens)
+		lemmatized_tokens = ZettelPreProcessor.lematizer(self, pos_tagged_tokens)
+		return lemmatized_tokens
+
 	def tokenizer(self):
 		tokens = []
 		for zettel in ZettelPreProcessor.zettels:
@@ -148,11 +157,12 @@ class ZettelPreProcessor:
 	def create_doc_count_dictionary(self, tokens):
 		doc_count_dict = {}
 		for zettel in ZettelPreProcessor.zettels:
-			cur_zettel = re.split('\W+', str(zettel).lower())
+			ZettelPreProcessor.init_zettels(self, zettel)
+			cur_zettel = ZettelPreProcessor.process_zettels(self)
 			z_dict = {key: 1 for key in cur_zettel}
 			word_dict = {}
 			for word in tokens:
-				#if word was already found in current zettel... break
+				# if word was already evaluated... break
 				if word in word_dict:
 					continue
 				# if word is in current zettel...

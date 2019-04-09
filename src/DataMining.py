@@ -2,8 +2,8 @@ from src import ZettelPreProcessor as PreProcess
 from src import Distance
 from src import Cluster
 import numpy as np
-
 import os
+import pandas as pd
 
 
 class DataMining:
@@ -27,48 +27,45 @@ class DataMining:
     process = PreProcess.ZettelPreProcessor()
     process.init_zettels(zettels)
 
-    tokens = process.tokenizer()
-    unique_corpus = process.create_unique_corpus(tokens)
-    count_matrix = process.create_count_matrix(unique_corpus)
-    n_gram = process.create_n_gram(tokens, 2)
-    filtered_words = process.remove_stop_words(tokens)
-    unique_tag_corpus = process.create_unique_tag_corpus(tokens)
-    tag_boolean_matrix = process.create_boolean_tag_matrix(unique_tag_corpus)
-    # stemmer types: 'porter', 'lancaster', 'snowball'
-    stemmed_tokens = process.stemmer(tokens, 'lancaster')
-    pos_tagged_tokens = process.pos_tagger(tokens)
-    lemmatized_tokens = process.lematizer(pos_tagged_tokens)
-    count_dictionary = process.create_count_dictionary(tokens)
-    doc_count_dictionary = process.create_doc_count_dictionary(tokens)
+    lemmatized_tokens = process.process_zettels()
+    n_grams = process.create_n_gram(lemmatized_tokens, 2)
+
+    unique_corpus = process.create_unique_corpus(lemmatized_tokens)
+    unique_n_gram_corpus = process.create_unique_corpus(n_grams)
+    #unique_tag_corpus = process.create_unique_tag_corpus(tags)  #TODO get tokens from a array and parse...
+
+    #tag_boolean_matrix = process.create_boolean_tag_matrix(unique_tag_corpus)
+
+    unique_count_matrix = process.create_count_matrix(unique_corpus)
+    n_gram_count_matrix = process.create_unique_corpus(n_grams)
+    #tag_count_matrix = process.create_unique_corpus(unique_tag_corpus)
+
+    count_dictionary = process.create_count_dictionary(lemmatized_tokens)
+    doc_count_dictionary = process.create_doc_count_dictionary(lemmatized_tokens)
 
     distance = Distance.Distance()
 
-    euclidean = distance.calculate_distances(count_matrix, 0)
-    manhattan = distance.calculate_distances(count_matrix, 1)
-    minkowsky = distance.calculate_distances(count_matrix, 2)
-    cosine = distance.calculate_distances(count_matrix, 3)
-    jaccard = distance.calculate_distances(count_matrix, 4)
-    tf_idf = distance.tf_idf(zettels, tokens, count_dictionary, doc_count_dictionary) #TODO
+    euclidean = distance.calculate_distances(unique_count_matrix, 0)
+    manhattan = distance.calculate_distances(unique_count_matrix, 1)
+    minkowsky = distance.calculate_distances(unique_count_matrix, 2)
+    cosine = distance.calculate_distances(unique_count_matrix, 3)
+    jaccard = distance.calculate_distances(unique_count_matrix, 4)
 
-    for row in tf_idf:
-        print(row)
+    tf_idf = distance.tf_idf(zettels)
+    tf_idf_dataframe = pd.DataFrame.from_records(tf_idf)
+    print(tf_idf_dataframe)
 
     euclidean_distance_matrix = distance.create_distance_matrix(euclidean)
     manhattan_distance_matrix = distance.create_distance_matrix(manhattan)
     minkowsky_distance_matrix = distance.create_distance_matrix(minkowsky)
     cosine_distance_matrix = distance.create_distance_matrix(cosine)
     jaccard_distance_matrix = distance.create_distance_matrix(jaccard)
-    tf_idf_distance_matrix = distance.create_distance_matrix(tf_idf)
-
-    for row in tf_idf_distance_matrix:
-        print("\n")
-        print(row)
 
     cluster = Cluster.Cluster()
 
     # customer_data = pd.read_csv('D:\Datasets\customer_data.csv')
     # data = customer_data.iloc[:, 3:5].values
-    matrix = np.array(manhattan_distance_matrix)
+    matrix = np.array(euclidean_distance_matrix)
     hierarchical_cluser = cluster.hclust(matrix)
 
 
@@ -97,3 +94,5 @@ class DataMining:
 #20 visual graphs
 #21 TODO Tag/Autotag
 #22 word,count dictionary
+
+#
