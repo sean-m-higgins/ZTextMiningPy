@@ -43,6 +43,8 @@ class DataMining:
     count_dictionary = process.create_count_dictionary(lemmatized_tokens)
     doc_count_dictionary = process.create_doc_count_dictionary(lemmatized_tokens)
 
+    print(doc_count_dictionary)
+
     distance = Distance.Distance()
 
     euclidean = distance.calculate_distances(unique_count_matrix, 0)
@@ -53,7 +55,7 @@ class DataMining:
 
     tf_idf = distance.tf_idf(zettels)
     tf_idf_dataframe = pd.DataFrame.from_records(tf_idf)
-    print(tf_idf_dataframe)
+    #print(tf_idf_dataframe)
 
     euclidean_distance_matrix = distance.create_distance_matrix(euclidean)
     manhattan_distance_matrix = distance.create_distance_matrix(manhattan)
@@ -61,12 +63,12 @@ class DataMining:
     cosine_distance_matrix = distance.create_distance_matrix(cosine)
     jaccard_distance_matrix = distance.create_distance_matrix(jaccard)
 
-    cluster = Cluster.Cluster()
-
-    # customer_data = pd.read_csv('D:\Datasets\customer_data.csv')
-    # data = customer_data.iloc[:, 3:5].values
-    matrix = np.array(jaccard_distance_matrix)
-    hierarchical_cluser = cluster.hclust(matrix)
+    # cluster = Cluster.Cluster()
+    #
+    # # customer_data = pd.read_csv('D:\Datasets\customer_data.csv')
+    # # data = customer_data.iloc[:, 3:5].values
+    # matrix = np.array(jaccard_distance_matrix)
+    # hierarchical_cluser = cluster.hclust(matrix)
 
 
 

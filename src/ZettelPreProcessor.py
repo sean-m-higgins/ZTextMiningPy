@@ -99,6 +99,7 @@ class ZettelPreProcessor:
 		stopwords = "/Users/SeanHiggins/ZTextMiningPy/docs/data/processedData/stopWords/sparkStopWords.txt"
 		file = open(stopwords, "r")
 		contents = file.read()
+		file.close()
 		return contents
 
 	def remove_stop_words(self, tokens):
