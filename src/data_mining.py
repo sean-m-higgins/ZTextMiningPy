@@ -1,6 +1,4 @@
-from src import ZettelPreProcessor as PreProcess
-from src import Distance
-from src import Cluster
+from src import zettel_preprocessor, distance, cluster
 import numpy as np
 import os
 import pandas as pd
@@ -13,6 +11,7 @@ class DataMining:
     rheingold = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/rheingold-examples"
 
     def get_zettels_from_directory(directory):
+        global zettels
         zettels = []
         files = os.listdir(directory)
         for file in files:
@@ -22,9 +21,9 @@ class DataMining:
             zettels.append(contents)
         return zettels
 
-    zettels = get_zettels_from_directory(baseball)
+    get_zettels_from_directory(baseball)
 
-    process = PreProcess.ZettelPreProcessor()
+    process = zettel_preprocessor.ZettelPreProcessor()
     process.init_zettels(zettels)
 
     lemmatized_tokens = process.process_zettels()
@@ -37,25 +36,25 @@ class DataMining:
     #tag_boolean_matrix = process.create_boolean_tag_matrix(unique_tag_corpus)
 
     unique_count_matrix = process.create_count_matrix(unique_corpus)
-    n_gram_count_matrix = process.create_unique_corpus(n_grams)
+    n_gram_count_matrix = process.create_count_matrix(unique_n_gram_corpus)
     #tag_count_matrix = process.create_unique_corpus(unique_tag_corpus)
 
     count_dictionary = process.create_count_dictionary(lemmatized_tokens)
     doc_count_dictionary = process.create_doc_count_dictionary(lemmatized_tokens)
 
     print(doc_count_dictionary)
+    print("hi")
 
-    distance = Distance.Distance()
+    distance = distance.Distance()
 
     euclidean = distance.calculate_distances(unique_count_matrix, 0)
     manhattan = distance.calculate_distances(unique_count_matrix, 1)
     minkowsky = distance.calculate_distances(unique_count_matrix, 2)
     cosine = distance.calculate_distances(unique_count_matrix, 3)
     jaccard = distance.calculate_distances(unique_count_matrix, 4)
-
     tf_idf = distance.tf_idf(zettels)
+
     tf_idf_dataframe = pd.DataFrame.from_records(tf_idf)
-    #print(tf_idf_dataframe)
 
     euclidean_distance_matrix = distance.create_distance_matrix(euclidean)
     manhattan_distance_matrix = distance.create_distance_matrix(manhattan)
@@ -71,30 +70,27 @@ class DataMining:
     # hierarchical_cluser = cluster.hclust(matrix)
 
 
-
-
-#1 Convert source to List of String
-#2 Make list of words unique
-#3 Make 1&2 a function
-#4 Create class to process all zettels
-#5 Form unique word corpus
-#TODO #6 Apply hierarchical clustering methods agglomerative, ... kmeans
-#Dendrogram
-#7 create matrix of word counts of the file's words in uniqueCorpus
-#8 tokenize corpus
-##9 stop words
-##10 lemmatize/stem
-#11 function to write to text file
-#12 LDA
-#13 function to create n-grams
-#14 function to binarize?
-#15 bag of words...(uniqueCorpus)
-#16 test Suite
-#17 distances  ... bootstrap? ... spearmans rank?... others?
-#18 part of speech??
-#19 uniqueTagCorpus
-#20 visual graphs
-#21 TODO Tag/Autotag
-#22 word,count dictionary
-#TODO Tests
-#
+'#   #1 Convert source to List of String' \
+    '#2 Make list of words unique' \
+    '#3 Make 1&2 a function' \
+    '#4 Create class to process all zettels' \
+    '#5 Form unique word corpus' \
+    'TODO #6 Apply hierarchical clustering methods agglomerative, ... kmeans' \
+    '#Dendrogram' \
+    '#7 create matrix of word counts of the files words in uniqueCorpus' \
+    '#8 tokenize corpus' \
+    '#9 stop words' \
+    '#10 lemmatize/stem' \
+    '#11 function to write to text file' \
+    'TODO #12 LDA' \
+    '#13 function to create n-grams' \
+    '#14 function to binarize?' \
+    '#15 bag of words...(uniqueCorpus)' \
+    '#16 test Suite' \
+    '#17 distances  ... bootstrap? ... spearmans rank?... others?' \
+    '#18 part of speech?? ' \
+    '#19 uniqueTagCorpus' \
+    '#20 visual graphs' \
+    '#21 TODO Tag/Autotag' \
+    '#22 word,count dictionary' \
+    'TODO Tests '

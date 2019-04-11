@@ -1,4 +1,4 @@
-from src import ZettelPreProcessor
+from src import zettel_preprocessor
 from math import *
 
 
@@ -69,7 +69,7 @@ class Distance:
 
     def tf_idf(self, zettels):
         """ tf_idf = tf * idf """
-        process = ZettelPreProcessor.ZettelPreProcessor()
+        process = zettel_preprocessor.ZettelPreProcessor()
         process.init_zettels(zettels)
         tokens = process.process_zettels()
         doc_count_dict = process.create_doc_count_dictionary(tokens)

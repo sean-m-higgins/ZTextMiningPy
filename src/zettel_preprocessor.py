@@ -7,37 +7,37 @@ from nltk.stem import SnowballStemmer, WordNetLemmatizer
 
 
 class ZettelPreProcessor:
-	zettels = []
 
 	def init_zettels(self, zet):
-		ZettelPreProcessor.zettels = zet
+		global zettels
+		zettels = zet
 
 	def process_zettels(self):
 		tokens = ZettelPreProcessor.tokenizer(self)
 		filtered_words = ZettelPreProcessor.remove_stop_words(self, tokens)
+		pos_tagged_tokens = ZettelPreProcessor.pos_tagger(self, filtered_words)
 		# stemmer types: 'porter', 'lancaster', 'snowball'
-		stemmed_tokens = ZettelPreProcessor.stemmer(self, filtered_words, 'lancaster')
-		pos_tagged_tokens = ZettelPreProcessor.pos_tagger(self, stemmed_tokens)
-		lemmatized_tokens = ZettelPreProcessor.lematizer(self, pos_tagged_tokens)
+		stemmed_tokens = ZettelPreProcessor.stemmer(self, pos_tagged_tokens, 'lancaster')
+		lemmatized_tokens = ZettelPreProcessor.lematizer(self, stemmed_tokens)
 		return lemmatized_tokens
 
 	def tokenizer(self):
 		tokens = []
-		for zettel in ZettelPreProcessor.zettels:
-			new_list = re.split('\W+', str(zettel).lower())
+		for zettel in zettels:
+			new_list = re.split('\W+', str(zettel))
 			for token in new_list:
 				tokens.append(token)
 		tokens = list(filter(None, tokens))
 		return tokens
 
 	def create_unique_corpus(self, tokens):
-		unique = []
+		unique_corpus = []
 		for word in tokens:
-			if word not in unique:
-				unique.append(word)
-		unique = list(filter(None, unique))
-		unique.sort()
-		return unique
+			if word not in unique_corpus:
+				unique_corpus.append(word)
+		unique_corpus = list(filter(None, unique_corpus))
+		unique_corpus.sort()
+		return unique_corpus
 
 	def create_unique_tag_corpus(self, tokens):
 		unique_tag_corpus = []
@@ -58,7 +58,7 @@ class ZettelPreProcessor:
 
 	def create_count_matrix(self, unique_corpus):
 		count_matrix = []
-		for zettel in ZettelPreProcessor.zettels:
+		for zettel in zettels:
 			count = ZettelPreProcessor.get_word_count(self, zettel, unique_corpus)
 			count_matrix.append(count)
 		return count_matrix
@@ -90,14 +90,16 @@ class ZettelPreProcessor:
 		return tag_boolean_matrix
 
 	def create_n_gram(self, tokens, n):
-		n_gram = []
-		for i in range(len(tokens)-n+1):
-			n_gram.append(tokens[i:i+n])
-		return n_gram
+		n_grams = []
+		for index in range(len(tokens)-n+1):
+			pair = tokens[index:index+n]
+			split = pair[0] + " " + pair[1]
+			n_grams.append(split)
+		return n_grams
 
 	def get_stop_words(self):
-		stopwords = "/Users/SeanHiggins/ZTextMiningPy/docs/data/processedData/stopWords/sparkStopWords.txt"
-		file = open(stopwords, "r")
+		stop_words = "/Users/SeanHiggins/ZTextMiningPy/docs/data/processedData/stopWords/sparkStopWords.txt"
+		file = open(stop_words, "r")
 		contents = file.read()
 		file.close()
 		return contents
@@ -120,55 +122,53 @@ class ZettelPreProcessor:
 			'snowball': SnowballStemmer('english'),
 		}
 		stemmer = switch.get(stemmer_type)
-		new_tokens = []
+		stemmed_tokens = []
 		for word in tokens:
-			new_tokens.append(stemmer.stem(word))
-		return new_tokens
+			stemmed_tokens.append([stemmer.stem(word[0]), word[1]])
+		return stemmed_tokens
 
 	def pos_tagger(self, tokens):
 		tags = nltk.pos_tag(tokens)
-		new_tags = []
+		tokens_with_pos_tags = []
 		for pair in tags:
 			if pair[1].startswith('J'):
-				new_tags.append([pair[0], 'a'])
+				tokens_with_pos_tags.append([pair[0], 'a'])
 			elif pair[1].startswith('V'):
-				new_tags.append([pair[0], 'v'])
+				tokens_with_pos_tags.append([pair[0], 'v'])
 			elif pair[1].startswith('N'):
-				new_tags.append([pair[0], 'n'])
+				tokens_with_pos_tags.append([pair[0], 'n'])
 			elif pair[1].startswith('R'):
-				new_tags.append([pair[0], 'r'])
-		return new_tags
+				tokens_with_pos_tags.append([pair[0], 'r'])
+		return tokens_with_pos_tags
 
 	def lematizer(self, tokens_pos):
-		new_tokens = []
+		lemmatized_tokens = []
 		lemmatizer = WordNetLemmatizer()
 		for word in tokens_pos:
-			new_tokens.append(lemmatizer.lemmatize(word[0], word[1]))
-		return new_tokens
+			lemmatized_tokens.append(lemmatizer.lemmatize(word[0], word[1]))
+		return lemmatized_tokens
 
 	def create_count_dictionary(self, tokens):
-		word_dict = {}
+		word_count_dict = {}
 		for word in tokens:
-			if word in word_dict:
-				word_dict[word] += 1
+			if word in word_count_dict:
+				word_count_dict[word] += 1
 			else:
-				word_dict[word] = 1
-		return word_dict
+				word_count_dict[word] = 1
+		return word_count_dict
 
 	def create_doc_count_dictionary(self, tokens):
 		doc_count_dict = {}
-		zettels = ZettelPreProcessor.zettels
 		for zettel in zettels:
-			ZettelPreProcessor.init_zettels(self, zettel)
-			cur_zettel = ZettelPreProcessor.process_zettels(self)
-			z_dict = {key: 1 for key in cur_zettel}
+			process = ZettelPreProcessor()
+			process.init_zettels(zettel)
+			lemmatized_tokens = process.process_zettels()
+			cur_zettel_dict = {key: 1 for key in lemmatized_tokens}
 			word_dict = {}
 			for word in tokens:
-				# if word was already evaluated... break
 				if word in word_dict:
 					continue
-				# if word is in current zettel...
-				if word in z_dict:
+				if word in cur_zettel_dict:
 					if word in doc_count_dict:
 						doc_count_dict[word] += 1
 						word_dict[word] = 1

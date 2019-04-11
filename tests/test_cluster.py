@@ -1,8 +1,9 @@
-from src import Cluster
+from src import cluster
 import unittest
 
 
 class Test(unittest.TestCase):
+    cluster = cluster.Cluster()
     test = 0
 
 
