@@ -31,6 +31,50 @@ class ZettelPreProcessor:
 		tokens = list(filter(None, tokens))
 		return tokens
 
+	def pos_tagger(self, tokens):
+		tags = nltk.pos_tag(tokens)
+		tokens_with_pos_tags = []
+		for pair in tags:
+			if pair[1].startswith('J'):
+				tokens_with_pos_tags.append([pair[0], 'a'])
+			elif pair[1].startswith('V'):
+				tokens_with_pos_tags.append([pair[0], 'v'])
+			elif pair[1].startswith('N'):
+				tokens_with_pos_tags.append([pair[0], 'n'])
+			elif pair[1].startswith('R'):
+				tokens_with_pos_tags.append([pair[0], 'r'])
+		return tokens_with_pos_tags
+
+	def remove_stop_words(self, tokens):
+		filtered_words = []
+		stop_words = set(stopwords.words('english'))
+		for word in tokens:
+			if word[0].lower() in stop_words:
+				continue
+			else:
+				filtered_words.append(word)
+		filter(None, filtered_words)
+		return filtered_words
+
+	def stemmer(self, tokens, stemmer_type):
+		switch = {
+			'porter': PorterStemmer(),
+			'lancaster': LancasterStemmer(),
+			'snowball': SnowballStemmer('english'),
+		}
+		stemmer = switch.get(stemmer_type)
+		stemmed_tokens = []
+		for word in tokens:
+			stemmed_tokens.append([stemmer.stem(word[0]), word[1]])
+		return stemmed_tokens
+
+	def lematizer(self, tokens_pos):
+		lemmatized_tokens = []
+		lemmatizer = WordNetLemmatizer()
+		for word in tokens_pos:
+			lemmatized_tokens.append(lemmatizer.lemmatize(word[0], word[1]))
+		return lemmatized_tokens
+
 	def create_unique_corpus(self, tokens):
 		unique_corpus = []
 		for word in tokens:
@@ -53,8 +97,7 @@ class ZettelPreProcessor:
 				if word not in unique_tag_corpus:
 					unique_tag_corpus.append(word)
 				break
-		unique_tag_corpus = list(filter(None, unique_tag_corpus))
-		unique_tag_corpus.sort()
+		unique_tag_corpus = list(filter(None, unique_tag_corpus)).sort()
 		return unique_tag_corpus
 
 	def create_count_matrix(self, unique_corpus):
@@ -97,50 +140,6 @@ class ZettelPreProcessor:
 			split = pair[0] + " " + pair[1]
 			n_grams.append(split)
 		return n_grams
-
-	def remove_stop_words(self, tokens):
-		filtered_words = []
-		stop_words = set(stopwords.words('english'))
-		for word in tokens:
-			if word[0].lower() in stop_words:
-				continue
-			else:
-				filtered_words.append(word)
-		filter(None, filtered_words)
-		return filtered_words
-
-	def stemmer(self, tokens, stemmer_type):
-		switch = {
-			'porter': PorterStemmer(),
-			'lancaster': LancasterStemmer(),
-			'snowball': SnowballStemmer('english'),
-		}
-		stemmer = switch.get(stemmer_type)
-		stemmed_tokens = []
-		for word in tokens:
-			stemmed_tokens.append([stemmer.stem(word[0]), word[1]])
-		return stemmed_tokens
-
-	def pos_tagger(self, tokens):
-		tags = nltk.pos_tag(tokens)
-		tokens_with_pos_tags = []
-		for pair in tags:
-			if pair[1].startswith('J'):
-				tokens_with_pos_tags.append([pair[0], 'a'])
-			elif pair[1].startswith('V'):
-				tokens_with_pos_tags.append([pair[0], 'v'])
-			elif pair[1].startswith('N'):
-				tokens_with_pos_tags.append([pair[0], 'n'])
-			elif pair[1].startswith('R'):
-				tokens_with_pos_tags.append([pair[0], 'r'])
-		return tokens_with_pos_tags
-
-	def lematizer(self, tokens_pos):
-		lemmatized_tokens = []
-		lemmatizer = WordNetLemmatizer()
-		for word in tokens_pos:
-			lemmatized_tokens.append(lemmatizer.lemmatize(word[0], word[1]))
-		return lemmatized_tokens
 
 	def create_count_dictionary(self, tokens):
 		word_count_dict = {}

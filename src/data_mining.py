@@ -21,7 +21,7 @@ class DataMining:
             zettels.append(contents)
         return zettels
 
-    get_zettels_from_directory(baseball)
+    get_zettels_from_directory(rheingold)
 
     process = zettel_preprocessor.ZettelPreProcessor()
     process.init_zettels(zettels)
@@ -42,32 +42,33 @@ class DataMining:
     count_dictionary = process.create_count_dictionary(lemmatized_tokens)
     doc_count_dictionary = process.create_doc_count_dictionary(lemmatized_tokens)
 
-    print(doc_count_dictionary)
-    print("hi")
-
     distance = distance.Distance()
 
-    euclidean = distance.calculate_distances(unique_count_matrix, 0)
-    manhattan = distance.calculate_distances(unique_count_matrix, 1)
-    minkowsky = distance.calculate_distances(unique_count_matrix, 2)
-    cosine = distance.calculate_distances(unique_count_matrix, 3)
-    jaccard = distance.calculate_distances(unique_count_matrix, 4)
-    tf_idf = distance.tf_idf(zettels)
+    def calc_dist(self, distance_str):
+        switch = {
+            'euclidean': self.distance.calculate_distances(self.unique_count_matrix, 0),
+            'manhattan': self.distance.calculate_distances(self.unique_count_matrix, 1),
+            'minkowsky': self.distance.calculate_distances(self.unique_count_matrix, 2),
+            'cosine': self.distance.calculate_distances(self.unique_count_matrix, 3),
+            'jaccard': self.distance.calculate_distances(self.unique_count_matrix, 4),
+            'tf_idf': self.distance.tf_idf(zettels),
+        }
+        return switch.get(distance_str)
 
-    tf_idf_dataframe = pd.DataFrame.from_records(tf_idf)
+    def calc_dist_matrix(self, dist_matrix_str):
+        switch = {
+            'euclidean': self.distance.create_distance_matrix(self.calc_dist('euclidean')),
+            'manhattan': self.distance.create_distance_matrix(self.calc_dist('manhattan')),
+            'minkowsky': self.distance.create_distance_matrix(self.calc_dist('minkowsky')),
+            'cosine': self.distance.create_distance_matrix(self.calc_dist('cosine')),
+            'jaccard': self.distance.create_distance_matrix(self.calc_dist('jaccard')),
+        }
+        return switch.get(dist_matrix_str)
 
-    euclidean_distance_matrix = distance.create_distance_matrix(euclidean)
-    manhattan_distance_matrix = distance.create_distance_matrix(manhattan)
-    minkowsky_distance_matrix = distance.create_distance_matrix(minkowsky)
-    cosine_distance_matrix = distance.create_distance_matrix(cosine)
-    jaccard_distance_matrix = distance.create_distance_matrix(jaccard)
+    cluster = cluster.Cluster()
 
-    # cluster = Cluster.Cluster()
-    #
-    # # customer_data = pd.read_csv('D:\Datasets\customer_data.csv')
-    # # data = customer_data.iloc[:, 3:5].values
-    # matrix = np.array(jaccard_distance_matrix)
-    # hierarchical_cluser = cluster.hclust(matrix)
+    matrix = np.array(calc_dist_matrix('manhattan'))
+    hierarchical_cluser = cluster.hclust(matrix)
 
 
 '#   #1 Convert source to List of String' \
@@ -76,21 +77,18 @@ class DataMining:
     '#4 Create class to process all zettels' \
     '#5 Form unique word corpus' \
     'TODO #6 Apply hierarchical clustering methods agglomerative, ... kmeans' \
-    '#Dendrogram' \
     '#7 create matrix of word counts of the files words in uniqueCorpus' \
     '#8 tokenize corpus' \
-    '#9 stop words' \
+    '#9 remove stop words' \
     '#10 lemmatize/stem' \
     '#11 function to write to text file' \
     'TODO #12 LDA' \
-    '#13 function to create n-grams' \
-    '#14 function to binarize?' \
-    '#15 bag of words...(uniqueCorpus)' \
+    '#13 n-grams' \
+    '#14 word,count dictionary' \
+    '#15 visual graphs' \
     '#16 test Suite' \
-    '#17 distances  ... bootstrap? ... spearmans rank?... others?' \
-    '#18 part of speech?? ' \
+    '#17 distances - euclidean, manhattan, cosine, jaccard, minkowski, tf_idf...bootstrap?...spearmans_rank?...??' \
+    '#18 part of speech' \
     '#19 uniqueTagCorpus' \
-    '#20 visual graphs' \
-    '#21 TODO Tag/Autotag' \
-    '#22 word,count dictionary' \
-    'TODO Tests '
+    'TODO #20 Tag/Autotag' \
+    'TODO #21 normalize tf_idf'
