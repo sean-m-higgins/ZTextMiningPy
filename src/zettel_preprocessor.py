@@ -4,6 +4,7 @@ import nltk
 from nltk.stem.porter import PorterStemmer
 from nltk.stem.lancaster import LancasterStemmer
 from nltk.stem import SnowballStemmer, WordNetLemmatizer
+from nltk.corpus import stopwords
 
 
 class ZettelPreProcessor:
@@ -14,10 +15,10 @@ class ZettelPreProcessor:
 
 	def process_zettels(self):
 		tokens = ZettelPreProcessor.tokenizer(self)
-		filtered_words = ZettelPreProcessor.remove_stop_words(self, tokens)
-		pos_tagged_tokens = ZettelPreProcessor.pos_tagger(self, filtered_words)
+		pos_tagged_tokens = ZettelPreProcessor.pos_tagger(self, tokens)
+		filtered_words = ZettelPreProcessor.remove_stop_words(self, pos_tagged_tokens)
 		# stemmer types: 'porter', 'lancaster', 'snowball'
-		stemmed_tokens = ZettelPreProcessor.stemmer(self, pos_tagged_tokens, 'lancaster')
+		stemmed_tokens = ZettelPreProcessor.stemmer(self, filtered_words, 'lancaster')
 		lemmatized_tokens = ZettelPreProcessor.lematizer(self, stemmed_tokens)
 		return lemmatized_tokens
 
@@ -97,18 +98,11 @@ class ZettelPreProcessor:
 			n_grams.append(split)
 		return n_grams
 
-	def get_stop_words(self):
-		stop_words = "/Users/SeanHiggins/ZTextMiningPy/docs/data/processedData/stopWords/sparkStopWords.txt"
-		file = open(stop_words, "r")
-		contents = file.read()
-		file.close()
-		return contents
-
 	def remove_stop_words(self, tokens):
 		filtered_words = []
-		stopwords = ZettelPreProcessor.get_stop_words(self)
+		stop_words = set(stopwords.words('english'))
 		for word in tokens:
-			if word in stopwords:
+			if word[0].lower() in stop_words:
 				continue
 			else:
 				filtered_words.append(word)
@@ -176,5 +170,3 @@ class ZettelPreProcessor:
 						doc_count_dict[word] = 1
 						word_dict[word] = 1
 		return doc_count_dict
-
-

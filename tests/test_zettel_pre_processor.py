@@ -13,10 +13,11 @@ class Test(unittest.TestCase):
     process.init_zettels(document)
 
     tokens = process.tokenizer()
-    filtered_words = process.remove_stop_words(tokens)
-    pos_tokens = process.pos_tagger(filtered_words)
+    pos_tokens = process.pos_tagger(tokens)
+    filtered_words = process.remove_stop_words(pos_tokens)
+
     # stemmer types: 'porter', 'lancaster', 'snowball'
-    stemmed_tokens = process.stemmer(pos_tokens, 'lancaster')
+    stemmed_tokens = process.stemmer(filtered_words, 'lancaster')
     lemmatized_tokens = process.lematizer(stemmed_tokens)
 
     n_grams = process.create_n_gram(lemmatized_tokens, 2)
@@ -33,8 +34,8 @@ class Test(unittest.TestCase):
     doc_count_dict = process.create_doc_count_dictionary(lemmatized_tokens)
 
     def test_tokenizer(self):
-        expected = ['this',	'is', 'a', 'test', 'sentence', 'for', 'data', 'mining', 'zettels', 'zettels', 'zettels',
-                    'to', 'see', 'the', 'full', 'affect', 'of', 'the', 'functions', 'this', 'is', 'another', 'test',
+        expected = ['This',	'is', 'a', 'test', 'sentence', 'for', 'data', 'mining', 'zettels', 'zettels', 'zettels',
+                    'To', 'see', 'the', 'full', 'affect', 'of', 'the', 'functions', 'this', 'is', 'another', 'test',
                     'sentence', 'tags', 'zettel', 'sentence', 'test', 'cite']
         self.assertEqual(self.tokens, expected)
 
@@ -43,8 +44,10 @@ class Test(unittest.TestCase):
         self.assertEqual(self.unique_corpus, expected)
 
     def test_stop_words(self):
-        expected = ['test', 'sentence', 'data', 'mining', 'zettels', 'zettels', 'zettels', 'see', 'full', 'affect',
-                    'functions', 'another', 'test', 'sentence', 'tags', 'zettel', 'sentence', 'test', 'cite']
+        expected = [['test', 'n'], ['sentence', 'n'], ['data', 'n'], ['mining', 'n'], ['zettels', 'n'],
+                    ['zettels', 'v'], ['zettels', 'n'], ['see', 'v'], ['full', 'a'], ['affect', 'n'],
+                    ['functions', 'n'], ['test', 'n'], ['sentence', 'n'], ['tags', 'n'], ['zettel', 'n'],
+                    ['sentence', 'n'], ['test', 'n'], ['cite', 'n']]
         self.assertEqual(self.filtered_words, expected)
 
     def test_count_matrix(self):
@@ -65,16 +68,16 @@ class Test(unittest.TestCase):
         self.assertEqual(self.lemmatized_tokens, expected)
 
     def test_pos_tagger(self):
-        expected = [['test', 'n'], ['sentence', 'n'], ['data', 'n'],  ['mining', 'n'], ['zettels', 'n'],
-                    ['zettels', 'v'],  ['zettels', 'n'], ['see', 'v'], ['full', 'a'], ['affect', 'a'],
-                    ['functions', 'n'], ['test', 'n'], ['sentence', 'n'], ['tags', 'n'], ['zettel', 'n'],
+        expected = [['is', 'v'], ['test', 'n'], ['sentence', 'n'], ['data', 'n'], ['mining', 'n'], ['zettels', 'n'],
+                    ['zettels', 'v'], ['zettels', 'n'], ['see', 'v'], ['full', 'a'], ['affect', 'n'],
+                    ['functions', 'n'], ['is', 'v'], ['test', 'n'], ['sentence', 'n'], ['tags', 'n'], ['zettel', 'n'],
                     ['sentence', 'n'], ['test', 'n'], ['cite', 'n']]
         self.assertEqual(self.pos_tokens, expected)
 
     def test_stemmer(self):
-        expected = [['test', 'n'],  ['sent', 'n'],  ['dat', 'n'],  ['min', 'n'], ['zettel', 'n'], ['zettel', 'v'],
-                    ['zettel', 'n'], ['see', 'v'],  ['ful', 'a'],  ['affect', 'a'], ['funct', 'n'], ['test', 'n'],
-                    ['sent', 'n'],  ['tag', 'n'], ['zettel', 'n'], ['sent', 'n'], ['test', 'n'], ['cit', 'n']]
+        expected = [['test', 'n'], ['sent', 'n'], ['dat', 'n'], ['min', 'n'], ['zettel', 'n'], ['zettel', 'v'],
+                    ['zettel', 'n'], ['see', 'v'], ['ful', 'a'], ['affect', 'n'], ['funct', 'n'], ['test', 'n'],
+                    ['sent', 'n'], ['tag', 'n'], ['zettel', 'n'], ['sent', 'n'], ['test', 'n'], ['cit', 'n']]
         self.assertEqual(self.stemmed_tokens, expected)
 
     def test_count_dict(self):

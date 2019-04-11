@@ -13,10 +13,11 @@ class Test(unittest.TestCase):
     process.init_zettels(document)
 
     tokens = process.tokenizer()
-    filtered_words = process.remove_stop_words(tokens)
-    pos_tokens = process.pos_tagger(filtered_words)
+    pos_tokens = process.pos_tagger(tokens)
+    filtered_words = process.remove_stop_words(pos_tokens)
+
     # stemmer types: 'porter', 'lancaster', 'snowball'
-    stemmed_tokens = process.stemmer(pos_tokens, 'lancaster')
+    stemmed_tokens = process.stemmer(filtered_words, 'lancaster')
     lemmatized_tokens = process.lematizer(stemmed_tokens)
 
     n_grams = process.create_n_gram(lemmatized_tokens, 2)
