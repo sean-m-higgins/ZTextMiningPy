@@ -5,6 +5,7 @@ from nltk.stem.porter import PorterStemmer
 from nltk.stem.lancaster import LancasterStemmer
 from nltk.stem import SnowballStemmer, WordNetLemmatizer
 from nltk.corpus import stopwords
+import os
 
 
 class ZettelPreProcessor:
@@ -169,3 +170,13 @@ class ZettelPreProcessor:
 						doc_count_dict[word] = 1
 						word_dict[word] = 1
 		return doc_count_dict
+
+	def get_zettels_from_directory(self, directory):
+		new_zettels = []
+		files = os.listdir(directory)
+		for file in files:
+			path = directory + "/" + file
+			alist = [line.rstrip() for line in open(path)]
+			contents = [alist]
+			new_zettels.append(contents)
+		return new_zettels

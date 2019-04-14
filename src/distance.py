@@ -1,39 +1,71 @@
 from src import zettel_preprocessor
 from math import *
+import numpy as np
 
 
 class Distance:
 
     def calculate_distances(self, matrix, n):
         i = 1
-        distances = [0]
+        distances = [0.0]
         for row in matrix:
             if i == len(matrix):
                 break
             current_rows = [row, matrix[i]]
-            distance = Distance.distance_calculator(self, current_rows, n)
+            distance = float(self.distance_calculator(current_rows, n))
             distances.append(distance)
             i += 1
         return distances
 
     def distance_calculator(self, rows, n):
-        switch = {
-            0: Distance.euclidean_distance(self, rows[0], rows[1]),
-            1: Distance.manhattan_distance(self, rows[0], rows[1]),
-            2: Distance.minkowsky_distance(self, rows[0], rows[1], 3),
-            3: Distance.cosine_distance(self, rows[0], rows[1]),
-            4: Distance.jaccard_similarity(self, rows[0], rows[1]),
-        }
-        return switch.get(n)
+        if n == 0:
+            return self.euclidean_distance(rows[0], rows[1])
+        elif n == 1:
+            return self.manhattan_distance(rows[0], rows[1])
+        elif n == 2:
+            return self.minkowsky_distance(rows[0], rows[1], 3)
+        elif n == 3:
+            return self.cosine_distance(rows[0], rows[1])
+        elif n == 4:
+            return self.jaccard_similarity(rows[0], rows[1])
+
+    def get_distances(self, count_matrix, distance_str):
+        if distance_str == 'euclidean':
+            return self.calculate_distances(count_matrix, 0)
+        elif distance_str == 'manhattan':
+            return self.calculate_distances(count_matrix, 1)
+        elif distance_str == 'minkowski':
+            return self.calculate_distances(count_matrix, 2)
+        elif distance_str == 'cosine':
+            return self.calculate_distances(count_matrix, 3)
+        elif distance_str == 'jaccard':
+            return self.calculate_distances(count_matrix, 4)
 
     def create_distance_matrix(self, distances):
         distance_matrix = []
-        new_distances = distances
-        length = len(distances)
-        for distance in distances:
+        distance_matrix.append(distances)
+        new_distances = np.array(distances)
+        for i in range(len(distances)-1):
+            temp_dist = []
+            temp_dist.append(new_distances[-1])
+            new_distances = new_distances[0: -1]
+            for int in new_distances:
+                temp_dist.append(int)
+            new_distances = temp_dist
             distance_matrix.append(new_distances)
-            new_distances = new_distances[length-1: length] + new_distances[0: length-1]
         return distance_matrix
+
+    def get_distance_matrix(self, count_matrix, dist_matrix_str):
+        if dist_matrix_str == 'euclidean':
+            return self.create_distance_matrix(self.get_distances(count_matrix, 'euclidean'))
+        elif dist_matrix_str == 'manhattan':
+            return self.create_distance_matrix(self.get_distances(count_matrix, 'manhattan'))
+        elif dist_matrix_str == 'minkowsky':
+            return self.create_distance_matrix(self.get_distances(count_matrix, 'minkowsky'))
+        elif dist_matrix_str == 'cosine':
+            return self.create_distance_matrix(self.get_distances(count_matrix, 'cosine'))
+        elif dist_matrix_str == 'jaccard':
+            return self.create_distance_matrix(self.get_distances(count_matrix, 'jaccard'))
 
     #from https://dataconomy.com/2015/04/implementing-the-five-most-popular-similarity-measures-in-python/
     def euclidean_distance(self, row_one, row_two):

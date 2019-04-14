@@ -8,7 +8,7 @@ class Cluster:
     def hclust(self, data):
         plt.figure(figsize=(10, 10))
         plt.title("Custom Dendograms")
-        dend = sch.dendrogram(sch.linkage(data, method='complete'))
+        dend = sch.dendrogram(sch.linkage(data, method='ward'))
 
         cluster = AgglomerativeClustering(n_clusters=10, affinity='euclidean', linkage='ward')
         cluster.fit_predict(data)
