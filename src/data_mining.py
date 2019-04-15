@@ -25,10 +25,14 @@ class DataMining:
     doc_count_dictionary = process.create_doc_count_dictionary(lemmatized_tokens)
 
     distance = distance.Distance()
-    matrix = np.array(distance.get_distance_matrix(unique_count_matrix, 'manhattan'))
+    distance_type = 'manhattan'
+    matrix = np.array(distance.get_distance_matrix(unique_count_matrix, distance_type))
+    tf_idf = distance.tf_idf(zettels)
 
     cluster = cluster.Cluster()
-    hierarchical_cluster = cluster.hclust(matrix)
+    # hierarchical_cluster = cluster.hclust(matrix, distance_type)
+    # hierarchical_cluster = cluster.hclust(tf_idf, 'tf idf')
+    k_means = cluster.k_means(matrix, distance_type)
 
 
 '#   #1 Convert source to List of String' \
@@ -36,7 +40,7 @@ class DataMining:
     '#3 Make 1&2 a function' \
     '#4 Create class to process all zettels' \
     '#5 Form unique word corpus' \
-    'TODO #6 Apply hierarchical clustering methods agglomerative, ... kmeans' \
+    '#6 Apply hierarchical clustering methods agglomerative, ... kmeans...??' \
     '#7 create matrix of word counts of the files words in uniqueCorpus' \
     '#8 tokenize corpus' \
     '#9 remove stop words' \
@@ -51,5 +55,5 @@ class DataMining:
     '#18 part of speech' \
     '#19 uniqueTagCorpus' \
     'TODO #20 Tag/Autotag' \
-    'TODO #21 normalize tf_idf' \
+    'TODO??#21 normalize tf_idf' \
     'TODO #22 retrieval class'

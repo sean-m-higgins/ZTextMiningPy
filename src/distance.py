@@ -60,8 +60,8 @@ class Distance:
             return self.create_distance_matrix(self.get_distances(count_matrix, 'euclidean'))
         elif dist_matrix_str == 'manhattan':
             return self.create_distance_matrix(self.get_distances(count_matrix, 'manhattan'))
-        elif dist_matrix_str == 'minkowsky':
-            return self.create_distance_matrix(self.get_distances(count_matrix, 'minkowsky'))
+        elif dist_matrix_str == 'minkowski':
+            return self.create_distance_matrix(self.get_distances(count_matrix, 'minkowski'))
         elif dist_matrix_str == 'cosine':
             return self.create_distance_matrix(self.get_distances(count_matrix, 'cosine'))
         elif dist_matrix_str == 'jaccard':
@@ -107,6 +107,7 @@ class Distance:
         doc_count_dict = process.create_doc_count_dictionary(tokens)
         total_docs = len(zettels)
         tf_idf = []
+        row_length = 0.0
         for zettel in zettels:  # TODO how to deal with zettels of different lengths?
             new_tf_idf = []
             process.init_zettels(zettel)
@@ -120,6 +121,11 @@ class Distance:
                 idf = total_docs / doc_count_dict[word]
                 tf_idf_value = tf * idf
                 new_tf_idf.append(tf_idf_value)
+            if row_length < len(new_tf_idf):
+                row_length = len(new_tf_idf)
             tf_idf.append(new_tf_idf)
+        for row in tf_idf:
+            while len(row) < row_length:
+                row.append(0.0)
         return tf_idf
 
