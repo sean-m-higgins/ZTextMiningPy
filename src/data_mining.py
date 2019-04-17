@@ -25,14 +25,14 @@ class DataMining:
     doc_count_dictionary = process.create_doc_count_dictionary(lemmatized_tokens)
 
     distance = distance.Distance()
-    distance_type = 'manhattan'
+    distance_type = 'minkowski'
     matrix = np.array(distance.get_distance_matrix(unique_count_matrix, distance_type))
     tf_idf = distance.tf_idf(zettels)
 
     cluster = cluster.Cluster()
-    # hierarchical_cluster = cluster.hclust(matrix, distance_type)
+    hierarchical_cluster = cluster.hclust(matrix, distance_type)
     # hierarchical_cluster = cluster.hclust(tf_idf, 'tf idf')
-    k_means = cluster.k_means(matrix, distance_type)
+    # k_means = cluster.k_means(matrix, distance_type)
 
 
 '#   #1 Convert source to List of String' \
@@ -54,6 +54,8 @@ class DataMining:
     '#17 distances - euclidean, manhattan, cosine, jaccard, minkowski, tf_idf...bootstrap?...spearmans_rank?...??' \
     '#18 part of speech' \
     '#19 uniqueTagCorpus' \
-    'TODO #20 Tag/Autotag' \
-    'TODO??#21 normalize tf_idf' \
-    'TODO #22 retrieval class'
+    '#21 normalize tf_idf' \
+    'TODO #22 retrieval class' \
+    'TODO #23 multi-label classification' \
+    'TODO #24 word embeddings' \
+    'TODO #25 '

@@ -11,8 +11,9 @@ import os
 class ZettelPreProcessor:
 
 	def init_zettels(self, zet):
-		global zettels
+		global zettels #TODO self.zettels
 		zettels = zet
+		self.tokens = self.tokenizer() #TODO
 
 	def process_zettels(self):
 		tokens = ZettelPreProcessor.tokenizer(self)

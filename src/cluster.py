@@ -2,6 +2,9 @@ from matplotlib import pyplot as plt
 import scipy.cluster.hierarchy as sch
 from sklearn import cluster
 import numpy as np
+#from sklearn.naive_bayes import GaussianNB
+#from skmultilearn.problem_transform import BinaryRelevance
+
 
 
 class Cluster:
@@ -34,3 +37,5 @@ class Cluster:
         # plt.xlabel('xx')
         # plt.ylabel('yy')
         plt.show()
+
+    # def multi_label_classify(self):
