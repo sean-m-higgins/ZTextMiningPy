@@ -47,11 +47,11 @@ MODEL_FILE = 'Model/model.h5'
 def print_config(cfg):
     """Print configuration settings"""
 
-    print('train:', cfg.get('data', 'train'))
+    print('train:', cfg.get('data', 'train')) #TODO
     if cfg.has_option('data', 'embed'):
         print('embeddings:', cfg.get('data', 'embed'))
     print('test_size', cfg.getfloat('args', 'test_size'))
-    print('batch:', cfg.get('dan', 'batch'))
+    print('batch:', cfg.get('dan', 'batch')) #TODO
     print('epochs:', cfg.get('dan', 'epochs'))
     print('embdims:', cfg.get('dan', 'embdims'))
     print('hidden:', cfg.get('dan', 'hidden'))
@@ -82,12 +82,12 @@ def get_model(cfg, init_vectors, num_of_features):
 
 if __name__ == "__main__":
 
-    cfg = configparser.ConfigParser()
+    cfg = configparser.ConfigParser() #TODO
     cfg.read(sys.argv[1])
     print_config(cfg)
 
-    base = os.environ['DATA_ROOT']
-    train_dir = os.path.join(base, cfg.get('data', 'train'))
+    base = os.environ['DATA_ROOT'] #TODO
+    train_dir = os.path.join(base, cfg.get('data', 'train')) #TODO
     code_file = os.path.join(base, cfg.get('data', 'codes'))
 
     dataset = dataset.DatasetProvider(
@@ -97,6 +97,8 @@ if __name__ == "__main__":
         cfg.getint('args', 'max_tokens_in_file'),
         cfg.getint('args', 'min_examples_per_code'))
     x, y = dataset.load()
+
+    # Split arrays or matrices into random train and test subsets
     train_x, val_x, train_y, val_y = train_test_split(
         x,
         y,
@@ -110,18 +112,18 @@ if __name__ == "__main__":
         init_vectors = [w2v.select_vectors(dataset.token2int)]
 
     # turn x into numpy array among other things
-    classes = len(dataset.code2int)
-    train_x = pad_sequences(train_x, maxlen=maxlen)
+    classes = len(dataset.code2int)     # =~tags || labels
+    train_x = pad_sequences(train_x, maxlen=maxlen)     # data
     val_x = pad_sequences(val_x, maxlen=maxlen)
-    train_y = np.array(train_y)
+    train_y = np.array(train_y)     # labels
     val_y = np.array(val_y)
 
     print('train_x shape:', train_x.shape)
     print('train_y shape:', train_y.shape)
     print('val_x shape:', val_x.shape)
     print('val_y shape:', val_y.shape)
-    print('number of features:', len(dataset.token2int))
-    print('number of labels:', len(dataset.code2int))
+    print('number of features:', len(dataset.token2int)) #TODO
+    print('number of labels:', len(dataset.code2int)) #TODO
 
     if cfg.has_option('dan', 'optimizer'):
         optimizer = cfg.get('dan', 'optimizer')
@@ -143,7 +145,7 @@ if __name__ == "__main__":
     model.save(MODEL_FILE)
 
     # do we need to evaluate?
-    if cfg.getfloat('args', 'test_size') == 0:
+    if cfg.getfloat('args', 'test_size') == 0: #TODO
         exit()
 
     # probability for each class; (test size, num of classes)
@@ -163,7 +165,7 @@ if __name__ == "__main__":
     print("micro: p: %.3f - r: %.3f - f1: %.3f" % (p, r, f1))
 
     outf1 = open(RESULTS_FILE, 'w')
-    int2code = dict((value, key) for key, value in list(dataset.code2int.items()))
+    int2code = dict((value, key) for key, value in list(dataset.code2int.items())) #TODO
     f1_scores = f1_score(val_y, distribution, average=None)
     outf1.write("%s|%s\n" % ('macro', f1))
     for index, f1 in enumerate(f1_scores):
