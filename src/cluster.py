@@ -38,4 +38,3 @@ class Cluster:
         # plt.ylabel('yy')
         plt.show()
 
-    # def multi_label_classify(self):

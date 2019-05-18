@@ -103,18 +103,16 @@ class Distance:
         """ tf_idf = tf * idf """
         process = zettel_preprocessor.ZettelPreProcessor()
         process.init_zettels(zettels)
-        tokens = process.process_zettels()
-        doc_count_dict = process.create_doc_count_dictionary(tokens)
+        doc_count_dict = process.create_doc_count_dictionary()
         total_docs = len(zettels)
         tf_idf = []
         row_length = 0.0
-        for zettel in zettels:  # TODO how to deal with zettels of different lengths?
+        for zettel in zettels:
             new_tf_idf = []
             process.init_zettels(zettel)
-            tokens = process.process_zettels()
-            count_dict = process.create_count_dictionary(tokens)
-            total_words = len(tokens)
-            for word in tokens:
+            count_dict = process.create_count_dictionary()
+            total_words = len(process.tokens)
+            for word in process.tokens:
                 # tf = (count of given word for a given zettel) / (total number of words for given zettel)
                 tf = count_dict[word] / total_words
                 # idf = (total number of documents) / (number of documents containing word)
@@ -129,3 +127,11 @@ class Distance:
                 row.append(0.0)
         return tf_idf
 
+
+if __name__ == "__main__":
+    process = zettel_preprocessor.ZettelPreProcessor()
+
+    distance = Distance()
+    distance_type = 'euclidean'
+    matrix = np.array(distance.get_distance_matrix(unique_count_matrix, distance_type))
+    tf_idf = distance.tf_idf(zettels)

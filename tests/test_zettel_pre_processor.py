@@ -18,7 +18,7 @@ class Test(unittest.TestCase):
 
     # stemmer types: 'porter', 'lancaster', 'snowball'
     stemmed_tokens = process.stemmer(filtered_words, 'lancaster')
-    lemmatized_tokens = process.lematizer(stemmed_tokens)
+    lemmatized_tokens = process.lemmatizer(stemmed_tokens)
 
     n_grams = process.create_n_gram(lemmatized_tokens, 2)
 
