@@ -11,23 +11,17 @@ class Test(unittest.TestCase):
 
     process = zettel_preprocessor.ZettelPreProcessor()
     process.init_zettels(document)
-
     tokens = process.tokenizer()
-    pos_tokens = process.pos_tagger(tokens)
-    filtered_words = process.remove_stop_words(pos_tokens)
-
+    pos_tokens = process.pos_tagger()
+    filtered_words = process.remove_stop_words()
     # stemmer types: 'porter', 'lancaster', 'snowball'
-    stemmed_tokens = process.stemmer(filtered_words, 'lancaster')
-    lemmatized_tokens = process.lemmatizer(stemmed_tokens)
-
-    n_grams = process.create_n_gram(lemmatized_tokens, 2)
-
-    unique_corpus = process.create_unique_corpus(lemmatized_tokens)
-
-    count_matrix = process.create_count_matrix(unique_corpus)
-
-    count_dict = process.create_count_dictionary(lemmatized_tokens)
-    doc_count_dict = process.create_doc_count_dictionary(lemmatized_tokens)
+    stemmed_tokens = process.stemmer( 'lancaster')
+    lemmatized_tokens = process.lemmatizer()
+    n_grams = process.create_n_gram(2)
+    unique_corpus = process.create_unique_corpus()
+    count_matrix = process.create_count_matrix()
+    count_dict = process.create_count_dictionary()
+    doc_count_dict = process.create_doc_count_dictionary()
 
     distance = distance.Distance()
 
@@ -59,8 +53,8 @@ class Test(unittest.TestCase):
     def test_df_idf(self):
         expected = [[0.14285714285714285, 0.14285714285714285, 0.42857142857142855, 0.42857142857142855,
                      0.6428571428571428, 0.6428571428571428, 0.6428571428571428],
-                    [0.5, 0.5, 0.5, 0.5, 0.16666666666666666, 0.16666666666666666],
-                    [0.6000000000000001, 0.30000000000000004, 0.2, 0.2, 0.6000000000000001]]
+                    [0.5, 0.5, 0.5, 0.5, 0.16666666666666666, 0.16666666666666666, 0.0],
+                    [0.6000000000000001, 0.30000000000000004, 0.2, 0.2, 0.6000000000000001, 0.0, 0.0]]
         distances = self.distance.tf_idf(self.document)
         self.assertEqual(distances, expected)
 

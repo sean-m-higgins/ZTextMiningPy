@@ -9,29 +9,24 @@ class Test(unittest.TestCase):
     tags = "tags: zettel, sentence, test, cite:..."
     document = [[sentence1], [sentence2], [tags]]
 
+
     process = zettel_preprocessor.ZettelPreProcessor()
     process.init_zettels(document)
-
     tokens = process.tokenizer()
-    pos_tokens = process.pos_tagger(tokens)
-    filtered_words = process.remove_stop_words(pos_tokens)
-
+    pos_tokens = process.pos_tagger()
+    filtered_words = process.remove_stop_words()
     # stemmer types: 'porter', 'lancaster', 'snowball'
-    stemmed_tokens = process.stemmer(filtered_words, 'lancaster')
-    lemmatized_tokens = process.lemmatizer(stemmed_tokens)
-
-    n_grams = process.create_n_gram(lemmatized_tokens, 2)
-
-    unique_corpus = process.create_unique_corpus(lemmatized_tokens)
-    unique_n_gram_corpus = process.create_unique_corpus(n_grams)
+    stemmed_tokens = process.stemmer('lancaster')
+    lemmatized_tokens = process.lemmatizer()
+    n_grams = process.create_n_gram(2)
+    unique_corpus = process.create_unique_corpus()
+    unique_n_gram_corpus = process.create_unique_corpus()
     #unique_tag_corpus = process.create_unique_tag_corpus(tags)  #TODO
-
     #tag_boolean_matrix = process.create_boolean_tag_matrix(unique_tag_corpus) #TODO
+    count_matrix = process.create_count_matrix()
+    count_dict = process.create_count_dictionary()
+    doc_count_dict = process.create_doc_count_dictionary()
 
-    count_matrix = process.create_count_matrix(unique_corpus)
-
-    count_dict = process.create_count_dictionary(lemmatized_tokens)
-    doc_count_dict = process.create_doc_count_dictionary(lemmatized_tokens)
 
     def test_tokenizer(self):
         expected = ['This',	'is', 'a', 'test', 'sentence', 'for', 'data', 'mining', 'zettels', 'zettels', 'zettels',
@@ -100,4 +95,5 @@ class Test(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    Test.init_tests()
     unittest.main()

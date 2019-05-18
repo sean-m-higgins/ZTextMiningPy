@@ -111,8 +111,8 @@ class Distance:
             new_tf_idf = []
             process.init_zettels(zettel)
             count_dict = process.create_count_dictionary()
-            total_words = len(process.tokens)
-            for word in process.tokens:
+            total_words = len(process.lemmatized_tokens)
+            for word in process.lemmatized_tokens:
                 # tf = (count of given word for a given zettel) / (total number of words for given zettel)
                 tf = count_dict[word] / total_words
                 # idf = (total number of documents) / (number of documents containing word)

@@ -139,15 +139,15 @@ class ZettelPreProcessor:
 
 	def create_n_gram(self, n):
 		n_grams = []
-		for index in range(len(self.tokens)-n+1):
-			pair = self.tokens[index:index+n]
+		for index in range(len(self.lemmatized_tokens)-n+1):
+			pair = self.lemmatized_tokens[index:index+n]
 			split = pair[0] + " " + pair[1]
 			n_grams.append(split)
 		return n_grams
 
 	def create_count_dictionary(self):
 		word_count_dict = {}
-		for word in self.tokens:
+		for word in self.lemmatized_tokens:		#TODO tokens or lemmatized_tokens
 			if word in word_count_dict:
 				word_count_dict[word] += 1
 			else:
@@ -159,9 +159,9 @@ class ZettelPreProcessor:
 		for zettel in self.zettels:
 			process = ZettelPreProcessor()
 			process.init_zettels(zettel)
-			cur_zettel_dict = {key: 1 for key in process.tokens}
+			cur_zettel_dict = {key: 1 for key in process.lemmatized_tokens}		#TODO tokens or lemmatized tokens
 			word_dict = {}
-			for word in self.tokens:
+			for word in self.lemmatized_tokens:
 				if word in word_dict:
 					continue
 				if word in cur_zettel_dict:
