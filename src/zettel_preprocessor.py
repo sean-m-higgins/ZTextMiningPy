@@ -178,11 +178,22 @@ class ZettelPreProcessor:
 		files = os.listdir(directory)
 		for file in files:
 			path = directory + "/" + file
-			alist = [line.rstrip() for line in open(path)]
-			contents = [alist]
+			contents = [line.rstrip() for line in open(path)]
 			new_zettels.append(contents)
 		return new_zettels
 
+	def get_document_word_counts(self):
+		i = 0
+		counts = []
+		for zettel in self.zettels:
+			counts.append(0)
+			process = ZettelPreProcessor()
+			process.init_zettels(zettel)
+			print(zettel)
+			for word in process.tokens:
+				counts[i] = counts[i] + 1
+			i += 1
+		return counts
 
 if __name__ == "__main__":
 	baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/baseball"

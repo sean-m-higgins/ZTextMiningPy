@@ -133,5 +133,5 @@ if __name__ == "__main__":
 
     distance = Distance()
     distance_type = 'euclidean'
-    matrix = np.array(distance.get_distance_matrix(unique_count_matrix, distance_type))
-    tf_idf = distance.tf_idf(zettels)
+    matrix = np.array(distance.get_distance_matrix(process.unique_count_matrix, distance_type))
+    tf_idf = distance.tf_idf(process.zettels)

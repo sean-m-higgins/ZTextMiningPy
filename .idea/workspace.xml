@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1e3a476-4385-4a46-9452-4c047bba0a79" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/distance.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/distance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/explore_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/explore_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zettel_preprocessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_preprocessor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_distance.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_distance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_zettel_pre_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_zettel_pre_processor.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,16 +16,19 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ZTextMiningPy$Unittests_in_test_sample_py.coverage" NAME="Unittests in test_sample.py Coverage Results" MODIFIED="1554509457846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/ZTextMiningPy$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1558153534115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/ZTextMiningPy$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1559783026252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/ZTextMiningPy$DataMining.coverage" NAME="DataMining Coverage Results" MODIFIED="1558151133604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/zettel_preprocessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="145" column="22" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="22" />
+            <state relative-caret-position="224">
+              <caret line="190" column="40" lean-forward="true" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -33,17 +36,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cluster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            <state relative-caret-position="345">
+              <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/explore_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="301">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <element signature="e#183#207#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,10 +60,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/distance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="114" column="50" lean-forward="true" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
+            <state relative-caret-position="1902">
+              <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="80" column="30" lean-forward="true" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,17 +127,17 @@
         <option value="$PROJECT_DIR$/src/multilabel_classification.py" />
         <option value="$PROJECT_DIR$/src/cluster.py" />
         <option value="$PROJECT_DIR$/src/data_mining.py" />
-        <option value="$PROJECT_DIR$/src/explore_data.py" />
         <option value="$PROJECT_DIR$/tests/__init__.py" />
         <option value="$PROJECT_DIR$/tests/test_zettel_pre_processor.py" />
-        <option value="$PROJECT_DIR$/src/zettel_preprocessor.py" />
-        <option value="$PROJECT_DIR$/src/distance.py" />
         <option value="$PROJECT_DIR$/tests/test_distance.py" />
+        <option value="$PROJECT_DIR$/src/distance.py" />
+        <option value="$PROJECT_DIR$/src/model.py" />
+        <option value="$PROJECT_DIR$/src/zettel_preprocessor.py" />
+        <option value="$PROJECT_DIR$/src/explore_data.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1382" />
     <option name="height" value="1027" />
@@ -166,6 +187,21 @@
               <item name="ZTextMiningPy" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ZTextMiningPy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="ZTextMiningPy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="ZTextMiningPy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -177,7 +213,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558152339877" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559879650722" />
     <property name="jdk.selected.JAVA_MODULE" value="10.0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -205,7 +241,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in tests">
+  <component name="RunManager" selected="Python.explore_data">
     <configuration name="DataMining" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ZTextMiningPy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -222,28 +258,6 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/data_mining.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Distance" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ZTextMiningPy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/distance.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -272,10 +286,51 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="explore_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ZTextMiningPy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/explore_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="model" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ZTextMiningPy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="zettel_preprocessor" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ZTextMiningPy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -289,21 +344,6 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests in /Users/SeanHiggins/ZTextMiningPy/tests/test_sample.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="ZTextMiningPy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_sample.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in tests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -323,11 +363,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests in tests" />
+        <item itemvalue="Python.explore_data" />
+        <item itemvalue="Python.model" />
         <item itemvalue="Python.zettel_preprocessor" />
+        <item itemvalue="Python tests.Unittests in tests" />
         <item itemvalue="Python.DataMining" />
-        <item itemvalue="Python tests.Unittests in /Users/SeanHiggins/ZTextMiningPy/tests/test_sample.py" />
-        <item itemvalue="Python.Distance" />
       </list>
     </recent_temporary>
   </component>
@@ -370,14 +410,17 @@
       <workItem from="1556921644075" duration="506000" />
       <workItem from="1557082056468" duration="258000" />
       <workItem from="1557115928608" duration="190000" />
-      <workItem from="1557886202312" duration="6481000" />
+      <workItem from="1557886202312" duration="7479000" />
+      <workItem from="1558889536195" duration="1450000" />
+      <workItem from="1559258470735" duration="1384000" />
+      <workItem from="1559782974536" duration="2071000" />
+      <workItem from="1559785340173" duration="1944000" />
+      <workItem from="1559851124989" duration="1150000" />
+      <workItem from="1559852695382" duration="13635000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_tests - 2019.05.17 at 23h 11m 39s.xml">
-      <configuration name="Unittests in tests" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_tests - 2019.05.17 at 23h 12m 50s.xml">
       <configuration name="Unittests in tests" configurationId="tests" />
     </history-entry>
@@ -405,9 +448,12 @@
     <history-entry file="Unittests_in_tests - 2019.05.17 at 23h 25m 39s.xml">
       <configuration name="Unittests in tests" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_tests - 2019.06.05 at 20h 03m 52s.xml">
+      <configuration name="Unittests in tests" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166958000" />
+    <option name="totallyTimeSpent" value="189590000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,10 +465,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="23" width="1382" height="1027" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21343283" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1892552" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -431,7 +477,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3839572" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3839572" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -451,32 +497,13 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
       <window_info anchor="right" x="0" y="0" width="192" height="827" id="Documentation" order="9" sideWeight="0.3604278" side_tool="true" weight="0.45597014" />
-      <window_info anchor="right" id="SciView" order="10" sideWeight="0.6395722" weight="0.45597014" />
+      <window_info anchor="right" id="SciView" order="10" sideWeight="0.6395722" weight="0.45543346" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/pip-10.0.1-py3.6.egg/pip/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/pip-10.0.1-py3.6.egg/pip/__main__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/pyvenv.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="36" lean-forward="true" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/bin/pip">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -499,14 +526,6 @@
         <state relative-caret-position="60">
           <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/data/zettels/baseball/atlanta-braves.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/data/zettels/baseball/baltimore-orioles.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/data/zettels/baseball/boston-red-sox.yaml">
@@ -598,16 +617,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/callback.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/callback.py" />
     <entry file="file://$PROJECT_DIR$/docs/data/zettels/rheingold-examples/Rheingold-Tools-for-Thought-0001.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -615,50 +625,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/data/zettels/baseball/arizona-diamondbacks.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-start-column="7" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/retrieval.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/explore_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_mining.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/multilabel_classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="82" selection-start-line="82" selection-end-line="82" selection-end-column="26" />
-          <folding>
-            <element signature="e#47#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cluster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_mining.py" />
+    <entry file="file://$PROJECT_DIR$/src/multilabel_classification.py" />
     <entry file="file://$PROJECT_DIR$/tests/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -676,16 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/distance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="114" column="50" lean-forward="true" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_distance.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -696,10 +657,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/spacy/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="80" column="30" lean-forward="true" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/data/zettels/baseball/atlanta-braves.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/data/zettels/baseball/baltimore-orioles.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/data/zettels/baseball/arizona-diamondbacks.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/zettel_preprocessor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="145" column="22" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="22" />
+        <state relative-caret-position="224">
+          <caret line="190" column="40" lean-forward="true" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1902">
+          <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/explore_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#183#207#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -761,6 +788,7 @@
             <option name="proportions">
               <list>
                 <option value="0.4816092" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
