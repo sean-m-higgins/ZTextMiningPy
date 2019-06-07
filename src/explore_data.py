@@ -1,4 +1,3 @@
-# # TODO histograms of number of tags, num words / num tags...?
 from zettel_preprocessor import ZettelPreProcessor
 from wordcloud import WordCloud, STOPWORDS
 import numpy as np
@@ -23,7 +22,7 @@ class exploreData:
     def get_bar_graph(self, values):
         """
         Function to plot bar graph
-        :param documents: list of zettels
+        :param values: list of word counts for each zettel
         """
         n = len(values)
         x = np.arange(n)
@@ -33,29 +32,29 @@ class exploreData:
         plt.ylabel('Number of Words')
         plt.show()
 
-if __name__ == "__main__":
-    baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/baseball"
-    bibs = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/bibs"
-    examples = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/examples"
-    rheingold = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/rheingold-examples"
 
-    process = ZettelPreProcessor()
-    zettels = process.get_zettels_from_directory(baseball)
-    process.init_zettels(zettels)
+baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/baseball"
+bibs = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/bibs"
+examples = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/examples"
+rheingold = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/rheingold-examples"
 
-    words = process.lemmatized_tokens
-    stopwords = STOPWORDS
-    one_str_words = ''
+process = ZettelPreProcessor()
+zettels = process.get_zettels_from_directory(baseball)
+process.init_zettels(zettels)
 
-    for word in words:
-        one_str_words = one_str_words + word + " "
+words = process.lemmatized_tokens
+stopwords = STOPWORDS
+one_str_words = ''
 
-    ex = exploreData()
-    wordcloud = ex.get_wordcloud(one_str_words, stopwords)
-    ex.plot_wordcloud(wordcloud)
+for word in words:
+    one_str_words = one_str_words + word + " "
 
-    document_word_counts = process.get_document_word_counts()
-    ex.get_bar_graph(document_word_counts)
+ex = exploreData()
+wordcloud = ex.get_wordcloud(one_str_words, stopwords)
+ex.plot_wordcloud(wordcloud)
+
+document_word_counts = process.get_document_word_counts()
+ex.get_bar_graph(document_word_counts)
 
 
 
