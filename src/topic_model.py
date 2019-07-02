@@ -24,9 +24,9 @@ rheingold_zettels = process.get_zettels_from_directory(rheingold)
 one_str_zettels = ''
 
 for zettel in baseball_zettels:
-    one_str_zettels = one_str_zettels + zettel + " \n"
+    one_str_zettels = str(one_str_zettels + zettel + " \n")
 for zettel in rheingold_zettels:
-    one_str_zettels = one_str_zettels + zettel + " \n"
+    one_str_zettels = str(one_str_zettels + zettel + " \n")
 
 print(one_str_zettels)
 nlp = spacy.load('en')
@@ -48,19 +48,15 @@ for word in doc:
         texts.append(article)
         article = []
 
-print(texts)
-
+# combine bigrams and add to corpus
 bigram = gensim.models.Phrases(texts)
 
 texts = [bigram[line] for line in texts]
-print(texts)
 
 dictionary = Dictionary(texts)
-print(dictionary)
 
 # (word id, number of times word appears in document)
 corpus = [dictionary.doc2bow(text) for text in texts]
-print(corpus)
 
 # latent semantic indexing, a popular information retrieval method,
 # which works by decomposing the original matrix of words to
