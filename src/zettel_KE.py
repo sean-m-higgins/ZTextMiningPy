@@ -10,7 +10,7 @@ class KE:
         self.lemma_tokens = z_process.lemmatized_tokens
         self.filter_n_grams(z_process.bi_gram, 2)  #TODO possibly change to 1?
         self.filter_n_grams(z_process.tri_gram, 2)
-        self.doc_count_dict = self.create_doc_count_dictionary(z_process.create_unique_corpus())
+        self.doc_count_dict = self.create_doc_count_dictionary(set(self.lemma_tokens))
         self.window_size = 4
 
     def run(self, min_freq, n):
@@ -309,8 +309,11 @@ class KE:
 rheingold = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/rheingold-examples"
 baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/baseball"
 
+import datetime
+print(datetime.datetime.now())
+
 z_process = process.ZettelPreProcessor()
-zettels = z_process.get_zettels_from_directory(rheingold)
+zettels = z_process.get_zettels_from_directory(baseball)
 
 ke = KE(zettels)
 suggested_keywords = ke.run(min_freq=1, n=5)
@@ -324,3 +327,6 @@ for zettel in suggested_keywords:
         print(item[1][0])
         inner_i += 1
     index += 1
+
+print("Done.")
+print(datetime.datetime.now())
