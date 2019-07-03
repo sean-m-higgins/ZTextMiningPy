@@ -90,6 +90,14 @@ class ZettelPreProcessor:
 			all_n_grams.append(n_grams)
 		return all_n_grams
 
+	def create_unique_corpus(self):
+		token_set = []
+		for zettel in self.lemmatized_tokens:
+			for word in zettel:
+				if word not in token_set:
+					token_set.append(word[0])
+		return token_set
+
 	def get_zettels_from_directory(self, directory):
 		new_zettels = []
 		files = os.listdir(directory)

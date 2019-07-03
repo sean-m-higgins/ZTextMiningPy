@@ -182,6 +182,9 @@ would
 also
 later
 often
+PDF
+eBook
+know
 title
 note
 summary
