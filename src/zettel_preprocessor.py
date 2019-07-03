@@ -5,7 +5,7 @@ import nltk
 from nltk.stem.porter import PorterStemmer
 from nltk.stem.lancaster import LancasterStemmer
 from nltk.stem import SnowballStemmer, WordNetLemmatizer
-from nltk.corpus import stopwords
+from nltk.corpus import stopwords # stopwords.words('english')
 import os
 
 
@@ -14,6 +14,8 @@ class ZettelPreProcessor:
 	def init_zettels(self, zet):
 		self.zettels = zet
 		self.tokens = self.tokenizer()
+		sw_file = open("/Users/SeanHiggins/ZTextMiningPy/docs/data/processedData/stopWords/zettelStopWords.txt", "r")
+		self.stop_words = re.split("\n", sw_file.read()) #TODO possibly remove title, note... from file
 		self.filtered_words = self.remove_stop_words()
 		self.pos_tagged_tokens = self.pos_tagger()
 		self.lemmatized_tokens = self.lemmatizer()
@@ -39,11 +41,10 @@ class ZettelPreProcessor:
 
 	def remove_stop_words(self):
 		all_filtered_words = []
-		stop_words = set(stopwords.words('english')) #TODO possibly switch out with own list of stopwords
 		for zettel in self.tokens:
 			filtered_words = []
 			for word in zettel:
-				if word.lower() in stop_words:
+				if word.lower() in self.stop_words:
 					continue
 				else:
 					filtered_words.append(word)
@@ -74,7 +75,7 @@ class ZettelPreProcessor:
 		for zettel in self.pos_tagged_tokens:
 			lemmatized_tokens = []
 			for word in zettel:
-				lemmatized_tokens.append(lemmatizer.lemmatize(word[0], word[2]))
+				lemmatized_tokens.append([lemmatizer.lemmatize(word[0], word[2]), word[1]])
 			all_lemmatized_tokens.append(lemmatized_tokens)
 		return all_lemmatized_tokens
 
@@ -97,8 +98,8 @@ class ZettelPreProcessor:
 		unique_corpus = []
 		for zettel in self.lemmatized_tokens:
 			for word in zettel:
-				if word not in unique_corpus:
-					unique_corpus.append(word)
+				if word[0] not in unique_corpus:
+					unique_corpus.append(word[0])
 		unique_corpus = list(filter(None, unique_corpus))
 		unique_corpus.sort()
 		return unique_corpus
@@ -158,6 +159,8 @@ class ZettelPreProcessor:
 			n_grams = []
 			for index in range(len(zettel)-n+1):
 				set = zettel[index:index+n]
+				if (set[0].lower() in self.stop_words) or (set[n-1].lower() in self.stop_words): #skip if begin/end with stop_word
+					continue
 				split = ""
 				for i in range(n):
 					split += set[i]

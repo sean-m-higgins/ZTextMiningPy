@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b1e3a476-4385-4a46-9452-4c047bba0a79" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/data/processedData/sparkOutput/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/data/processedData/stopWords/sparkStopWords.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zettel_KE.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_KE.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zettel_preprocessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_preprocessor.py" afterDir="false" />
     </list>
@@ -19,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/zettel_preprocessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2640">
-              <caret line="176" column="44" selection-start-line="176" selection-start-column="44" selection-end-line="176" selection-end-column="44" />
+            <state relative-caret-position="142">
+              <caret line="162" column="28" lean-forward="true" selection-start-line="162" selection-start-column="28" selection-end-line="162" selection-end-column="28" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -31,14 +33,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/zettel_KE.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="166" column="22" lean-forward="true" selection-start-line="166" selection-start-column="22" selection-end-line="166" selection-end-column="22" />
+            <state relative-caret-position="285">
+              <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/data/processedData/stopWords/zettelStopWords.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2715">
+              <caret line="181" column="5" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -58,11 +69,13 @@
       <find>tag</find>
       <find>titl</find>
       <find>pri</find>
-      <find>print</find>
       <find>[</find>
-      <find>]</find>
       <find>zettels</find>
       <find>base</find>
+      <find>]</find>
+      <find>],</find>
+      <find>print</find>
+      <find>as</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -102,14 +115,14 @@
         <option value="$PROJECT_DIR$/src/RAKE.py" />
         <option value="$PROJECT_DIR$/src/z_rake.py" />
         <option value="$PROJECT_DIR$/src/distance.py" />
-        <option value="$PROJECT_DIR$/src/zettel_preprocessor.py" />
         <option value="$PROJECT_DIR$/src/zettel_KE.py" />
+        <option value="$PROJECT_DIR$/src/zettel_preprocessor.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1180" />
+    <option name="width" value="1360" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectView">
@@ -117,7 +130,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -168,32 +180,18 @@
               <item name="ZTextMiningPy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ZTextMiningPy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="ZTextMiningPy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="ZTextMiningPy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562099851461" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562121081758" />
     <property name="jdk.selected.JAVA_MODULE" value="10.0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -413,7 +411,27 @@
       <workItem from="1562036486762" duration="140000" />
       <workItem from="1562036632075" duration="829000" />
       <workItem from="1562037529411" duration="19204000" />
-      <workItem from="1562098597993" duration="1249000" />
+      <workItem from="1562098597993" duration="4472000" />
+      <workItem from="1562106536002" duration="158000" />
+      <workItem from="1562106696821" duration="1296000" />
+      <workItem from="1562108051623" duration="582000" />
+      <workItem from="1562108695472" duration="486000" />
+      <workItem from="1562109189933" duration="968000" />
+      <workItem from="1562110175745" duration="479000" />
+      <workItem from="1562110665625" duration="398000" />
+      <workItem from="1562111070622" duration="2494000" />
+      <workItem from="1562116296161" duration="692000" />
+      <workItem from="1562117001009" duration="127000" />
+      <workItem from="1562117133576" duration="124000" />
+      <workItem from="1562117262452" duration="599000" />
+      <workItem from="1562117873150" duration="1916000" />
+      <workItem from="1562119817993" duration="248000" />
+      <workItem from="1562120072441" duration="778000" />
+      <workItem from="1562121058767" duration="1010000" />
+      <workItem from="1562122093362" duration="74000" />
+      <workItem from="1562122171244" duration="464000" />
+      <workItem from="1562122656652" duration="298000" />
+      <workItem from="1562122967057" duration="137000" />
     </task>
     <servers />
   </component>
@@ -450,7 +468,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222814000" />
+    <option name="totallyTimeSpent" value="239365000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -462,10 +480,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1180" height="1027" extended-state="0" />
+    <frame x="0" y="23" width="1360" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29876977" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35280728" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -474,7 +492,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3839572" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3839572" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -493,7 +511,7 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
-      <window_info anchor="right" x="0" y="0" width="192" height="827" id="Documentation" order="9" sideWeight="0.3604278" side_tool="true" weight="0.45518455" />
+      <window_info anchor="right" x="0" y="0" width="192" height="827" id="Documentation" order="9" sideWeight="0.3604278" side_tool="true" weight="0.45447648" />
       <window_info anchor="right" id="SciView" order="10" sideWeight="0.6395722" weight="0.4550979" />
     </layout>
   </component>
@@ -501,9 +519,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docs/data/zettels/baseball/chicago-grey-sox.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/data/zettels/baseball/cincinnati-reds.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -705,7 +720,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/distance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="1117">
           <caret line="106" column="19" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="19" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
@@ -713,22 +728,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/zettel_preprocessor.py">
+    <entry file="file://$PROJECT_DIR$/docs/data/processedData/stopWords/zettelStopWords.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2640">
-          <caret line="176" column="44" selection-start-line="176" selection-start-column="44" selection-end-line="176" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2715">
+          <caret line="181" column="5" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/zettel_KE.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="166" column="22" lean-forward="true" selection-start-line="166" selection-start-column="22" selection-end-line="166" selection-end-column="22" />
+        <state relative-caret-position="285">
+          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zettel_preprocessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="162" column="28" lean-forward="true" selection-start-line="162" selection-start-column="28" selection-end-line="162" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
