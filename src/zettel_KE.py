@@ -1,69 +1,67 @@
-import operator
 import numpy as np
 import zettel_preprocessor as process
 import re
 
-class KE(object):
+class KE:
 
-    # def __init__(self):
-
-    # def __init__(self, stop_words, regex='[\W\n]+'):
-    #     #lets users call predefined stopwords easily in a platform agnostic manner or use their own list
-    #     if isinstance(stop_words, list):
-    #         self.__stop_words_pattern = build_stop_word_regex(stop_words)
-    #     else:
-    #         self.__stop_words_pattern = build_stop_word_regex(load_stop_words(stop_words, regex))
-
-    # run -> tokenize, POS, lemmatize, bi-gram/tri-gram swaps, word scores, keyword scores, tf_idf, text rank, weight distribution...
-    def run(self, zettels):
+    def __init__(self, zettels):
         z_process = process.ZettelPreProcessor()
         z_process.init_zettels(zettels)
-
-        # tokens = z_process.tokens
-        # pos_tokens = z_process.pos_tagged_tokens
         self.lemma_tokens = z_process.lemmatized_tokens
-
-        print(z_process.bi_gram)
-        print(z_process.tri_gram)
-
-        self.filter_n_grams(z_process.bi_gram, 2)
+        self.filter_n_grams(z_process.bi_gram, 2)  #TODO possibly change to 1?
         self.filter_n_grams(z_process.tri_gram, 2)
-
-
-        doc_count_dict = self.create_doc_count_dictionary(z_process.create_unique_corpus())
-        TF_IDF = self.tf_idf(doc_count_dict)
-
-        self.word_scores = self.create_word_score() #TODO
-        keyword_scores = self.create_keyword_score(1) #TODO
-
+        self.doc_count_dict = self.create_doc_count_dictionary(z_process.create_unique_corpus())
         self.window_size = 4
-        text_ranks = self.create_text_rank()
+
+    def run(self, min_freq, n):
+        self.tf_idf_scores = self.tf_idf()
+        self.word_scores = self.create_word_score()
+        self.keyword_scores = self.create_keyword_score(self.word_scores, min_freq)
+        self.text_ranks = self.create_text_rank()
+        self.pos_scores = self.create_pos_score()
+        # z_area_scores = self.create_area_score()  #TODO once retrieve data correctly
+        self.all_scores = self.weight_distribution()
+        return self.get_keywords(n)
 
 
-        # print(tokens)
-        # print(pos_tokens)
-        # print(lemma_tokens)
-        # print(bi_grams)
-        # print(tri_grams)
-        # print(doc_count_dict)
-        # print(TF_IDF)
-        # print(word_scores)
-        # print(keyword_scores)
-        # print(text_ranks)
+    def filter_n_grams(self, n_grams, min_freq):
+        """ remove infrequent n_grams and add frequent n_grams to corr. zettel in lemma_tokens """
+        all_n_grams = []
+        for zettel in n_grams:
+            cur_n_grams = []
+            for gram in zettel:
+                if zettel.count(gram) >= min_freq:
+                    cur_n_grams.append(gram)
+            all_n_grams.append(cur_n_grams)
+        all_new_tokens = self.lemma_tokens
+        index = 0
+        for zettel in n_grams:
+            for gram in zettel:
+                all_new_tokens[index].append([gram, 'NG'])
+            index += 1
+        self.lemma_tokens = all_new_tokens
 
-    # def run(self, text, minCharacters=1, maxWords=5, minFrequency=1):
-    #     sentence_list = split_sentences(text)
-    #
-    #     phrase_list = generate_candidate_keywords(sentence_list, self.__stop_words_pattern, minCharacters, maxWords)
-    #
-    #     word_scores = calculate_word_scores(phrase_list)
-    #
-    #     keyword_candidates = generate_candidate_keyword_scores(phrase_list, word_scores, minFrequency)
-    #
-    #     sorted_keywords = sorted(keyword_candidates.items(), key=operator.itemgetter(1), reverse=True)
-    #     return sorted_keywords
+    def create_doc_count_dictionary(self, unique_lemmas):
+        """ {word: doc_count} """
+        doc_count_dict = {}
+        for zettel in self.lemma_tokens:
+            for word in unique_lemmas:
+                for token in zettel:
+                    if token[0] == word:
+                        doc_count_dict.setdefault(word, 0)
+                        doc_count_dict[word] += 1
+                        break
+        return doc_count_dict
 
-    def tf_idf(self, doc_count_dict):
+    def create_count_dictionary(self, tokens):
+        """ {word: count} """
+        word_count_dict = {}
+        for word in tokens:
+            word_count_dict.setdefault(word[0], 0)
+            word_count_dict[word[0]] += 1
+        return word_count_dict
+
+    def tf_idf(self):
         """ tf_idf = tf * idf """
         total_docs = len(self.lemma_tokens)
         all_tf_idf = []
@@ -76,7 +74,7 @@ class KE(object):
                 # tf = (count of given word for a given zettel) / (total number of words for given zettel)
                 tf = count_dict[word[0]] / total_words
                 # idf = (total number of documents) / (number of documents containing word)
-                idf = total_docs / doc_count_dict[word[0]]
+                idf = total_docs / self.doc_count_dict[word[0]]
                 tf_idf_value = tf * idf
                 tf_idf.append(tf_idf_value)
             if row_length < len(tf_idf):
@@ -87,28 +85,10 @@ class KE(object):
                 row.append(0.0)
         return all_tf_idf
 
-    def create_count_dictionary(self, tokens):
-        word_count_dict = {}
-        for word in tokens:
-            word_count_dict.setdefault(word[0], 0)
-            word_count_dict[word[0]] += 1
-        return word_count_dict
-
-    def create_doc_count_dictionary(self, unique_lemmas):
-        doc_count_dict = {}
-        for zettel in self.lemma_tokens:
-            for word in unique_lemmas:
-                for token in zettel:
-                    if token[0] == word:
-                        doc_count_dict.setdefault(word, 0)
-                        doc_count_dict[word] += 1
-                        break
-        return doc_count_dict
-
     # https://github.com/fabianvf/python-rake/blob/master/RAKE/RAKE.py
-    # word score = deg(word) / freq(word) -- deg(word) = word_list_len - 1 for each word in the phrase + freq(word)
-    # single word = 0 degree, bi-gram = 1 degree, tri-gram = 2 degree #TODO experiment with diff numbers
+    # single word = 0 degree, bi-gram = 1 degree, tri-gram = 2 degree  #TODO experiment with diff numbers
     def create_word_score(self):
+        """ word_score = deg(word) / freq(word) ... deg(word) = phrase_len - 1 + freq(word) """
         word_freq = {}
         word_deg = {}
         for zettel in self.lemma_tokens:
@@ -128,8 +108,8 @@ class KE(object):
         return word_score
 
     # https://github.com/fabianvf/python-rake/blob/master/RAKE/RAKE.py
-    # keyword score = sum of each word score in phrase
-    def create_keyword_score(self, min_freq):
+    def create_keyword_score(self, word_scores, min_freq):  #TODO remove min_freq to constant?
+        """ keyword_score = sum of each word_score in phrase """
         keywords_score = {}
         for zettel in self.lemma_tokens:
             for word in zettel:
@@ -138,16 +118,16 @@ class KE(object):
                     word_list = re.split(" ", word[0])
                     score = 0
                     for new_word in word_list:
-                        score += self.word_scores[new_word]
+                        score += word_scores[new_word]
                     keywords_score[word[0]] = score
         return keywords_score
 
     # https://towardsdatascience.com/textrank-for-keyword-extraction-by-python-c0bae21bcec0
-    # text rank = calculate weight for each word based on graph. Any two word pairs have an undirected edge from 1 to 2
     def create_text_rank(self):
-        filtered_tokens = self.filter_pos()
-        vocab = self.create_vocab(filtered_tokens)
-        token_windows = self.create_token_windows(filtered_tokens)
+        """ text rank = weight based on any two word pairs of words (undirected edge from 1 to 2)"""
+        # filtered_tokens = self.filter_pos()    #if use, replace 2 self.lemma_tokens below
+        vocab = self.create_vocab(self.lemma_tokens)
+        token_windows = self.create_token_windows(self.lemma_tokens)
         graph = self.create_matrix(vocab, token_windows)
         text_rank = np.array([1] * len(vocab))
         previous_tr = 0
@@ -165,41 +145,44 @@ class KE(object):
         return node_weight
 
     # use all tokens, or optionally use only noun, proper noun, and verb tags TODO experiment...
-    def filter_pos(self):
-        all_tokens = []
-        for zettel in self.lemma_tokens:
-            tokens = []
-            for word in zettel:
-                if word[1] in ['NN', 'NNS', 'NNP', 'NNPS', 'NG']: # NG = n_gram
-                    tokens.append(word[0])
-            all_tokens.append(tokens)
-        return all_tokens
+    # def filter_pos(self):
+    #     """ remove words not of desired pos """
+    #     all_tokens = []
+    #     for zettel in self.lemma_tokens:
+    #         tokens = []
+    #         for word in zettel:
+    #             if word[1] in ['NN', 'NNS', 'NNP', 'NNPS', 'NG']:   # NG = n_gram
+    #                 tokens.append(word[0])
+    #         all_tokens.append(tokens)
+    #     return all_tokens
 
-    # create (word, index) vocabulary
     def create_vocab(self, filtered_tokens):
+        """ {word: index} """
         vocab = {}
         index = 0
         for zettel in filtered_tokens:
             for word in zettel:
-                if word not in vocab:
-                    vocab[word] = index
+                if word[0] not in vocab:
+                    vocab[word[0]] = index
                     index += 1
         return vocab
 
     # set window size k --> [w1, w2, …, w_k], [w2, w3, …, w_{k+1}], [w3, w4, …, w_{k+2}]...
     def create_token_windows(self, filtered_tokens):
+        """ token pairs inside each window """
         all_token_pairs = []
         for zettel in filtered_tokens:
             for i, word in enumerate(zettel):
                 for j in range(i+1, i+ self.window_size):
                     if j >= len(zettel):
                         break
-                    pair = (word, zettel[j])
+                    pair = (word[0], zettel[j][0])
                     if pair not in all_token_pairs:
                         all_token_pairs.append(pair)
         return all_token_pairs
 
     def create_matrix(self, vocab, token_windows):
+        """ graph with undirected edges from first word to second word of pair """
         vocab_size = len(vocab)
         graph = np.zeros((vocab_size, vocab_size), dtype='float')
         for word_1, word_2 in token_windows:
@@ -210,26 +193,105 @@ class KE(object):
         graph = np.divide(graph, norm, where= norm!= 0) #ignore the elements that = 0 in norm
         return graph
 
-    def filter_n_grams(self, n_grams, min_freq):
-        all_n_grams = []
-        for zettel in n_grams:
-            cur_n_grams = []
-            for gram in zettel:
-                if zettel.count(gram) >= min_freq:
-                    cur_n_grams.append(gram)
-            all_n_grams.append(cur_n_grams)
+    def create_pos_score(self):
+        """ pos_score = ('NN', .40) ('NNS', .35) ('NNP', .80) ('NNPS', .70) ('NG', .50) (V: .25) (Other: .15) """  #TODO subject to change
+        pos_score = {}
+        for zettel in self.lemma_tokens:
+            for word in zettel:
+                pos_score.setdefault(word[0], 0)
+                switch = {
+                    'NN': 0.40,
+                    'NNS': 0.35,
+                    'NNP': 0.80,
+                    'NNPS': 0.70,
+                    'NG': 0.50,
+                    'VB': 0.25,
+                    'VBD': 0.25,
+                    'VBG': 0.25,
+                    'VBN': 0.25,
+                    'VBP': 0.25,
+                    'VBZ': 0.25,
+                    'JJ': 0.15,
+                    'JJR': 0.15,
+                    'JJS': 0.15,
+                    'RB': 0.15,
+                    'RBR': 0.15,
+                    'RBS': 0.15
+                }
+                pos_score[word[0]] = switch.get(word[1])
+        return pos_score
 
-        all_new_tokens = self.lemma_tokens
-        print(all_new_tokens)
-        index = 0
-        for zettel in n_grams:
-            for gram in zettel:
-                all_new_tokens[index].append([gram, 'NG'])
-            index += 1
-        print(all_new_tokens)
-        self.lemma_tokens = all_new_tokens
+    # def create_area_score(self):
+    #     """ z_area_score = (title: .80) (summary: .60) (note: 40) """  #TODO subject to change
+    #     z_area_score = {}
+    #     for zettel in self.lemma_tokens:
+    #         index = 0
+    #         for section in zettel:  TODO once retrieve correctly
+    #             for word in section:
+    #                 z_area_score.setdefault(word[0], 0)
+    #                 switch = {
+    #                     0: 0.80,
+    #                     1: 0.60,
+    #                     2: 0.40
+    #                 }
+    #                 z_area_score[word[0]] = switch.get(index)
+    #     return z_area_score
+
+    def weight_distribution(self):
+        """ combine all scores together with weights """
+        z_index = 0
+        all_scores = []
+        for zettel in self.lemma_tokens:
+            scores = []
+            w_index = 0
+            for word in zettel:
+                cur_score = 0
+                cur_tf_idf = self.tf_idf_scores[z_index][w_index]
+                if word[1] == 'NG':
+                    word_list = re.split(" ", word[0])
+                    cur_word_score = 0
+                    i = 0
+                    for new_word in word_list:
+                        cur_word_score += self.word_scores[new_word]
+                        i += 1
+                    cur_word_score = cur_word_score / i / 10
+                else:
+                    cur_word_score = self.word_scores[word[0]] / 10
+                cur_keyword_score = self.keyword_scores[word[0]] / 10
+                cur_text_rank = self.text_ranks[word[0]] / 10
+                cur_pos_score = self.pos_scores[word[0]]
+                # cur_area_score = self.z_area_scores[word[0]]
+                cur_score = (cur_tf_idf * 0.2) + (cur_word_score * 0.2) + (cur_keyword_score * 0.2) + \
+                            (cur_text_rank * 0.2) + (cur_pos_score * 0.2)  # + (cur_area_score * 0.16)
+                scores.append(cur_score)
+            all_scores.append(scores)
+        return all_scores
+
+    def get_keywords(self, n):
+        """ get top n keywords based on total score for each zettel """
+        z_index = 0
+        all_keywords = []
+        for zettel in self.lemma_tokens:
+            keywords = []
+            cur_zettel_dict = {}
+            w_index = 0
+            for word in zettel:
+                cur_zettel_dict.setdefault(word[0], 0)
+                cur_word_total_score = self.all_scores[z_index][w_index]
+                if cur_zettel_dict[word[0]] > cur_word_total_score:
+                    continue
+                else:
+                    cur_zettel_dict[word[0]] = cur_word_total_score
+            cur_sorted = sorted(cur_zettel_dict.items(), key=lambda kv: kv[1])
+            for i in range(n):
+                keywords.append([n-i, cur_sorted[i]])
+            all_keywords.append(keywords)
+        return all_keywords
 
 
+
+# TODO delete? possibility of using page_rank by way of linking zettels together. if one zettel points to another could
+#  mean those repitive words from those zettels are important keywords...?
 # after creating graph, weights = (1-d) + d * ( dot( graph, page_ranks) )
 # initialize page ranks as 1
 # def create_page_rank(self, graph):
@@ -244,12 +306,21 @@ class KE(object):
 #     #         print(page_ranks)
 
 
-ke = KE()
-
 rheingold = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/rheingold-examples"
 baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/baseball"
 
 z_process = process.ZettelPreProcessor()
-zettels = z_process.get_zettels_from_directory(baseball)
+zettels = z_process.get_zettels_from_directory(rheingold)
 
-ke.run(zettels)
+ke = KE(zettels)
+suggested_keywords = ke.run(min_freq=1, n=5)
+
+index = 0
+for zettel in suggested_keywords:
+    print("\nSuggested Keywords for Zettel " + str(index) + ": ")
+    inner_i = 1
+    for item in zettel:
+        print(str(inner_i) + ": ")
+        print(item[1][0])
+        inner_i += 1
+    index += 1

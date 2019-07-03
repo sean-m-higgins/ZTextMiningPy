@@ -15,15 +15,15 @@ class ZettelPreProcessor:
 		self.zettels = zet
 		self.tokens = self.tokenizer()
 		sw_file = open("/Users/SeanHiggins/ZTextMiningPy/docs/data/processedData/stopWords/zettelStopWords.txt", "r")
-		self.stop_words = re.split("\n", sw_file.read()) #TODO possibly remove title, note... from file
+		self.stop_words = re.split("\n", sw_file.read())  #TODO possibly remove title, note... from file
 		self.filtered_words = self.remove_stop_words()
 		self.pos_tagged_tokens = self.pos_tagger()
 		self.lemmatized_tokens = self.lemmatizer()
-		self.stemmed_tokens = self.stemmer('lancaster')  # stemmer types: 'porter', 'lancaster', 'snowball'
+		#self.stemmed_tokens = self.stemmer('lancaster')  #stemmer types: 'porter', 'lancaster', 'snowball'  TODO remove?
 		self.unique_corpus = self.create_unique_corpus()
 		self.bi_gram = self.create_n_gram(2)
 		self.tri_gram = self.create_n_gram(3)
-		self.unique_count_matrix = self.create_count_matrix()
+		#self.unique_count_matrix = self.create_count_matrix() TODO remove?
 		#self.unique_tag_corpus = self..create_unique_tag_corpus(tags)  #TODO get tokens from an array and parse...
 		#self.tag_boolean_matrix = self.create_boolean_tag_matrix(unique_tag_corpus)
 		#self.tag_count_matrix = self.create_unique_corpus(unique_tag_corpus)
@@ -104,7 +104,7 @@ class ZettelPreProcessor:
 		unique_corpus.sort()
 		return unique_corpus
 
-	# def create_unique_tag_corpus(self): #TODO fix once tags are recieved correctly
+	# def create_unique_tag_corpus(self):  #TODO fix once tags are recieved correctly
 	# 	unique_tag_corpus = []
 	# 	lock = 0
 	# 	for word in self.tokens:
@@ -120,14 +120,14 @@ class ZettelPreProcessor:
 	# 	unique_tag_corpus = list(filter(None, unique_tag_corpus)).sort()
 	# 	return unique_tag_corpus
 
-	def create_count_matrix(self): #TODO check
+	def create_count_matrix(self):  #TODO check
 		count_matrix = []
 		for zettel in self.zettels:
 			count = ZettelPreProcessor.get_word_count(self, zettel)
 			count_matrix.append(count)
 		return count_matrix
 
-	def get_word_count(self, zettel): #TODO check
+	def get_word_count(self, zettel):  #TODO check
 		new_unique_corpus = self.unique_corpus
 		count = np.zeros(len(new_unique_corpus))
 		split_zettel = re.split("\W+", str(zettel).lower())
@@ -172,10 +172,10 @@ class ZettelPreProcessor:
 
 	# def create_count_dictionary(self, tokens): #TODO replaced?
 	# 	word_count_dict = {}
-	#         for word in tokens:
-	#             word_count_dict.setdefault(word, 0)
-	#             word_count_dict[word] += 1
-	#         return word_count_dict
+	#	for word in tokens:
+	#      	word_count_dict.setdefault(word, 0)
+    #		word_count_dict[word] += 1
+    #	return word_count_dict
 	#
 	# def create_doc_count_dictionary(self):
 	# 	doc_count_dict = {}
