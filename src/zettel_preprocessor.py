@@ -6,49 +6,126 @@ import nltk
 # from nltk.stem.lancaster import LancasterStemmer
 # from nltk.stem import SnowballStemmer
 from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet as wn
 # from nltk.corpus import stopwords # stopwords.words('english')
 import os
+import threading
+import concurrent.futures
+from queue import Queue
 
 
 class ZettelPreProcessor:
 
 	def init_zettels(self, zet):
+		self.lock = threading.Lock()
+		self.lemmatizer = WordNetLemmatizer()
 		self.zettels = zet
 		self.tokens = self.tokenizer()
 		sw_file = open("/Users/SeanHiggins/ZTextMiningPy/docs/data/processedData/stopWords/zettelStopWords.txt", "r")
-		self.stop_words = re.split("\n", sw_file.read())  #TODO possibly remove title, note... from file
+		self.stop_words = [line[:-1] for line in sw_file.readlines()] #TODO possibly remove title, note... from file
 		self.filtered_words = self.remove_stop_words()
 		self.pos_tagged_tokens = self.pos_tagger()
-		self.lemmatized_tokens = self.lemmatizer()
-		self.bi_gram = self.create_n_gram(2)
-		self.tri_gram = self.create_n_gram(3)
+		self.lemmatized_tokens = self.create_lemmatized_tokens()
+		thread_1 = threading.Thread(self.get_bi_gram(), args=(1,))
+		thread_1.start()
+		thread_2 = threading.Thread(self.get_tri_gram(), args=(2,))
+		thread_2.start()
+		thread_1.join()
+		thread_2.join()
 		#self.stemmed_tokens = self.stemmer('lancaster')  #stemmer types: 'porter', 'lancaster', 'snowball'  TODO remove?
-		#self.unique_count_matrix = self.create_count_matrix() TODO remove?
+		#self.unique_count_matrix = self.create_count_matrix()
 		#self.unique_tag_corpus = self..create_unique_tag_corpus(tags)  #TODO get tokens from an array and parse...
 		#self.tag_boolean_matrix = self.create_boolean_tag_matrix(unique_tag_corpus)
 		#self.tag_count_matrix = self.create_unique_corpus(unique_tag_corpus)
 
 	def tokenizer(self):
 		all_tokens = []
-		for zettel in self.zettels:
+		self.token_q = Queue()
+		with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+			for num in range(5):
+				executor.submit(self.get_tokens, num)
+		results = {}
+		while not self.token_q.empty():
+			temp_result = self.token_q.get()
+			results[temp_result[1]] = temp_result[0]
+		for index in range(5):
+			for zettel in results[index]:
+				all_tokens.append(zettel)
+		return all_tokens
+
+	def get_tokens(self, thread_index):
+		switch = {
+			0: self.zettels[:(len(self.zettels)//5)],
+			1: self.zettels[(len(self.zettels)//5): (len(self.zettels)//5)*2],
+			2: self.zettels[(len(self.zettels)//5)*2: (len(self.zettels)//5)*3],
+			3: self.zettels[(len(self.zettels)//5)*3: (len(self.zettels)//5)*4],
+			4: self.zettels[(len(self.zettels)//5)*4: (len(self.zettels)//5)*5],
+		}
+		new_tokens = []
+		for zettel in switch.get(thread_index):
 			tokens = re.split('\W+', str(zettel))
 			tokens = list(filter(None, tokens))
-			all_tokens.append(tokens)
-		return all_tokens
+			new_tokens.append(tokens)
+		self.token_q.put([new_tokens, thread_index])
+
 
 	def remove_stop_words(self):
 		all_filtered_words = []
-		for zettel in self.tokens:
-			filtered_words = []
-			for word in zettel:
-				if word.lower() not in self.stop_words:
-					filtered_words.append(word)
-			all_filtered_words.append(filtered_words)
+		self.stop_word_q = Queue()
+		with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+			for num in range(5):
+				executor.submit(self.get_stop_words, num)
+		results = {}
+		while not self.stop_word_q.empty():
+			temp_result = self.stop_word_q.get()
+			results[temp_result[1]] = temp_result[0]
+		for index in range(5):
+			for zettel in results[index]:
+				all_filtered_words.append(zettel)
 		return all_filtered_words
 
+	def get_stop_words(self, thread_index):
+		switch = {
+			0: self.tokens[:(len(self.tokens)//5)],
+			1: self.tokens[(len(self.tokens)//5): (len(self.tokens)//5)*2],
+			2: self.tokens[(len(self.tokens)//5)*2: (len(self.tokens)//5)*3],
+			3: self.tokens[(len(self.tokens)//5)*3: (len(self.tokens)//5)*4],
+			4: self.tokens[(len(self.tokens)//5)*4: (len(self.tokens)//5)*5],
+		}
+		all_filtered_words = []
+		for zettel in switch.get(thread_index):
+			filtered_words = []
+			for word in zettel:
+				if word not in self.stop_words and word.lower() not in self.stop_words:
+					filtered_words.append(str(word))
+			all_filtered_words.append(filtered_words)
+		self.stop_word_q.put([all_filtered_words, thread_index])
+
 	def pos_tagger(self):
+		tokens_with_pos_tags = []
+		self.pos_tokens_q = Queue()
+		with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+			for num in range(5):
+				executor.submit(self.get_pos_tags, num)
+		results = {}
+		while not self.pos_tokens_q.empty():
+			temp_result = self.pos_tokens_q.get()
+			results[temp_result[1]] = temp_result[0]
+		for index in range(5):
+			for zettel in results[index]:
+				tokens_with_pos_tags.append(zettel)
+		return tokens_with_pos_tags
+
+	def get_pos_tags(self, thread_index):
+		switch = {
+			0: self.filtered_words[:(len(self.filtered_words)//5)],
+			1: self.filtered_words[(len(self.filtered_words)//5): (len(self.filtered_words)//5)*2],
+			2: self.filtered_words[(len(self.filtered_words)//5)*2: (len(self.filtered_words)//5)*3],
+			3: self.filtered_words[(len(self.filtered_words)//5)*3: (len(self.filtered_words)//5)*4],
+			4: self.filtered_words[(len(self.filtered_words)//5)*4: (len(self.filtered_words)//5)*5],
+		}
 		all_tokens_with_pos_tags = []
-		for zettel in self.filtered_words:
+		for zettel in switch.get(thread_index):
 			tags = nltk.pos_tag(zettel)
 			tokens_with_pos_tags = []
 			for word in tags:
@@ -61,17 +138,39 @@ class ZettelPreProcessor:
 				elif word[1].startswith('R'):
 					tokens_with_pos_tags.append([word[0], word[1], 'r'])
 			all_tokens_with_pos_tags.append(tokens_with_pos_tags)
-		return all_tokens_with_pos_tags
+		self.pos_tokens_q.put([all_tokens_with_pos_tags, thread_index])
 
-	def lemmatizer(self):
+	def create_lemmatized_tokens(self):
 		all_lemmatized_tokens = []
-		lemmatizer = WordNetLemmatizer()
-		for zettel in self.pos_tagged_tokens:
+		self.lemma_q = Queue()
+		wn.ensure_loaded()
+		with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+			for num in range(5):
+				executor.submit(self.get_lemma_tokens, num)
+		results = {}
+		while not self.lemma_q.empty():
+			temp_result = self.lemma_q.get()
+			results[temp_result[1]] = temp_result[0]
+		for index in range(5):
+			for zettel in results[index]:
+				all_lemmatized_tokens.append(zettel)
+		return all_lemmatized_tokens
+
+	def get_lemma_tokens(self, thread_index):
+		switch = {
+			0: self.pos_tagged_tokens[:(len(self.pos_tagged_tokens)//5)],
+			1: self.pos_tagged_tokens[(len(self.pos_tagged_tokens)//5): (len(self.pos_tagged_tokens)//5)*2],
+			2: self.pos_tagged_tokens[(len(self.pos_tagged_tokens)//5)*2: (len(self.pos_tagged_tokens)//5)*3],
+			3: self.pos_tagged_tokens[(len(self.pos_tagged_tokens)//5)*3: (len(self.pos_tagged_tokens)//5)*4],
+			4: self.pos_tagged_tokens[(len(self.pos_tagged_tokens)//5)*4: (len(self.pos_tagged_tokens)//5)*5],
+		}
+		all_lemmatized_tokens = []
+		for zettel in switch.get(thread_index):
 			lemmatized_tokens = []
 			for word in zettel:
-				lemmatized_tokens.append([lemmatizer.lemmatize(word[0], word[2]), word[1]])
+				lemmatized_tokens.append([self.lemmatizer.lemmatize(word[0], word[2]), word[1]])
 			all_lemmatized_tokens.append(lemmatized_tokens)
-		return all_lemmatized_tokens
+		self.lemma_q.put([all_lemmatized_tokens, thread_index])
 
 	def create_n_gram(self, n):
 		all_n_grams = []
@@ -89,6 +188,12 @@ class ZettelPreProcessor:
 				n_grams.append(split)
 			all_n_grams.append(n_grams)
 		return all_n_grams
+
+	def get_bi_gram(self):
+		self.bi_gram = self.create_n_gram(2)
+
+	def get_tri_gram(self):
+		self.tri_gram = self.create_n_gram(3)
 
 	def create_unique_corpus(self):
 		token_set = []
@@ -130,11 +235,11 @@ class ZettelPreProcessor:
 		return count_matrix
 
 	def get_word_count(self, zettel):  #TODO check
-		new_unique_corpus = self.unique_corpus
+		new_unique_corpus = self.create_unique_corpus()
 		count = np.zeros(len(new_unique_corpus))
 		split_zettel = re.split("\W+", str(zettel).lower())
 		for word in split_zettel:
-			new_iter = iter(self.unique_corpus)
+			new_iter = iter(self.create_unique_corpus())
 			i = 0
 			for new_word in new_iter:
 				if word == new_word:
