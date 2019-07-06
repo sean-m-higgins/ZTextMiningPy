@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1e3a476-4385-4a46-9452-4c047bba0a79" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/data/processedData/stopWords/zettelStopWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/data/processedData/stopWords/zettelStopWords.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zettel_KE.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_KE.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zettel_preprocessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_preprocessor.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/zettel_preprocessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="104">
+              <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -31,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/zettel_KE.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+            <state relative-caret-position="765">
+              <caret line="51" column="43" lean-forward="true" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -118,14 +117,14 @@
         <option value="$PROJECT_DIR$/src/RAKE.py" />
         <option value="$PROJECT_DIR$/src/z_rake.py" />
         <option value="$PROJECT_DIR$/src/distance.py" />
+        <option value="$PROJECT_DIR$/src/zettel_preprocessor.py" />
         <option value="$PROJECT_DIR$/docs/data/processedData/stopWords/zettelStopWords.txt" />
         <option value="$PROJECT_DIR$/src/zettel_KE.py" />
-        <option value="$PROJECT_DIR$/src/zettel_preprocessor.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="y" value="24" />
     <option name="width" value="1448" />
     <option name="height" value="1027" />
   </component>
@@ -134,7 +133,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -156,40 +154,13 @@
             <path>
               <item name="ZTextMiningPy" type="b2602c69:ProjectViewProjectNode" />
               <item name="ZTextMiningPy" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZTextMiningPy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZTextMiningPy" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="processedData" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZTextMiningPy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZTextMiningPy" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="processedData" type="462c0819:PsiDirectoryNode" />
-              <item name="stopWords" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZTextMiningPy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZTextMiningPy" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="zettels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZTextMiningPy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZTextMiningPy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -441,6 +412,7 @@
       <workItem from="1562134368085" duration="10330000" />
       <workItem from="1562193009735" duration="9859000" />
       <workItem from="1562211935957" duration="8121000" />
+      <workItem from="1562221126422" duration="3279000" />
     </task>
     <servers />
   </component>
@@ -477,7 +449,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276854000" />
+    <option name="totallyTimeSpent" value="280133000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -489,10 +461,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1448" height="1027" extended-state="0" />
+    <frame x="0" y="24" width="1448" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35633" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36130866" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -520,7 +492,7 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
-      <window_info anchor="right" x="0" y="0" width="192" height="827" id="Documentation" order="9" sideWeight="0.3604278" side_tool="true" weight="0.45382795" />
+      <window_info anchor="right" x="0" y="0" width="192" height="827" id="Documentation" order="9" sideWeight="0.3604278" side_tool="true" weight="0.45376956" />
       <window_info anchor="right" id="SciView" order="10" sideWeight="0.6395722" weight="0.45447648" />
     </layout>
   </component>
@@ -687,19 +659,9 @@
     <entry file="file://$PROJECT_DIR$/docs/data/zettels/rheingold-examples/Rheingold-Tools-for-Thought-0003.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/data/zettels/rheingold-examples/Rheingold-Tools-for-Thought-0002.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/wiki.py" />
     <entry file="file://$PROJECT_DIR$/src/wiki_reader.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/data/zettels/rheingold-examples/Rheingold-Tools-for-Thought-0001.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="134" selection-start-line="2" selection-start-column="2" selection-end-line="11" selection-end-column="134" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/explore_data.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -737,29 +699,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/data/processedData/stopWords/zettelStopWords.txt">
+    <entry file="file://$PROJECT_DIR$/docs/data/zettels/rheingold-examples/Rheingold-Tools-for-Thought-0002.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/data/zettels/rheingold-examples/Rheingold-Tools-for-Thought-0001.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="183" column="5" lean-forward="true" selection-start-line="183" selection-start-column="5" selection-end-line="183" selection-end-column="5" />
+        <state relative-caret-position="180">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/zettel_KE.py">
+    <entry file="file://$PROJECT_DIR$/docs/data/processedData/stopWords/zettelStopWords.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="637">
+          <caret line="199" column="7" lean-forward="true" selection-start-line="199" selection-start-column="7" selection-end-line="199" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/zettel_preprocessor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="104">
+          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zettel_KE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="43" lean-forward="true" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

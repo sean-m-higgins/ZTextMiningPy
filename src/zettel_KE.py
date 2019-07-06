@@ -34,7 +34,7 @@ class KE:
         thread_5.start()
         # thread_8 = threading.Thread(self.get_z_area_scores(), args=(8,))
         # thread_8.start()
-        weights = [0.2, 0.2, 0.2, 0.2, 0.2]  # [1/6, 1/6, 1/6, 1/6, 1/6, 1/6]
+        weights = [0.3, 0.1, 0.1, 0.25, 0.25]  # [1/6, 1/6, 1/6, 1/6, 1/6, 1/6]
         thread_3.join()
         thread_5.join()
         thread_6.join()
