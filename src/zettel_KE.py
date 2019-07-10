@@ -10,7 +10,7 @@ class KE:
         z_process.init_zettels(zettels)
         self.lemma_tokens = z_process.lemmatized_tokens
         self.filter_n_grams(z_process.bi_gram, 2)  # TODO possibly change to 1?
-        self.filter_n_grams(z_process.tri_gram, 2)  # TODO (lock when adding to lemma_tokens)
+        self.filter_n_grams(z_process.tri_gram, 2)
         self.doc_count_dict = self.create_doc_count_dictionary(z_process.create_unique_corpus())
         self.window_size = 4
 
