@@ -1,6 +1,7 @@
 import numpy as np
-import zettel_preprocessor as process
+import zettel_preprocessor_th as process
 import re
+import threading
 
 
 class KE:
@@ -9,22 +10,56 @@ class KE:
         z_process = process.ZettelPreProcessor()
         z_process.init_zettels(zettels)
         self.lemma_tokens = z_process.lemmatized_tokens
-        self.filter_n_grams(z_process.bi_gram, 2)  # TODO possibly change to 1?
-        self.filter_n_grams(z_process.tri_gram, 2)  # TODO (lock when adding to lemma_tokens)
+        self.thread_1 = threading.Thread(self.filter_n_grams(z_process.bi_gram, 2), args=(1,))  # TODO possibly change to 1?  # (lock when adding to lemma_tokens)
+        self.thread_1.start()
+        self.thread_2 = threading.Thread(self.filter_n_grams(z_process.tri_gram, 2), args=(2,))  # TODO (lock when adding to lemma_tokens)
+        self.thread_2.start()
         self.doc_count_dict = self.create_doc_count_dictionary(z_process.create_unique_corpus())
         self.window_size = 4
 
     def run(self, min_freq, n):
         """ Calculate scores, Combine all scores into one, and Get top n keywords """
-        self.tf_idf_scores = self.tf_idf()
-        self.word_scores = self.create_word_score()
-        self.keyword_scores = self.create_keyword_score(self.word_scores, min_freq)
-        self.text_ranks = self.create_text_rank()
-        self.pos_scores = self.create_pos_score()
-        #     z_area_scores = self.create_area_score() # TODO once retrieve data correctly
+        self.thread_1.join()
+        self.thread_2.join()
+        thread_3 = threading.Thread(self.get_tf_idf(), args=(3,))
+        thread_3.start()
+        thread_4 = threading.Thread(self.get_word_scores(), args=(4,))
+        thread_4.start()
+        thread_6 = threading.Thread(self.get_text_ranks(), args=(6,))
+        thread_6.start()
+        thread_7 = threading.Thread(self.get_pos_score(), args=(7,))
+        thread_7.start()
+        thread_4.join()
+        thread_5 = threading.Thread(self.get_keyword_scores(min_freq), args=(5,))
+        thread_5.start()
+        # thread_8 = threading.Thread(self.get_z_area_scores(), args=(8,))
+        # thread_8.start()
         weights = [0.3, 0.1, 0.1, 0.25, 0.25]  # [1/6, 1/6, 1/6, 1/6, 1/6, 1/6]
+        thread_3.join()
+        thread_5.join()
+        thread_6.join()
+        thread_7.join()
+        # thread_8.join()
         self.all_scores = self.weight_distribution(weights)
         return self.get_keywords(n)
+
+    def get_tf_idf(self):
+        self.tf_idf_scores = self.tf_idf()
+
+    def get_word_scores(self):
+        self.word_scores = self.create_word_score()
+
+    def get_keyword_scores(self, min_freq):
+        self.keyword_scores = self.create_keyword_score(self.word_scores, min_freq)
+
+    def get_text_ranks(self):
+        self.text_ranks = self.create_text_rank()
+
+    def get_pos_score(self):
+        self.pos_scores = self.create_pos_score()
+
+    # def get_z_area_scores(self):  # TODO once retrieve data correctly
+    #     z_area_scores = self.create_area_score()
 
     def filter_n_grams(self, n_grams, min_freq):
         """ remove infrequent n_grams and add frequent n_grams to corr. zettel in lemma_tokens """
@@ -312,7 +347,7 @@ import datetime
 print(datetime.datetime.now())
 
 z_process = process.ZettelPreProcessor()
-zettels = z_process.get_zettels_from_directory(baseball)
+zettels = z_process.get_zettels_from_directory(rheingold)
 
 ke = KE(zettels)
 suggested_keywords = ke.run(min_freq=1, n=5)
