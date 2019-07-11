@@ -1,5 +1,6 @@
 import numpy as np
 import zettel_preprocessor as process
+import weights
 import re
 
 
@@ -8,11 +9,16 @@ class KE:
     def __init__(self, zettels):
         z_process = process.ZettelPreProcessor()
         z_process.init_zettels(zettels)
+        z_weights = weights.Weights()
         self.lemma_tokens = z_process.lemmatized_tokens
-        self.filter_n_grams(z_process.bi_gram, 2)  # TODO possibly change to 1?
-        self.filter_n_grams(z_process.tri_gram, 2)
+        self.filter_n_grams(z_process.bi_gram, z_weights.n_gram_min_freq, 2)
+        self.filter_n_grams(z_process.tri_gram, z_weights.n_gram_min_freq, 3)
+        self.filter_pos()
         self.doc_count_dict = self.create_doc_count_dictionary(z_process.create_unique_corpus())
         self.window_size = 4
+        self.score_weights = z_weights.all_score_weights
+        self.pos_score_switch = z_weights.pos_switch
+        self.z_area_switch = z_weights.z_area_switch
 
     def run(self, min_freq, n):
         """ Calculate scores, Combine all scores into one, and Get top n keywords """
@@ -21,26 +27,47 @@ class KE:
         self.keyword_scores = self.create_keyword_score(self.word_scores, min_freq)
         self.text_ranks = self.create_text_rank()
         self.pos_scores = self.create_pos_score()
-        #     z_area_scores = self.create_area_score() # TODO once retrieve data correctly
-        weights = [0.3, 0.1, 0.1, 0.25, 0.25]  # [1/6, 1/6, 1/6, 1/6, 1/6, 1/6]
-        self.all_scores = self.weight_distribution(weights)
+        #     self.z_area_scores = self.create_area_score() # TODO once retrieve data correctly
+        self.all_scores = self.weight_distribution(self.score_weights)
         return self.get_keywords(n)
 
-    def filter_n_grams(self, n_grams, min_freq):
+    def filter_n_grams(self, n_grams, min_freq, n):
         """ remove infrequent n_grams and add frequent n_grams to corr. zettel in lemma_tokens """
         all_n_grams = []
         for zettel in n_grams:
             cur_n_grams = []
             for gram in zettel:
                 if zettel.count(gram) >= min_freq:
-                    cur_n_grams.append(gram)
+                    if gram not in cur_n_grams:
+                        cur_n_grams.append(gram)
             all_n_grams.append(cur_n_grams)
+        self.swap_n_grams(all_n_grams, n)
+
+    def swap_n_grams(self, all_n_grams, n):  #TODO do this in preprocessing with tokens... or its fine
         all_new_tokens = self.lemma_tokens
         index = 0
         for zettel in all_n_grams:
-            for new_gram in zettel:
-                all_new_tokens[index].append([new_gram, 'NG'])
-            index += 1
+            if len(zettel) != 0:
+                for new_gram in zettel:
+                    for token_zettel in all_new_tokens:
+                        token_index = 0
+                        for word in token_zettel:
+                            if n == 2:
+                                if token_index != len(token_zettel)-1:
+                                    if word[0] + " " + token_zettel[token_index+1][0] == new_gram:
+                                        word[0] = new_gram
+                                        word[1] = 'NG'
+                                        del token_zettel[token_index+1]
+                            if n == 3:
+                                if token_index != len(token_zettel)-1:
+                                    if token_index != len(token_zettel)-2:
+                                        if word[0] + " " + token_zettel[token_index+1][0] + " " + token_zettel[token_index+2][0] == new_gram:
+                                            word[0] = new_gram
+                                            word[1] = 'NG'
+                                            del token_zettel[token_index+1]
+                                            del token_zettel[token_index+2]
+                            token_index += 1
+                index += 1
         self.lemma_tokens = all_new_tokens
 
     def create_doc_count_dictionary(self, unique_tokens):
@@ -118,6 +145,18 @@ class KE:
                     keywords_score[word[0]] = score
         return keywords_score
 
+    # use all tokens, or optionally use only noun, proper noun, and verb tags TODO experiment...
+    def filter_pos(self):
+        """ remove words not of desired pos """
+        all_tokens = []
+        for zettel in self.lemma_tokens:
+            tokens = []
+            for word in zettel:
+                if word[1] in ['NN', 'NNS', 'NNP', 'NNPS', 'NG']:   # NG = n_gram
+                    tokens.append(word)
+            all_tokens.append(tokens)
+        self.lemma_tokens = all_tokens
+
     # https://towardsdatascience.com/textrank-for-keyword-extraction-by-python-c0bae21bcec0
     def create_text_rank(self):
         """ text rank = weight based on any two word pairs of words (undirected edge from 1 to 2)"""
@@ -139,18 +178,6 @@ class KE:
         for word in vocab:
             node_weight[word] = text_rank[vocab[word]]
         return node_weight
-
-    # use all tokens, or optionally use only noun, proper noun, and verb tags TODO experiment...
-    # def filter_pos(self):
-    #     """ remove words not of desired pos """
-    #     all_tokens = []
-    #     for zettel in self.lemma_tokens:
-    #         tokens = []
-    #         for word in zettel:
-    #             if word[1] in ['NN', 'NNS', 'NNP', 'NNPS', 'NG']:   # NG = n_gram
-    #                 tokens.append(word[0])
-    #         all_tokens.append(tokens)
-    #     return all_tokens
 
     def create_vocab(self, filtered_tokens):
         """ {word: index} """
@@ -189,35 +216,16 @@ class KE:
         graph = np.divide(graph, norm, where= norm!= 0) #ignore the elements that = 0 in norm
         return graph
 
-    def create_pos_score(self):  #TODO subject to change
+    def create_pos_score(self):
         """ pos_score = ('NN', .40) ('NNS', .35) ('NNP', .80) ('NNPS', .70) ('NG', .50) (V: .25) (Other: .15) """
         pos_score = {}
         for zettel in self.lemma_tokens:
             for word in zettel:
                 pos_score.setdefault(word[0], 0)
-                switch = {
-                    'NN': 0.40,
-                    'NNS': 0.35,
-                    'NNP': 0.80,
-                    'NNPS': 0.70,
-                    'NG': 0.50,
-                    'VB': 0.25,
-                    'VBD': 0.25,
-                    'VBG': 0.25,
-                    'VBN': 0.25,
-                    'VBP': 0.25,
-                    'VBZ': 0.25,
-                    'JJ': 0.15,
-                    'JJR': 0.15,
-                    'JJS': 0.15,
-                    'RB': 0.15,
-                    'RBR': 0.15,
-                    'RBS': 0.15
-                }
-                pos_score[word[0]] = switch.get(word[1], 0)
+                pos_score[word[0]] = self.pos_score_switch.get(word[1], 0)
         return pos_score
 
-    # def create_area_score(self):  #TODO subject to change  #TODO combine with pos_score method
+    # def create_area_score(self):  #TODO combine with pos_score method
     #     """ z_area_score = (title: .80) (summary: .60) (note: 40) """
     #     z_area_score = {}
     #     for zettel in self.lemma_tokens:
@@ -225,12 +233,7 @@ class KE:
     #         for section in zettel:  TODO once retrieve correctly
     #             for word in section:
     #                 z_area_score.setdefault(word[0], 0)
-    #                 switch = {
-    #                     0: 0.80,
-    #                     1: 0.60,
-    #                     2: 0.40
-    #                 }
-    #                 z_area_score[word[0]] = switch.get(index)
+    #                 z_area_score[word[0]] = self.z_area_switch.get(index)
     #     return z_area_score
 
     def weight_distribution(self, weights):
@@ -307,12 +310,14 @@ class KE:
 
 rheingold = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/rheingold-examples"
 baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/baseball"
+movies = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/movies"
+clean_baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/clean_baseball"
 
 import datetime
 print(datetime.datetime.now())
 
 z_process = process.ZettelPreProcessor()
-zettels = z_process.get_zettels_from_directory(baseball)
+zettels = z_process.get_zettels_from_clean_directory(movies)
 
 ke = KE(zettels)
 suggested_keywords = ke.run(min_freq=1, n=5)

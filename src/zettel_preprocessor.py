@@ -16,6 +16,7 @@ class ZettelPreProcessor:
 	def init_zettels(self, zets):
 		self.lemmatizer = WordNetLemmatizer()
 		self.zettels = zets
+		self.given_tags = []
 		self.tokens = self.tokenizer()
 		sw_file = open("/Users/SeanHiggins/ZTextMiningPy/docs/data/processedData/stopWords/zettelStopWords.txt", "r")
 		self.stop_words = [line[:-1] for line in sw_file.readlines()] #TODO possibly remove title, note... from file
@@ -26,42 +27,56 @@ class ZettelPreProcessor:
 		self.tri_gram = self.create_n_gram(3)
 		#self.stemmed_tokens = self.stemmer('lancaster')  #stemmer types: 'porter', 'lancaster', 'snowball'  TODO remove?
 		#self.unique_count_matrix = self.create_count_matrix()
-		#self.unique_tag_corpus = self..create_unique_tag_corpus(tags)  #TODO get tokens from an array and parse...
 		#self.tag_boolean_matrix = self.create_boolean_tag_matrix(unique_tag_corpus)
 		#self.tag_count_matrix = self.create_unique_corpus(unique_tag_corpus)
 
 	def tokenizer(self):
 		all_tokens = []
 		for zettel in self.zettels:
-			tokens = re.split('\W+', str(zettel))
-			tokens = list(filter(None, tokens))
-			all_tokens.append(tokens)
+			new_zettel = []
+			index = 0
+			for section in zettel:
+				if index == len(zettel)-1:
+					new_tags = re.split(";", section)
+					self.given_tags.append(new_tags)
+				else:
+					tokens = re.split('\W+', section)
+					tokens = list(filter(None, tokens))
+					new_zettel.append(tokens)
+				index += 1
+			all_tokens.append(new_zettel)
 		return all_tokens
 
 	def remove_stop_words(self):
 		all_filtered_words = []
 		for zettel in self.tokens:
-			filtered_words = []
-			for word in zettel:
-				if word not in self.stop_words and word.lower() not in self.stop_words:
-					filtered_words.append(str(word))
-			all_filtered_words.append(filtered_words)
+			filtered_zettels = []
+			for section in zettel:
+				new_section = []
+				for word in section:
+					if word not in self.stop_words and word.lower() not in self.stop_words:
+						new_section.append(word)
+				filtered_zettels.append(new_section)
+			all_filtered_words.append(filtered_zettels)
 		return all_filtered_words
 
 	def pos_tagger(self):
 		all_tokens_with_pos_tags = []
 		for zettel in self.filtered_words:
-			tags = nltk.pos_tag(zettel)
 			tokens_with_pos_tags = []
-			for word in tags:
-				if word[1].startswith('J'):
-					tokens_with_pos_tags.append([word[0], word[1], 'a'])
-				elif word[1].startswith('V'):
-					tokens_with_pos_tags.append([word[0], word[1], 'v'])
-				elif word[1].startswith('N'):
-					tokens_with_pos_tags.append([word[0], word[1], 'n'])
-				elif word[1].startswith('R'):
-					tokens_with_pos_tags.append([word[0], word[1], 'r'])
+			aread_id = 0
+			for section in zettel:
+				tags = nltk.pos_tag(section)
+				for word in tags:
+					if word[1].startswith('J'):
+						tokens_with_pos_tags.append([word[0], word[1], 'a', aread_id])
+					elif word[1].startswith('V'):
+						tokens_with_pos_tags.append([word[0], word[1], 'v', aread_id])
+					elif word[1].startswith('N'):
+						tokens_with_pos_tags.append([word[0], word[1], 'n', aread_id])
+					elif word[1].startswith('R'):
+						tokens_with_pos_tags.append([word[0], word[1], 'r', aread_id])
+				aread_id += 1
 			all_tokens_with_pos_tags.append(tokens_with_pos_tags)
 		return all_tokens_with_pos_tags
 
@@ -70,7 +85,7 @@ class ZettelPreProcessor:
 		for zettel in self.pos_tagged_tokens:
 			lemmatized_tokens = []
 			for word in zettel:
-				lemmatized_tokens.append([self.lemmatizer.lemmatize(word[0], word[2]), word[1]])
+				lemmatized_tokens.append([self.lemmatizer.lemmatize(word[0], word[2]), word[1], word[3]])
 			all_lemmatized_tokens.append(lemmatized_tokens)
 		return all_lemmatized_tokens
 
@@ -78,16 +93,17 @@ class ZettelPreProcessor:
 		all_n_grams = []
 		for zettel in self.tokens:
 			n_grams = []
-			for index in range(len(zettel)-n+1):
-				set = zettel[index:index+n]
-				if (set[0].lower() in self.stop_words) or (set[n-1].lower() in self.stop_words): #skip if begin/end with stop_word
-					continue
-				split = ""
-				for i in range(n):
-					split += set[i]
-					if i < n-1:
-						split = split + " "
-				n_grams.append(split)
+			for section in zettel:
+				for index in range(len(section)-n+1):
+					set = section[index:index+n]
+					if (set[0].lower() in self.stop_words) or (set[n-1].lower() in self.stop_words): #skip if begin/end with stop_word
+						continue
+					split = ""
+					for i in range(n):
+						split += set[i]
+						if i < n-1:
+							split = split + " "
+					n_grams.append(split)
 			all_n_grams.append(n_grams)
 		return all_n_grams
 
@@ -95,8 +111,16 @@ class ZettelPreProcessor:
 		token_set = []
 		for zettel in self.lemmatized_tokens:
 			for word in zettel:
-				if word not in token_set:
+				if word[0] not in token_set:
 					token_set.append(word[0])
+		return token_set
+
+	def create_unique_tag_corpus(self):
+		token_set = []
+		for zettel in self.given_tags:
+			for word in zettel:
+				if word not in token_set:
+					token_set.append(word)
 		return token_set
 
 	def get_zettels_from_directory(self, directory):
@@ -106,6 +130,18 @@ class ZettelPreProcessor:
 			path = directory + "/" + file
 			contents = [str([line.rstrip() for line in open(path)])]
 			new_zettels.append(contents)
+		return new_zettels
+
+	def get_zettels_from_clean_directory(self, directory):
+		new_zettels = []
+		files = os.listdir(directory)
+		for file in files:
+			path = directory + "/" + file
+			zettel = []
+			lines = open(path).readlines()
+			for line in lines:
+				zettel.append(line)
+			new_zettels.append(zettel)
 		return new_zettels
 
 	# def stemmer(self, stemmer_type):
@@ -123,35 +159,35 @@ class ZettelPreProcessor:
 	# 		all_stemmed_tokens.append(stemmed_tokens)
 	# 	return all_stemmed_tokens
 
-	def create_count_matrix(self):  #TODO check
-		count_matrix = []
-		for zettel in self.zettels:
-			count = ZettelPreProcessor.get_word_count(self, zettel)
-			count_matrix.append(count)
-		return count_matrix
+	# def create_count_matrix(self):  #TODO check
+	# 	count_matrix = []
+	# 	for zettel in self.zettels:
+	# 		count = ZettelPreProcessor.get_word_count(self, zettel)
+	# 		count_matrix.append(count)
+	# 	return count_matrix
+	#
+	# def get_word_count(self, zettel):  #TODO check
+	# 	new_unique_corpus = self.create_unique_corpus()
+	# 	count = np.zeros(len(new_unique_corpus))
+	# 	split_zettel = re.split("\W+", str(zettel).lower())
+	# 	for word in split_zettel:
+	# 		new_iter = iter(self.create_unique_corpus())
+	# 		i = 0
+	# 		for new_word in new_iter:
+	# 			if word == new_word:
+	# 				count[i] = count[i] + 1
+	# 			i += 1
+	# 	return count.tolist()
 
-	def get_word_count(self, zettel):  #TODO check
-		new_unique_corpus = self.create_unique_corpus()
-		count = np.zeros(len(new_unique_corpus))
-		split_zettel = re.split("\W+", str(zettel).lower())
-		for word in split_zettel:
-			new_iter = iter(self.create_unique_corpus())
-			i = 0
-			for new_word in new_iter:
-				if word == new_word:
-					count[i] = count[i] + 1
-				i += 1
-		return count.tolist()
-
-	def get_document_word_counts(self):
-		i = 0
-		counts = []
-		for zettel in self.tokens:
-			counts.append(0)
-			for word in zettel:
-				counts[i] = counts[i] + 1
-			i += 1
-		return counts
+	# def get_document_word_counts(self):
+	# 	i = 0
+	# 	counts = []
+	# 	for zettel in self.tokens:
+	# 		counts.append(0)
+	# 		for word in zettel:
+	# 			counts[i] = counts[i] + 1
+	# 		i += 1
+	# 	return counts
 
 	# def create_count_dictionary(self, tokens): #TODO replaced?
 	# 	word_count_dict = {}
@@ -179,22 +215,6 @@ class ZettelPreProcessor:
 	# 					word_dict[word] = 1
 	# 	return doc_count_dict
 
-	# def create_unique_tag_corpus(self):  #TODO fix once tags are recieved correctly
-	# 	unique_tag_corpus = []
-	# 	lock = 0
-	# 	for word in self.tokens:
-	# 		if word == "tags":
-	# 			lock = 1
-	# 			continue
-	# 		if word == "cite":
-	# 			lock = 0
-	# 		while lock == 1:
-	# 			if word not in unique_tag_corpus:
-	# 				unique_tag_corpus.append(word)
-	# 			break
-	# 	unique_tag_corpus = list(filter(None, unique_tag_corpus)).sort()
-	# 	return unique_tag_corpus
-
 	# def create_boolean_tag_matrix(self): 	#TODO
 	# 	unique_tag_count_matrix = ZettelPreProcessor.create_count_matrix(self)
 	# 	tag_boolean_matrix = []
@@ -214,12 +234,15 @@ if __name__ == "__main__":
 	bibs = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/bibs"
 	examples = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/examples"
 	rheingold = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/rheingold-examples"
+	movies = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/movies"
+	clean_baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/clean_baseball"
 
 	import datetime
 	print(datetime.datetime.now())
 
 	process = ZettelPreProcessor()
-	zettels = process.get_zettels_from_directory(baseball)
+	# zettels = process.get_zettels_from_directory(baseball)
+	zettels = process.get_zettels_from_clean_directory(movies)
 	process.init_zettels(zettels)
 
 	print("Done.")
