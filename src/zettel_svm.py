@@ -1,6 +1,7 @@
-# import zettel_preprocessor as process
-# from sklearn import svm
-# from sklearn.metrics import accuracy_score
+import zettel_preprocessor as process
+import zettel_KE
+from sklearn import svm
+from sklearn.metrics import accuracy_score
 
 
 
@@ -25,6 +26,30 @@
 #
 # print(accuracy_score(test_lables, predicted_labels))
 
+movies = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/movies"
+clean_baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/clean_baseball"
+
+import datetime
+print(datetime.datetime.now())
+
+z_process = process.ZettelPreProcessor()
+zettels = z_process.get_zettels_from_clean_directory(movies)
+
+ke = zettel_KE.KE(zettels)
+suggested_keywords = ke.run(min_freq=1)
+
+index = 0
+for zettel in suggested_keywords:
+    print("\nSuggested Keywords for Zettel " + str(index) + ": ")
+    inner_i = 1
+    for item in zettel:
+        print(str(inner_i) + ": ")
+        print(item)
+        inner_i += 1
+    index += 1
+
+print("Done.")
+print(datetime.datetime.now())
 
 
 import numpy as np

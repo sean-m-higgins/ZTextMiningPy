@@ -145,7 +145,7 @@ class KE:
                     keywords_score[word[0]] = score
         return keywords_score
 
-    # use all tokens, or optionally use only noun, proper noun, and verb tags TODO experiment...
+    # use all tokens, or optionally use only noun, proper noun, and verb tags TODO experiment... any additions?
     def filter_pos(self):
         """ remove words not of desired pos """
         all_tokens = []
@@ -304,7 +304,7 @@ import datetime
 print(datetime.datetime.now())
 
 z_process = process.ZettelPreProcessor()
-zettels = z_process.get_zettels_from_clean_directory(movies)
+zettels = z_process.get_zettels_from_clean_directory(clean_baseball)
 
 ke = KE(zettels)
 suggested_keywords = ke.run(min_freq=1)
