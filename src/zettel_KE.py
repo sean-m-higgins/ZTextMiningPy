@@ -19,17 +19,19 @@ class KE:
         self.score_weights = z_weights.all_score_weights
         self.pos_score_switch = z_weights.pos_switch
         self.z_area_switch = z_weights.z_area_switch
+        self.keyword_n = z_weights.keyword_n
 
-    def run(self, min_freq, n):
+    def run(self, min_freq):
         """ Calculate scores, Combine all scores into one, and Get top n keywords """
         self.tf_idf_scores = self.tf_idf()
         self.word_scores = self.create_word_score()
         self.keyword_scores = self.create_keyword_score(self.word_scores, min_freq)
         self.text_ranks = self.create_text_rank()
-        self.pos_scores = self.create_pos_score()
-        #     self.z_area_scores = self.create_area_score() # TODO once retrieve data correctly
+        self.pos_scores = {}
+        self.z_area_scores = {}
+        self.create_pos_and_area_score()
         self.all_scores = self.weight_distribution(self.score_weights)
-        return self.get_keywords(n)
+        return self.get_keywords()
 
     def filter_n_grams(self, n_grams, min_freq, n):
         """ remove infrequent n_grams and add frequent n_grams to corr. zettel in lemma_tokens """
@@ -92,10 +94,9 @@ class KE:
 
     def tf_idf(self):
         """ tf_idf = tf * idf """
-        all_tf_idf = []
+        all_tf_idf = {}
         total_docs = len(self.lemma_tokens)
         for zettel in self.lemma_tokens:
-            tf_idf = []
             total_words = len(zettel)
             count_dict = self.create_count_dictionary(zettel)
             for word in zettel:
@@ -104,12 +105,11 @@ class KE:
                 # idf = (total number of documents) / (number of documents containing word)
                 idf = total_docs / self.doc_count_dict[word[0]]
                 tf_idf_value = tf * idf
-                tf_idf.append(tf_idf_value)
-            all_tf_idf.append(tf_idf)
+                all_tf_idf[word[0]] = tf_idf_value
         return all_tf_idf
 
     # https://github.com/fabianvf/python-rake/blob/master/RAKE/RAKE.py
-    # single word = 0 degree, bi-gram = 1 degree, tri-gram = 2 degree  #TODO experiment with diff numbers
+    # single word = 0 degree, bi-gram = 1 degree, tri-gram = 2 degree
     def create_word_score(self):
         """ word_score = deg(word) / freq(word) ... deg(word) = phrase_len - 1 + freq(word) """
         word_freq = {}
@@ -131,7 +131,7 @@ class KE:
         return word_score
 
     # https://github.com/fabianvf/python-rake/blob/master/RAKE/RAKE.py
-    def create_keyword_score(self, word_scores, min_freq):  #TODO remove min_freq to constant?
+    def create_keyword_score(self, word_scores, min_freq):
         """ keyword_score = sum of each word_score in phrase """
         keywords_score = {}
         for zettel in self.lemma_tokens:
@@ -216,35 +216,23 @@ class KE:
         graph = np.divide(graph, norm, where= norm!= 0) #ignore the elements that = 0 in norm
         return graph
 
-    def create_pos_score(self):
-        """ pos_score = ('NN', .40) ('NNS', .35) ('NNP', .80) ('NNPS', .70) ('NG', .50) (V: .25) (Other: .15) """
-        pos_score = {}
+    def create_pos_and_area_score(self):
+        """ pos_score = ('NN', .40) ('NNS', .35) ('NNP', .80) ('NNPS', .70) ('NG', .50) (V: .25) (Other: .15)
+            z_area_score = (title: .80) (summary: .60) (note: 40) """
         for zettel in self.lemma_tokens:
             for word in zettel:
-                pos_score.setdefault(word[0], 0)
-                pos_score[word[0]] = self.pos_score_switch.get(word[1], 0)
-        return pos_score
-
-    # def create_area_score(self):  #TODO combine with pos_score method
-    #     """ z_area_score = (title: .80) (summary: .60) (note: 40) """
-    #     z_area_score = {}
-    #     for zettel in self.lemma_tokens:
-    #         index = 0
-    #         for section in zettel:  TODO once retrieve correctly
-    #             for word in section:
-    #                 z_area_score.setdefault(word[0], 0)
-    #                 z_area_score[word[0]] = self.z_area_switch.get(index)
-    #     return z_area_score
+                self.pos_scores.setdefault(word[0], 0)
+                self.pos_scores[word[0]] = self.pos_score_switch.get(word[1], 0)
+                self.z_area_scores.setdefault(word[0], 0)
+                self.z_area_scores[word[0]] = self.z_area_switch.get(word[2])
 
     def weight_distribution(self, weights):
         """ combine all scores together with weights """
         all_scores = []
-        z_index = 0
         for zettel in self.lemma_tokens:
             scores = []
-            w_index = 0
             for word in zettel:
-                cur_tf_idf = self.tf_idf_scores[z_index][w_index]
+                cur_tf_idf = self.tf_idf_scores[word[0]] / 3 #range: 0-3+
                 if word[1] == 'NG':
                     word_list = re.split(" ", word[0])
                     cur_word_score = 0
@@ -252,22 +240,21 @@ class KE:
                     for new_word in word_list:
                         cur_word_score += self.word_scores[new_word]
                         i += 1
-                    cur_word_score = cur_word_score / i / 10
+                    cur_word_score = cur_word_score / i / 2  #range: 0-2+
                 else:
-                    cur_word_score = self.word_scores[word[0]] / 10
-                cur_keyword_score = self.keyword_scores[word[0]] / 10
-                cur_text_rank = self.text_ranks[word[0]] / 10
+                    cur_word_score = self.word_scores[word[0]] / 2  #range: 0-2+
+                cur_keyword_score = self.keyword_scores[word[0]] / 4  #0-4+
+                cur_text_rank = self.text_ranks[word[0]] / 10  #range: 0-12+
                 cur_pos_score = self.pos_scores[word[0]]
-                # cur_area_score = self.z_area_scores[word[0]]
-                cur_score = (cur_tf_idf * weights[0]) + (cur_word_score * weights[1]) + (cur_keyword_score * weights[2]) + \
-                            (cur_text_rank * weights[3]) + (cur_pos_score * weights[4])  # + (cur_area_score * weights[5])
-                scores.append(cur_score)
-                w_index += 1
-            z_index += 1
+                cur_area_score = self.z_area_scores[word[0]]
+                cur_total_score = ((cur_tf_idf * weights[0]) + (cur_word_score * weights[1]) +
+                                   (cur_keyword_score * weights[2]) + (cur_text_rank * weights[3]) +
+                                   (cur_pos_score * weights[4]) + (cur_area_score * weights[5])) / 6
+                scores.append(cur_total_score)
             all_scores.append(scores)
         return all_scores
 
-    def get_keywords(self, n):
+    def get_keywords(self):
         """ get top n keywords based on total score for each zettel """
         all_keywords = []
         z_index = 0
@@ -285,7 +272,7 @@ class KE:
                     cur_zettel_dict[word[0]] = cur_word_total_score
                     w_index += 1
             cur_sorted = sorted(cur_zettel_dict.items(), key=lambda kv: kv[1], reverse=True)
-            for i in range(n):
+            for i in range(self.keyword_n):
                 keywords.append(str(cur_sorted[i]))
             z_index += 1
             all_keywords.append(keywords)
@@ -320,7 +307,7 @@ z_process = process.ZettelPreProcessor()
 zettels = z_process.get_zettels_from_clean_directory(movies)
 
 ke = KE(zettels)
-suggested_keywords = ke.run(min_freq=1, n=5)
+suggested_keywords = ke.run(min_freq=1)
 
 index = 0
 for zettel in suggested_keywords:
