@@ -10,6 +10,7 @@ class KE:
         z_process = process.ZettelPreProcessor()
         z_process.init_zettels(zettels)
         z_weights = weights.Weights()
+        self.tags = z_process.given_tags
         self.lemma_tokens = z_process.lemmatized_tokens
         self.filter_n_grams(z_process.bi_gram, z_weights.n_gram_min_freq, 2)
         self.filter_n_grams(z_process.tri_gram, z_weights.n_gram_min_freq, 3)
@@ -20,17 +21,19 @@ class KE:
         self.pos_score_switch = z_weights.pos_switch
         self.z_area_switch = z_weights.z_area_switch
         self.keyword_n = z_weights.keyword_n
+        self.min_keyword_freq = z_weights.min_keyword_freq
 
-    def run(self, min_freq):
+    def run(self):
         """ Calculate scores, Combine all scores into one, and Get top n keywords """
         self.tf_idf_scores = self.tf_idf()
         self.word_scores = self.create_word_score()
-        self.keyword_scores = self.create_keyword_score(self.word_scores, min_freq)
+        self.keyword_scores = self.create_keyword_score()
         self.text_ranks = self.create_text_rank()
         self.pos_scores = {}
         self.z_area_scores = {}
         self.create_pos_and_area_score()
-        self.all_scores = self.weight_distribution(self.score_weights)
+        self.all_scores = self.weight_distribution()
+        self.all_scores_dict = self.get_all_scores_dict()
         return self.get_keywords()
 
     def filter_n_grams(self, n_grams, min_freq, n):
@@ -131,17 +134,17 @@ class KE:
         return word_score
 
     # https://github.com/fabianvf/python-rake/blob/master/RAKE/RAKE.py
-    def create_keyword_score(self, word_scores, min_freq):
+    def create_keyword_score(self):
         """ keyword_score = sum of each word_score in phrase """
         keywords_score = {}
         for zettel in self.lemma_tokens:
             for word in zettel:
-                if zettel.count(word) >= min_freq:
+                if zettel.count(word) >= self.min_keyword_freq:
                     keywords_score.setdefault(word[0], 0)
                     word_list = re.split(" ", word[0])
                     score = 0
                     for new_word in word_list:
-                        score += word_scores[new_word]
+                        score += self.word_scores[new_word]
                     keywords_score[word[0]] = score
         return keywords_score
 
@@ -226,7 +229,7 @@ class KE:
                 self.z_area_scores.setdefault(word[0], 0)
                 self.z_area_scores[word[0]] = self.z_area_switch.get(word[2])
 
-    def weight_distribution(self, weights):
+    def weight_distribution(self):
         """ combine all scores together with weights """
         all_scores = []
         for zettel in self.lemma_tokens:
@@ -247,12 +250,24 @@ class KE:
                 cur_text_rank = self.text_ranks[word[0]] / 10  #range: 0-12+
                 cur_pos_score = self.pos_scores[word[0]]
                 cur_area_score = self.z_area_scores[word[0]]
-                cur_total_score = ((cur_tf_idf * weights[0]) + (cur_word_score * weights[1]) +
-                                   (cur_keyword_score * weights[2]) + (cur_text_rank * weights[3]) +
-                                   (cur_pos_score * weights[4]) + (cur_area_score * weights[5])) / 6
+                cur_total_score = ((cur_tf_idf * self.score_weights[0]) + (cur_word_score * self.score_weights[1]) +
+                                   (cur_keyword_score * self.score_weights[2]) + (cur_text_rank * self.score_weights[3]) +
+                                   (cur_pos_score * self.score_weights[4]) + (cur_area_score * self.score_weights[5])) / 6
                 scores.append(cur_total_score)
             all_scores.append(scores)
         return all_scores
+
+    def get_all_scores_dict(self):
+        z_index = 0
+        new_all_scores = {}
+        for zettel in self.lemma_tokens:
+            w_index = 0
+            for word in zettel:
+                new_all_scores.setdefault(word[0], 0)
+                new_all_scores[word[0]] = self.all_scores[z_index][w_index]
+                w_index += 1
+            z_index += 1
+        return new_all_scores
 
     def get_keywords(self):
         """ get top n keywords based on total score for each zettel """
@@ -294,30 +309,30 @@ class KE:
 #     #         print(iter)
 #     #         print(page_ranks)
 
+if __name__ == "__main__":
+    rheingold = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/rheingold-examples"
+    baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/baseball"
+    movies = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/movies"
+    clean_baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/clean_baseball"
 
-rheingold = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/rheingold-examples"
-baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/baseball"
-movies = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/movies"
-clean_baseball = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/clean_baseball"
+    import datetime
+    print(datetime.datetime.now())
 
-import datetime
-print(datetime.datetime.now())
+    z_process = process.ZettelPreProcessor()
+    zettels = z_process.get_zettels_from_clean_directory(clean_baseball)
 
-z_process = process.ZettelPreProcessor()
-zettels = z_process.get_zettels_from_clean_directory(clean_baseball)
+    ke = KE(zettels)
+    suggested_keywords = ke.run()
 
-ke = KE(zettels)
-suggested_keywords = ke.run(min_freq=1)
+    index = 0
+    for zettel in suggested_keywords:
+        print("\nSuggested Keywords for Zettel " + str(index) + ": ")
+        inner_i = 1
+        for item in zettel:
+            print(str(inner_i) + ": ")
+            print(item)
+            inner_i += 1
+        index += 1
 
-index = 0
-for zettel in suggested_keywords:
-    print("\nSuggested Keywords for Zettel " + str(index) + ": ")
-    inner_i = 1
-    for item in zettel:
-        print(str(inner_i) + ": ")
-        print(item)
-        inner_i += 1
-    index += 1
-
-print("Done.")
-print(datetime.datetime.now())
+    print("Done.")
+    print(datetime.datetime.now())

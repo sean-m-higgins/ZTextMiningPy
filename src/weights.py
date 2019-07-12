@@ -30,3 +30,4 @@ class Weights:
         }
         self.n_gram_min_freq = 2
         self.keyword_n = 7
+        self.min_keyword_freq = 1
