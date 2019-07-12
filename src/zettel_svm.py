@@ -23,13 +23,24 @@ def extract_features(directory):
     ke = zke.KE(zettels)
     ke.run()
     feature_1 = ke.tf_idf_scores
-    print(feature_1)
     feature_2 = ke.all_scores_dict
     feature_matrix = []
     for zettel in ke.lemma_tokens:
         for word in zettel:
             feature_matrix.append((feature_1[word[0]], feature_2[word[0]]))
-    return feature_matrix, get_lables(ke.lemma_tokens, ke.tags)
+    return feature_matrix, get_lables(ke.lemma_tokens, ke.tags), ke.lemma_tokens
+
+def get_keywords(predicted, tokens):
+    w_index = 0
+    all_predicted_tokens = []
+    for zettel in tokens:
+        z_predicted = []
+        for word in zettel:
+            if predicted[w_index] == 1:
+                z_predicted.append(word[0])
+        all_predicted_tokens.append(z_predicted)
+    return all_predicted_tokens
+
 
 TRAIN_DIR = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/movies"
 TEST_DIR = "/Users/SeanHiggins/ZTextMiningPy/docs/data/zettels/clean_baseball"
@@ -38,14 +49,17 @@ import datetime
 print(datetime.datetime.now())
 
 # 2-d features_matrix --> list(list(x,y))  # labels = target (keyword or not)
-features_matrix, labels = extract_features(TRAIN_DIR)
-test_features_matrix, test_labels = extract_features(TEST_DIR)
+features_matrix, labels, tokens = extract_features(TRAIN_DIR)
+test_features_matrix, test_labels, test_tokens = extract_features(TEST_DIR)
 
 model = svm.SVC(kernel='linear', C=1).fit(features_matrix, labels)
 
 predicted_labels = model.predict(test_features_matrix)
+for item in predicted_labels:
+    print(item)
 
 print(accuracy_score(test_labels, predicted_labels))
+print(get_keywords(predicted_labels, test_tokens))
 
 # https://www.analyticsvidhya.com/blog/2017/09/understaing-support-vector-machine-example-code/
 x_ = []
