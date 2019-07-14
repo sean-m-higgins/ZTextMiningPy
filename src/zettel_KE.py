@@ -48,7 +48,8 @@ class KE:
             all_n_grams.append(cur_n_grams)
         self.swap_n_grams(all_n_grams, n)
 
-    def swap_n_grams(self, all_n_grams, n):  #TODO do this in preprocessing with tokens... or its fine
+    def swap_n_grams(self, all_n_grams, n):  #TODO do this in preprocessing with tokens... or its fine?
+        """ swap list of candidate n_grams with their set of unigrams in the corpus """
         all_new_tokens = self.lemma_tokens
         index = 0
         for zettel in all_n_grams:
