@@ -149,7 +149,7 @@ class KE:
                     keywords_score[word[0]] = score
         return keywords_score
 
-    # use all tokens, or optionally use only noun, proper noun, and verb tags TODO experiment... any additions?
+    # use all tokens, or optionally use only ...
     def filter_pos(self):
         """ remove words not of desired pos """
         all_tokens = []
