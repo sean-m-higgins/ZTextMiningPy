@@ -6,16 +6,15 @@ import re
 
 class ZettelKE:
 
-    def __init__(self, zets):
+    def __init__(self, tokens, unique_corpus):
         z_weights = weights.Weights()
         self.score_weights = z_weights.all_score_weights
         self.pos_score_switch = z_weights.pos_switch
         self.z_area_switch = z_weights.z_area_switch
         self.keyword_n = z_weights.keyword_n
         self.min_keyword_freq = z_weights.min_keyword_freq
-        self.z_process = zettel_preprocess.ZettelPreProcessor(zets)
-        self.lemmatized_tokens = self.z_process.lemmatized_tokens
-        self.doc_count_dict = self.z_process.doc_count_dict
+        self.lemmatized_tokens = tokens
+        self.doc_count_dict = self.create_doc_count_dictionary(unique_corpus)
         self.tf_idf_scores = self.tf_idf()
         self.word_scores = self.create_word_score()
         self.keyword_scores = self.create_keyword_score()
@@ -29,40 +28,61 @@ class ZettelKE:
         """ Get top n keywords """
         return self.get_keywords()
 
+    def create_count_dictionary(self, tokens):
+        """ {word: count} """
+        word_count_dict = {}
+        for word in tokens:
+            word_count_dict.setdefault(word[0], 0)
+            word_count_dict[word[0]] += 1
+        return word_count_dict
+
+    def create_doc_count_dictionary(self, unique_tokens):  #TODO
+        """ {word: doc_count} """
+        doc_count_dict = {}
+        for zettel in self.lemmatized_tokens:
+            for token in zettel:
+                for word in unique_tokens:  #TODO check what word is
+                    if token[0] == word:
+                        doc_count_dict.setdefault(word, 0)
+                        doc_count_dict[word] += 1
+                        break
+        return doc_count_dict
+
     def tf_idf(self):
         """ tf_idf = tf * idf """
-        all_tf_idf = {}
+        all_tf_idf = {}  #TODO?
         total_docs = len(self.lemmatized_tokens)
         for zettel in self.lemmatized_tokens:
             total_words = len(zettel)
-            count_dict = self.z_process.create_count_dictionary(zettel)
+            count_dict = self.create_count_dictionary(zettel)
             for word in zettel:
-                # tf = (count of given word for a given zettel) / (total number of words for given zettel)
-                tf = count_dict[word[0]] / total_words
-                # idf = (total number of documents) / (number of documents containing word)
-                idf = total_docs / self.doc_count_dict[word[0]]
-                tf_idf_value = tf * idf
-                all_tf_idf[word[0]] = tf_idf_value
+                if word[0] not in all_tf_idf:
+                    # tf = (count of given word for a given zettel) / (total number of words for given zettel)
+                    tf = count_dict[word[0]] / total_words
+                    # idf = (total number of documents) / (number of documents containing word)
+                    idf = total_docs / self.doc_count_dict[word[0]]
+                    tf_idf_value = tf * idf
+                    all_tf_idf[word[0]] = tf_idf_value
         return all_tf_idf
 
     # https://github.com/fabianvf/python-rake/blob/master/RAKE/RAKE.py
-    # single word = 0 degree, bi-gram = 1 degree, tri-gram = 2 degree
     def create_word_score(self):
-        """ word_score = deg(word) / freq(word) ... deg(word) = phrase_len - 1 + freq(word) """
+        """ word_score = deg(word) / freq(word)
+            deg(word) = phrase_len - 1 + freq(word) --- uni-gram = 0, bi-gram = 1, tri-gram = 2 """
         word_freq = {}
         word_deg = {}
         for zettel in self.lemmatized_tokens:
             for word in zettel:
                 word_list = re.split(" ", word[0])
                 word_list_deg = len(word_list) - 1
-                for new_word in word_list:
-                    word_freq.setdefault(new_word, 0)
-                    word_freq[new_word] = word_freq[new_word] + 1
-                    word_deg.setdefault(new_word, 0)
-                    word_deg[new_word] = word_deg[new_word] + word_list_deg
+                for single_word in word_list:
+                    word_freq.setdefault(single_word, 0)
+                    word_freq[single_word] += 1
+                    word_deg.setdefault(single_word, 0)
+                    word_deg[single_word] += word_list_deg
         word_score = {}
         for word in word_freq:
-            word_deg[word] = word_deg[word] + word_freq[word]
+            word_deg[word] += word_freq[word]
             word_score.setdefault(word, 0)
             word_score[word] = word_deg[word] / (word_freq[word] * 1.0)
         return word_score
@@ -94,23 +114,23 @@ class ZettelKE:
 
     def weight_distribution(self):
         """ combine all scores together with weights """
-        all_scores = []
+        all_scores = []  #TODO
         for zettel in self.lemmatized_tokens:
-            scores = []
+            scores = []  #TODO
             for word in zettel:
-                cur_tf_idf = self.tf_idf_scores[word[0]] / 3  # range: 0-3+
-                cur_keyword_score = self.keyword_scores[word[0]] / 4  # 0-4+
+                cur_tf_idf = self.tf_idf_scores[word[0]] / 3  # range: 0-3+  #TODO
+                cur_keyword_score = self.keyword_scores[word[0]] / 4  # 0-4+  #TODO
                 cur_pos_score = self.pos_scores[word[0]]
                 cur_area_score = self.z_area_scores[word[0]]
                 cur_total_score = ((cur_tf_idf * self.score_weights[0]) +
                                    (cur_keyword_score * self.score_weights[1]) +
                                    (cur_pos_score * self.score_weights[2]) +
                                    (cur_area_score * self.score_weights[3])) / 4
-                scores.append(cur_total_score)
-            all_scores.append(scores)
+                scores.append(cur_total_score)  #TODO
+            all_scores.append(scores)  #TODO
         return all_scores
 
-    def get_all_scores_dict(self):
+    def get_all_scores_dict(self):  #TODO delete? and do in above emthod
         z_index = 0
         new_all_scores = {}
         for zettel in self.lemmatized_tokens:
@@ -131,7 +151,7 @@ class ZettelKE:
                     check = True
         return check
 
-    def get_final_keywords(self, keywords_dict):
+    def get_final_keywords(self, keywords_dict):  #TODO all
         """ Filter out any keywords that appear more than once, choosing the higher scored duplicate """
         new_keywords_dict = {}
         word_index = 0
@@ -182,10 +202,10 @@ class ZettelKE:
 
     def get_keywords(self):
         """ get top n keywords based on total score for each zettel """
-        all_keywords = []
+        all_keywords = []  #TODO
         z_index = 0
         for zettel in self.lemmatized_tokens:
-            keywords = []
+            keywords = []  #TODO
             w_index = 0
             cur_zettel_dict = {}
             for word in zettel:
@@ -198,11 +218,11 @@ class ZettelKE:
                     cur_zettel_dict[word[0]] = cur_word_total_score
                     w_index += 1
             final_zettel_dict = self.get_final_keywords(cur_zettel_dict)
-            cur_sorted = sorted(final_zettel_dict.items(), key=lambda kv: kv[1], reverse=True)
+            cur_sorted = sorted(final_zettel_dict.items(), key=lambda kv: kv[1], reverse=True)  #TODO sort numpy?
             for i in range(self.keyword_n):
-                keywords.append(str(cur_sorted[i]))
+                keywords.append(str(cur_sorted[i]))  #TODO
             z_index += 1
-            all_keywords.append(keywords)
+            all_keywords.append(keywords)  #TODO
         return all_keywords
 
 # TODO delete? possibility of using page_rank by way of linking zettels together. if one zettel points to another could
@@ -222,25 +242,25 @@ class ZettelKE:
 
 
 def get_zettels_from_directory(directory):
-    new_zettels = []
+    new_zettels = []  #TODO
     files = os.listdir(directory)
     for file in files:
         path = directory + "/" + file
         contents = [str([line.rstrip() for line in open(path)])]
-        new_zettels.append(contents)
+        new_zettels.append(contents)  #TODO
     return new_zettels
 
 
 def get_zettels_from_clean_directory(directory):
-    new_zettels = []
+    new_zettels = []  #TODO
     files = os.listdir(directory)
     for file in files:
         path = directory + "/" + file
-        zettel = []
+        zettel = []  #TODO
         lines = open(path).readlines()
         for line in lines:
-            zettel.append(line)
-        new_zettels.append(zettel)
+            zettel.append(line)  #TODO
+        new_zettels.append(zettel)  #TODO
     return new_zettels
 
 
@@ -258,8 +278,16 @@ if __name__ == "__main__":
     # zettels = process.get_zettels_from_directory(baseball)
     zettels = get_zettels_from_clean_directory(movies)
     # zettels = get_zettels_from_clean_directory(clean_baseball)  # TODO get zettles differently
-    z_ke = ZettelKE(zettels)
 
+    tokens = []  #TODO
+    unique_corpus = []  #TODO
+    for zettel in zettels:
+        z_preprocess = zettel_preprocess.ZettelPreProcessor(zettel)
+        tokens.append(z_preprocess.lemmatized_tokens)
+        for item in z_preprocess.create_unique_corpus():  #TODO check
+            unique_corpus.append(item)  #TODO
+
+    z_ke = ZettelKE(tokens, unique_corpus)
     suggested_keywords = z_ke.run()
 
     index = 0
