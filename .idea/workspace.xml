@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1e3a476-4385-4a46-9452-4c047bba0a79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/NoteRank.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zettel_KE.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_KE.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NoteRank.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cluster.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distance.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/explore_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/retrieval.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/topic_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/weights.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wiki_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_keyword_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/z_rake.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zettel_KE.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zettel_preprocessor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zettel_svm.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -240,8 +250,8 @@
       <list>
         <item itemvalue="Python.zettel_KE" />
         <item itemvalue="Python.zettel_svm" />
-        <item itemvalue="Python.z_rake" />
         <item itemvalue="Python.zettel_preprocessor" />
+        <item itemvalue="Python.z_rake" />
         <item itemvalue="Python.model" />
       </list>
     </recent_temporary>
@@ -334,6 +344,11 @@
       <workItem from="1563122828998" duration="1677000" />
       <workItem from="1566871587643" duration="490000" />
       <workItem from="1566930238095" duration="2197000" />
+      <workItem from="1567183605836" duration="431000" />
+      <workItem from="1567562315018" duration="6721000" />
+      <workItem from="1567708133156" duration="1053000" />
+      <workItem from="1568073056670" duration="2579000" />
+      <workItem from="1568592237598" duration="765000" />
     </task>
     <servers />
   </component>
