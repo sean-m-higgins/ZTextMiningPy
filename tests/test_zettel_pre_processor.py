@@ -1,4 +1,4 @@
-from src import zettel_preprocessor
+from src import zettel_preprocess
 import unittest
 
 
@@ -10,7 +10,7 @@ class Test(unittest.TestCase):
     document = [[sentence1], [sentence2], [tags]]
 
 
-    process = zettel_preprocessor.ZettelPreProcessor()
+    process = zettel_preprocess.ZettelPreProcessor()
     process.__init__(document)
     tokens = process.tokenizer()
     pos_tokens = process.pos_tagger()
