@@ -11,7 +11,7 @@ class Test(unittest.TestCase):
 
 
     process = zettel_preprocessor.ZettelPreProcessor()
-    process.init_zettels(document)
+    process.__init__(document)
     tokens = process.tokenizer()
     pos_tokens = process.pos_tagger()
     filtered_words = process.remove_stop_words()
