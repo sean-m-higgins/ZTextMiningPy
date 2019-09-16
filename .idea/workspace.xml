@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1e3a476-4385-4a46-9452-4c047bba0a79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/one_zettel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/simple.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zettel_keyword_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_keyword_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zettel_ke.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_ke.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zettel_preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_preprocess.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.simple">
+  <component name="RunManager" selected="Python.zettel_ke">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="ZTextMiningPy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,6 +126,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="zettel_ke" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ZTextMiningPy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/zettel_ke.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="zettel_keyword_extractor" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ZTextMiningPy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,28 +156,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/zettel_keyword_extractor.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="zettel_preprocessor" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ZTextMiningPy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/zettel_preprocess.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,18 +188,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.zettel_KE" />
-      <item itemvalue="Python.zettel_preprocessor" />
       <item itemvalue="Python.zettel_svm" />
       <item itemvalue="Python.zettel_keyword_extractor" />
       <item itemvalue="Python.simple" />
+      <item itemvalue="Python.zettel_ke" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.zettel_ke" />
         <item itemvalue="Python.simple" />
         <item itemvalue="Python.zettel_keyword_extractor" />
         <item itemvalue="Python.zettel_KE" />
         <item itemvalue="Python.zettel_svm" />
-        <item itemvalue="Python.zettel_preprocessor" />
       </list>
     </recent_temporary>
   </component>
@@ -301,7 +296,7 @@
       <workItem from="1567708133156" duration="1053000" />
       <workItem from="1568073056670" duration="2579000" />
       <workItem from="1568592237598" duration="765000" />
-      <workItem from="1568593173011" duration="19788000" />
+      <workItem from="1568593173011" duration="21102000" />
     </task>
     <servers />
   </component>
