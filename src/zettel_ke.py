@@ -1,5 +1,5 @@
 import numpy as np  # TODO
-import zettel_preprocess
+import zettel_preprocess, weights
 import os
 import re
 
@@ -7,14 +7,15 @@ import re
 class ZettelKE:
 
     def __init__(self, zets):
+        z_weights = weights.Weights()
+        self.score_weights = z_weights.all_score_weights
+        self.pos_score_switch = z_weights.pos_switch
+        self.z_area_switch = z_weights.z_area_switch
+        self.keyword_n = z_weights.keyword_n
+        self.min_keyword_freq = z_weights.min_keyword_freq
         self.z_process = zettel_preprocess.ZettelPreProcessor(zets)
         self.lemmatized_tokens = self.z_process.lemmatized_tokens
         self.doc_count_dict = self.z_process.doc_count_dict
-        self.score_weights = self.z_process.score_weights
-        self.pos_score_switch = self.z_process.pos_score_switch
-        self.z_area_switch = self.z_process.z_area_switch
-        self.keyword_n = self.z_process.keyword_n
-        self.min_keyword_freq = self.z_process.min_keyword_freq
         self.tf_idf_scores = self.tf_idf()
         self.word_scores = self.create_word_score()
         self.keyword_scores = self.create_keyword_score()

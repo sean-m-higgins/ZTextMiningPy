@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1e3a476-4385-4a46-9452-4c047bba0a79" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/weights.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zettel_ke.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_ke.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zettel_preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_preprocess.py" afterDir="false" />
     </list>
@@ -296,7 +298,7 @@
       <workItem from="1567708133156" duration="1053000" />
       <workItem from="1568073056670" duration="2579000" />
       <workItem from="1568592237598" duration="765000" />
-      <workItem from="1568593173011" duration="21102000" />
+      <workItem from="1568593173011" duration="23449000" />
     </task>
     <servers />
   </component>

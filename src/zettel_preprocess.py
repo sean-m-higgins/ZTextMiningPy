@@ -6,9 +6,9 @@ import re
 
 class ZettelPreProcessor:
 
-    def __init__(self, zets):
-        self.lemmatizer = WordNetLemmatizer()
-        self.zettels = zets
+    def __init__(self, zet):
+        self.lemmatizer = WordNetLemmatizer() # TODO keep here? slow?
+        self.zettel = zet
         self.given_tags = []
         self.tokens = self.tokenizer()
         stopwords_file = open("../docs/data/processedData/stopWords/zettelStopWords.txt", "r")
@@ -18,78 +18,60 @@ class ZettelPreProcessor:
         self.lemmatized_tokens = self.create_lemmatized_tokens()
         self.bi_gram = self.create_n_gram(2)
         self.tri_gram = self.create_n_gram(3)
-        z_weights = Weights()
-        self.filter_n_grams(self.bi_gram, z_weights.n_gram_min_freq, 2)
-        self.filter_n_grams(self.tri_gram, z_weights.n_gram_min_freq, 3)
-        self.filter_pos()
+        self.filter_n_grams(n_grams=self.bi_gram, min_freq=2, n=2)
+        self.filter_n_grams(n_grams=self.tri_gram, min_freq=2, n=3)
+        self.filter_pos()  # TODO move in order
         self.doc_count_dict = self.create_doc_count_dictionary(self.create_unique_corpus())
-        self.score_weights = z_weights.all_score_weights
-        self.pos_score_switch = z_weights.pos_switch
-        self.z_area_switch = z_weights.z_area_switch
-        self.keyword_n = z_weights.keyword_n
-        self.min_keyword_freq = z_weights.min_keyword_freq
 
     def tokenizer(self):
         """ Split zettels by word """
-        all_tokens = []
-        for zettel in self.zettels:
-            new_zettel = []
-            index = 0
-            for section in zettel:
-                if index == len(zettel) - 1:
-                    new_tags = re.split(";", section)
-                    self.given_tags.append(new_tags)
-                else:
-                    tokens = re.split('\W+', section)
-                    tokens = list(filter(None, tokens))
-                    new_zettel.append(tokens)
-                index += 1
-            all_tokens.append(new_zettel)
+        all_tokens = []  #TODO
+        index = 0
+        for section in self.zettel:
+            if index == len(self.zettel) - 1:
+                new_tags = re.split(";", section)
+                self.given_tags.append(new_tags)  #TODO
+            else:
+                tokens = re.split('\W+', section)  #TODO
+                tokens = list(filter(None, tokens))
+                all_tokens.append(tokens)  #TODO
+            index += 1
         return all_tokens
 
     def remove_stop_words(self):
         """ Remove any words included in stop words list """
-        all_filtered_words = []
-        for zettel in self.tokens:
-            filtered_zettels = []
-            for section in zettel:
-                new_section = []
-                for word in section:
-                    if word not in self.stop_words and word.lower() not in self.stop_words:
-                        new_section.append(word)
-                filtered_zettels.append(new_section)
-            all_filtered_words.append(filtered_zettels)
+        all_filtered_words = []  #TODO
+        for section in self.tokens:
+            new_section = []  #TODO
+            for word in section:
+                if word not in self.stop_words and word.lower() not in self.stop_words:
+                    new_section.append(word)  #TODO
+            all_filtered_words.append(new_section)  #TODO
         return all_filtered_words
 
     def pos_tagger(self):
         """ Tag each word with its part of speech """
-        all_tokens_with_pos_tags = []
-        for zettel in self.filtered_words:
-            tokens_with_pos_tags = []
-            aread_id = 0
-            for section in zettel:
-                tags = nltk.pos_tag(section)
-                for word in tags:
-                    if word[1].startswith('J'):
-                        tokens_with_pos_tags.append([word[0], word[1], 'a', aread_id])
-                    elif word[1].startswith('V'):
-                        tokens_with_pos_tags.append([word[0], word[1], 'v', aread_id])
-                    elif word[1].startswith('N'):
-                        tokens_with_pos_tags.append([word[0], word[1], 'n', aread_id])
-                    elif word[1].startswith('R'):
-                        tokens_with_pos_tags.append([word[0], word[1], 'r', aread_id])
-                aread_id += 1
-            all_tokens_with_pos_tags.append(tokens_with_pos_tags)
+        all_tokens_with_pos_tags = []  #TODO
+        aread_id = 0
+        for section in self.filtered_words:
+            tags = nltk.pos_tag(section)
+            for word in tags:
+                if word[1].startswith('J'):
+                    all_tokens_with_pos_tags.append([word[0], word[1], 'a', aread_id])  #TODO
+                elif word[1].startswith('V'):
+                    all_tokens_with_pos_tags.append([word[0], word[1], 'v', aread_id])  #TODO
+                elif word[1].startswith('N'):
+                    all_tokens_with_pos_tags.append([word[0], word[1], 'n', aread_id])  #TODO
+                elif word[1].startswith('R'):
+                    all_tokens_with_pos_tags.append([word[0], word[1], 'r', aread_id])  #TODO
+            aread_id += 1
         return all_tokens_with_pos_tags
 
     def create_lemmatized_tokens(self):
         """ Return lemmatized version for each word """
-        all_lemmatized_tokens = []
-        for zettel in self.pos_tagged_tokens:
-            lemmatized_tokens = []
-            for word in zettel:
-                lemmatized_tokens.append([self.lemmatizer.lemmatize(word[0], word[2]), word[1], word[3]])
-            all_lemmatized_tokens.append(lemmatized_tokens)
+        all_lemmatized_tokens = []  #TODO
+        for word in self.pos_tagged_tokens:
+                all_lemmatized_tokens.append([self.lemmatizer.lemmatize(word[0], word[2]), word[1], word[3]])  #TODO
         return all_lemmatized_tokens
 
     def create_n_gram(self, n):
@@ -201,25 +183,3 @@ class ZettelPreProcessor:
             word_count_dict.setdefault(word[0], 0)
             word_count_dict[word[0]] += 1
         return word_count_dict
-
-
-class Weights:
-
-    def __init__(self):
-        # tf_idf @ 0; keyword_score @ 1; pos_score @ 2; area_score @ 3
-        self.all_score_weights = [0.50, 0.30, 0.1, 0.1]
-        self.pos_switch = {
-            'NN': 0.30,
-            'NNS': 0.25,
-            'NNP': 0.80,
-            'NNPS': 0.70,
-            'NG': 0.70,
-        }
-        self.z_area_switch = {
-            0: 0.80,
-            1: 0.60,
-            2: 0.40
-        }
-        self.n_gram_min_freq = 2
-        self.keyword_n = 7
-        self.min_keyword_freq = 1
