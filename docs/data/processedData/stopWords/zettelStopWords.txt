@@ -187,14 +187,3 @@ whether
 PDF
 eBook
 know
-title
-note
-summary
-tags
-mentions
-dates
-bibtext
-url
-bibkey
-cite
-comment

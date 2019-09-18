@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1e3a476-4385-4a46-9452-4c047bba0a79" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/new.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/data/processedData/stopWords/zettelStopWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/data/processedData/stopWords/zettelStopWords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/weights.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/weights.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zettel_ke.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_ke.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zettel_preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_preprocess.py" afterDir="false" />
     </list>
@@ -27,6 +31,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="ZTextMiningPy/invalid/Python" />
+    </ignored-facets>
+  </component>
   <component name="ProjectId" id="1PzKf7h1ci3OG7b2jTVt6wZwfhS" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -39,7 +48,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4816092" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -63,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.zettel_ke">
+  <component name="RunManager" selected="Python.new">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="ZTextMiningPy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -86,10 +95,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="new" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ZTextMiningPy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/new.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="simple" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ZTextMiningPy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -105,7 +136,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="zettel_KE" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="zc" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ZTextMiningPy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -118,7 +149,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/zettel_KE.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/zc.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,6 +181,9 @@
       <module name="ZTextMiningPy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -165,42 +199,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="zettel_svm" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ZTextMiningPy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/zettel_svm.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.zettel_KE" />
-      <item itemvalue="Python.zettel_svm" />
       <item itemvalue="Python.zettel_keyword_extractor" />
       <item itemvalue="Python.simple" />
       <item itemvalue="Python.zettel_ke" />
+      <item itemvalue="Python.zc" />
+      <item itemvalue="Python.new" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.new" />
         <item itemvalue="Python.zettel_ke" />
-        <item itemvalue="Python.simple" />
+        <item itemvalue="Python.zc" />
         <item itemvalue="Python.zettel_keyword_extractor" />
-        <item itemvalue="Python.zettel_KE" />
-        <item itemvalue="Python.zettel_svm" />
+        <item itemvalue="Python.simple" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +309,11 @@
       <workItem from="1567708133156" duration="1053000" />
       <workItem from="1568073056670" duration="2579000" />
       <workItem from="1568592237598" duration="765000" />
-      <workItem from="1568593173011" duration="28927000" />
+      <workItem from="1568593173011" duration="29484000" />
+      <workItem from="1568678506493" duration="11845000" />
+      <workItem from="1568766954824" duration="1446000" />
+      <workItem from="1568769484446" duration="10108000" />
+      <workItem from="1568837993442" duration="5471000" />
     </task>
     <servers />
   </component>
