@@ -1,4 +1,3 @@
-import numpy as np  # TODO
 import zettel_preprocess
 import weights
 import os
@@ -26,7 +25,7 @@ class ZettelKE:
         """ Get top n keywords """
         return self.get_keywords()
 
-    def create_unique_corpus(self):
+    def create_unique_corpus(self):  #TODO set up for tags; if cur zettel's suggested keyword is in this corpus, add to suggestions after sorting.
         """ Create distinct set of words """
         token_set = []
         for zettel in self.tokens:
@@ -34,14 +33,6 @@ class ZettelKE:
                 if word[0] not in token_set:
                     token_set.append(word[0])
         return token_set
-
-    # def create_unique_tag_corpus(self):  #TODO
-    #     #     """ Create distinct set of tags"""
-    #     #     token_set = []
-    #     #     for word in self.given_tags:
-    #     #         if word not in token_set:
-    #     #             token_set.append(word)
-    #     #     return token_set
 
     def create_count_dictionary(self, cur_tokens):
         """ {word: count} """
@@ -63,9 +54,9 @@ class ZettelKE:
                         break
         return doc_count_dict
 
-    def tf_idf(self):
+    def tf_idf(self):  #TODO
         """ tf_idf = tf * idf """
-        all_tf_idf = {}  #TODO?
+        all_tf_idf = {}
         total_docs = len(self.tokens)
         for zettel in self.tokens:
             total_words = len(zettel)
@@ -118,9 +109,7 @@ class ZettelKE:
         return keywords_score
 
     def weight_distribution(self):
-        """ combine all scores together with weights
-            pos_score = ('NN', .40) ('NNS', .35) ('NNP', .80) ('NNPS', .70) ('NG', .50)
-            z_area_score = (title: .80) (summary: .60) (note: 40) """
+        """ combine all scores together with weights """
         all_scores = []
         for zettel in self.tokens:
             zettel_scores = {}
@@ -142,56 +131,57 @@ class ZettelKE:
         check = False
         for item in split_word:
             for key_item in split_keyword:
-                if item.lower() == key_item.lower():
+                if item.lower() == key_item.lower():    #TODO?
                     check = True
         return check
 
-    def get_final_keywords(self, keywords_dict):  #TODO all
+    def get_final_keywords(self, cur_keywords_dict):
         """ Filter out any keywords that appear more than once, choosing the higher scored duplicate """
         new_keywords_dict = {}
         word_index = 0
         black_list = []
-        for word in keywords_dict:
+        for word in cur_keywords_dict:
             keyword_index = 0
-            for keyword in keywords_dict:
+            word_score = cur_keywords_dict[word]
+            for keyword in cur_keywords_dict:
                 if word_index != keyword_index:
+                    keyword_score = cur_keywords_dict[keyword]
                     keyword_index += 1
-                    # if two words match, take higher scored phrase
-                    if word.lower() == keyword.lower():
-                        if keywords_dict[word] > keywords_dict[keyword] or keywords_dict[word] == keywords_dict[keyword]:
+                    if word.lower() == keyword.lower():  # if two words match, take higher scored phrase
+                        if word_score >= keyword_score:
                             if keyword not in black_list:
                                 black_list.append(keyword)
                             if word not in new_keywords_dict:
-                                new_keywords_dict[word] = keywords_dict[word]
+                                new_keywords_dict[word] = word_score
                                 break
                             break
                         else:
                             if word not in black_list:
                                 black_list.append(word)
                             if keyword not in new_keywords_dict:
-                                new_keywords_dict[keyword] = keywords_dict[keyword]
+                                new_keywords_dict[keyword] = keyword_score
                                 break
                             break
                     elif self.split_check(re.split(" ", word), re.split(" ", keyword)):
-                        if keywords_dict[word] > keywords_dict[keyword]:
+                        if word_score >= keyword_score:
                             if keyword not in black_list:
                                 black_list.append(keyword)
                             if word not in new_keywords_dict:
-                                new_keywords_dict[word] = keywords_dict[word]
+                                new_keywords_dict[word] = word_score
                                 break
                             break
                         else:
                             if word not in black_list:
                                 black_list.append(word)
                             if keyword not in new_keywords_dict:
-                                new_keywords_dict[keyword] = keywords_dict[keyword]
+                                new_keywords_dict[keyword] = keyword_score
                                 break
                             break
                 else:
                     keyword_index += 1
             if word not in black_list:
                 if word not in new_keywords_dict:
-                    new_keywords_dict[word] = keywords_dict[word]
+                    new_keywords_dict[word] = word_score
             word_index += 1
         return new_keywords_dict
 
@@ -200,10 +190,10 @@ class ZettelKE:
         all_keywords = []
         for cur_zettel_dict in self.all_scores:
             keywords = []
-            final_zettel_dict = self.get_final_keywords(cur_zettel_dict)  #TODO
+            final_zettel_dict = self.get_final_keywords(cur_zettel_dict)
             cur_sorted = sorted(final_zettel_dict.items(), key=lambda kv: kv[1], reverse=True)
             for i in range(self.keyword_n):
-                keywords.append(str(cur_sorted[i]))
+                keywords.append(str(cur_sorted[i]))  #TODO change what to be added to not a str? or change sr?
             all_keywords.append(keywords)
         return all_keywords
 
@@ -228,7 +218,6 @@ if __name__ == "__main__":
     import datetime
     print(datetime.datetime.now())
 
-    # zettels = process.get_zettels_from_directory(baseball)
     # zettels = get_zettels_from_clean_directory(clean_baseball)
     zettels = get_zettels_from_clean_directory(movies)  # TODO get zettles differently
 

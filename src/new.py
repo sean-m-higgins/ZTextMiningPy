@@ -1,4 +1,3 @@
-import numpy as np  # TODO
 import zettel_preprocess
 import weights
 import os
@@ -139,52 +138,54 @@ class ZettelKE:
                     check = True
         return check
 
-    def get_final_keywords(self, keywords_dict):  #TODO all
+    def remove_duplicate_keywords(self, cur_keywords_dict):
         """ Filter out any keywords that appear more than once, choosing the higher scored duplicate """
         new_keywords_dict = {}
         word_index = 0
         black_list = []
-        for word in keywords_dict:
+        for word in cur_keywords_dict:
             keyword_index = 0
-            for keyword in keywords_dict:
+            word_score = cur_keywords_dict[word]
+            for keyword in cur_keywords_dict:
                 if word_index != keyword_index:
+                    keyword_score = cur_keywords_dict[keyword]
                     keyword_index += 1
                     # if two words match, take higher scored phrase
                     if word.lower() == keyword.lower():
-                        if keywords_dict[word] > keywords_dict[keyword] or keywords_dict[word] == keywords_dict[keyword]:
+                        if word_score >= keyword_score:
                             if keyword not in black_list:
                                 black_list.append(keyword)
                             if word not in new_keywords_dict:
-                                new_keywords_dict[word] = keywords_dict[word]
+                                new_keywords_dict[word] = word_score
                                 break
                             break
                         else:
                             if word not in black_list:
                                 black_list.append(word)
                             if keyword not in new_keywords_dict:
-                                new_keywords_dict[keyword] = keywords_dict[keyword]
+                                new_keywords_dict[keyword] = keyword_score
                                 break
                             break
                     elif self.split_check(re.split(" ", word), re.split(" ", keyword)):
-                        if keywords_dict[word] > keywords_dict[keyword]:
+                        if word_score >= keyword_score:
                             if keyword not in black_list:
                                 black_list.append(keyword)
                             if word not in new_keywords_dict:
-                                new_keywords_dict[word] = keywords_dict[word]
+                                new_keywords_dict[word] = word_score
                                 break
                             break
                         else:
                             if word not in black_list:
                                 black_list.append(word)
                             if keyword not in new_keywords_dict:
-                                new_keywords_dict[keyword] = keywords_dict[keyword]
+                                new_keywords_dict[keyword] = keyword_score
                                 break
                             break
                 else:
                     keyword_index += 1
             if word not in black_list:
                 if word not in new_keywords_dict:
-                    new_keywords_dict[word] = keywords_dict[word]
+                    new_keywords_dict[word] = word_score
             word_index += 1
         return new_keywords_dict
 
@@ -193,49 +194,24 @@ class ZettelKE:
         all_keywords = []
         for cur_zettel_dict in self.all_scores:
             keywords = []
-            final_zettel_dict = self.get_final_keywords(cur_zettel_dict)  #TODO
+            final_zettel_dict = self.remove_duplicate_keywords(cur_zettel_dict)
             cur_sorted = sorted(final_zettel_dict.items(), key=lambda kv: kv[1], reverse=True)
             for i in range(self.keyword_n):
-                keywords.append(str(cur_sorted[i]))
+                keywords.append(str(cur_sorted[i]))  #TODO change what to be added to not a str? or change sr?
             all_keywords.append(keywords)
         return all_keywords
 
-# TODO delete? possibility of using page_rank by way of linking zettels together. if one zettel points to another could
-#  mean those repitive words from those zettels are important keywords...?
-# after creating graph, weights = (1-d) + d * ( dot( graph, page_ranks) )
-# initialize page ranks as 1
-# def create_page_rank(self, graph):
-#     #     new_graph = np.asarray(self.normalize_graph(graph))
-#     #     page_ranks = np.full((len(new_graph)), 1)
-#     #     d = 0.85
-#     #     iter = 0
-#     #     for itme in new_graph:
-#     #         iter += 1
-#     #         page_ranks = (1-d) + d * np.dot(new_graph, page_ranks)
-#     #         print(iter)
-#     #         print(page_ranks)
-
-
-def get_zettels_from_directory(directory):
-    new_zettels = []  #TODO
-    files = os.listdir(directory)
-    for file in files:
-        path = directory + "/" + file
-        contents = [str([line.rstrip() for line in open(path)])]
-        new_zettels.append(contents)  #TODO
-    return new_zettels
-
 
 def get_zettels_from_clean_directory(directory):
-    new_zettels = []  #TODO
+    new_zettels = []
     files = os.listdir(directory)
     for file in files:
         path = directory + "/" + file
-        zettel = []  #TODO
+        zettel = []
         lines = open(path).readlines()
         for line in lines:
-            zettel.append(line)  #TODO
-        new_zettels.append(zettel)  #TODO
+            zettel.append(line)
+        new_zettels.append(zettel)
     return new_zettels
 
 

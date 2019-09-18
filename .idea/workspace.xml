@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1e3a476-4385-4a46-9452-4c047bba0a79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/new.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/data/processedData/stopWords/zettelStopWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/data/processedData/stopWords/zettelStopWords.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/weights.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/weights.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/new.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/new.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zettel_ke.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_ke.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zettel_preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_preprocess.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.new">
+  <component name="RunManager" selected="Python.zettel_ke">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="ZTextMiningPy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -208,8 +204,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.new" />
         <item itemvalue="Python.zettel_ke" />
+        <item itemvalue="Python.new" />
         <item itemvalue="Python.zc" />
         <item itemvalue="Python.zettel_keyword_extractor" />
         <item itemvalue="Python.simple" />
@@ -313,7 +309,7 @@
       <workItem from="1568678506493" duration="11845000" />
       <workItem from="1568766954824" duration="1446000" />
       <workItem from="1568769484446" duration="10108000" />
-      <workItem from="1568837993442" duration="5471000" />
+      <workItem from="1568837993442" duration="9924000" />
     </task>
     <servers />
   </component>
