@@ -7,18 +7,18 @@ import re
 class ZettelKE:
 
     def __init__(self, tokens):
-        z_weights = weights.Weights()
+        z_weights = weights.Weights()  #TODO remove weights class and set values here
         self.score_weights = z_weights.all_score_weights
         self.pos_score_switch = z_weights.pos_switch
         self.z_area_switch = z_weights.z_area_switch
         self.keyword_n = z_weights.keyword_n
         self.min_keyword_freq = z_weights.min_keyword_freq
         self.tokens = tokens
-        self.unique_tokens = self.create_unique_corpus()
-        self.doc_count_dict = self.create_doc_count_dictionary()
-        self.tf_idf_scores = self.tf_idf()
-        self.word_scores = self.create_word_score()
-        self.keyword_scores = self.create_keyword_score()
+        self.unique_tokens = self.create_unique_corpus()  #TODO store in database
+        self.doc_count_dict = self.create_doc_count_dictionary()  #TODO store in database and get and set here
+        self.tf_idf_scores = self.tf_idf()  #TODO get and set scores
+        self.word_scores = self.create_word_score()  #TODO get and set scores
+        self.keyword_scores = self.create_keyword_score()  #TODO get and set scores
         self.all_scores = self.weight_distribution()
 
     def run(self):
@@ -42,11 +42,11 @@ class ZettelKE:
             word_count_dict[word[0]] += 1
         return word_count_dict
 
-    def create_doc_count_dictionary(self):  #TODO
+    def create_doc_count_dictionary(self):
         """ {word: doc_count} """
         doc_count_dict = {}
         for zettel in self.tokens:
-            for token in zettel:
+            for token in zettel:  #TODO
                 for word in self.unique_tokens:
                     if token[0] == word:
                         doc_count_dict.setdefault(word, 0)
@@ -131,7 +131,7 @@ class ZettelKE:
         check = False
         for item in split_word:
             for key_item in split_keyword:
-                if item.lower() == key_item.lower():    #TODO?
+                if item.lower() == key_item.lower():
                     check = True
         return check
 
