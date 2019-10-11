@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1e3a476-4385-4a46-9452-4c047bba0a79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/zettel_queue.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/new.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simple.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/weights.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zettel_ke.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_ke.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zettel_keyword_extractor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zettel_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zettel_queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/zettel_queue.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -316,6 +323,8 @@
       <workItem from="1569182126650" duration="2029000" />
       <workItem from="1569282496568" duration="2071000" />
       <workItem from="1569888457408" duration="2318000" />
+      <workItem from="1569976980068" duration="31000" />
+      <workItem from="1570073617084" duration="3209000" />
     </task>
     <servers />
   </component>

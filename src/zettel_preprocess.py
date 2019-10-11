@@ -14,20 +14,23 @@ class ZettelPreProcessor:
         self.pos_tagged_tokens = self.pos_tagger()
         self.filter_n_grams(self.create_n_gram(2))
         self.filter_n_grams(self.create_n_gram(3))
+        self.count_dict = self.create_count_dictionary()
 
     def tokenizer(self):
         """ Split zettels by word """
         all_tokens = []
-        index = 0
+        index = 0  #TODO remove
+        # for section, index in zip(self.zettel, range(len(self.zettel))):  #TODO
+        #     if index == 3:
+        #         self.given_tags = re.split(";", section)  #TODO make sure to use ';' 
         for section in self.zettel:
             if index == len(self.zettel) - 1:
-                new_tags = re.split(";", section)
-                self.given_tags.append(new_tags)  #TODO
+                self.given_tags = re.split(";", section)
             else:
                 tokens = re.split('\W+', section)
                 tokens = list(filter(None, tokens))
                 all_tokens.append(tokens)
-            index += 1
+            index += 1  #TODO remove
         return all_tokens
 
     def remove_stop_words(self):
@@ -72,11 +75,23 @@ class ZettelPreProcessor:
         return all_n_grams
 
     def filter_n_grams(self, n_grams):
-        """ remove infrequent n_grams and add frequent n_grams to respective zettel in lemma_tokens """
+        """ remove infrequent n_grams and add frequent n_grams to respective zettel in tokens """
         all_n_grams = []
         for gram in n_grams:
             if n_grams.count(gram) >= 2:
                 if gram not in all_n_grams:
+                    split_gram = re.split(" ", gram)
+                    tags = nltk.pos_tag(split_gram)
+                    if tags[0][1][0] == 'V' or tags[len(split_gram)-1][1][0] == 'V':
+                        continue
                     all_n_grams.append(gram)
         for gram in all_n_grams:
             self.pos_tagged_tokens.append([gram, 'NG', 3])
+
+    def create_count_dictionary(self):
+        """ {word: count} """
+        word_count_dict = {}
+        for word in self.pos_tagged_tokens:
+            word_count_dict.setdefault(word[0], 0)
+            word_count_dict[word[0]] += 1
+        return word_count_dict
